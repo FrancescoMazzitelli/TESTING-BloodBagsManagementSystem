@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>AmministratoreCTTHub</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/stylesPage.css">
+</head>
+
+<body onload="start();">
+    <div class="titlePage">
+        <div class="row">
+            <div class="col">
+                <span class="fontTitle">
+                    Centro Trasfusionale Territoriale            
+                </span>
+            </div>
+            <div class="col" style="text-align: right;">
+                <img class="logo" src="assets/img/LOGO_CTT.svg">
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        
+        <div class="row" style="margin: auto;">
+            <div class="border col boxProfile" style="background-image: url(&quot;assets/img/bg-pattern.png&quot;);">
+                <div class="row">
+                    <div class="col-sm" style="padding:1%; text-align: center">
+                        <img src="assets/img/Amministratore.svg" style="width: 80%;">
+                        <span><b>Amministratore CTT</b></span>
+                    </div>
+                    <div class="col-sm" style="margin: auto;">
+                        <div>
+                            <p id="nome">Nome: </p>
+                        </div>
+                        <div>
+                            <p id="cognome">Cognome:</p>
+                        </div>
+                        <div style="width: auto; padding-bottom: 2%;">
+                            <button class="btn btn-primary" onclick="location.href='ChangePasswordAfterLogin.html';" type="button" style="background-color: #13958d;">Change Password</button>
+                            <button class="btn btn-primary" onclick="logout();" type="button">Log out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border col-sm boxButton" style="background-image: url(&quot;assets/img/bg-pattern.png&quot;);">
+                <div class="containerBtn">
+                        <p><b>Azioni</b></p>
+                        <div class="row" style="margin: auto; padding-bottom: 3%">
+                            <div class="col-sm">
+                                <button class="btn btn-primary" onclick="location.href='AggiuntaNuovoDipendenteCTTForm.html';" type="button" style="background-color: #13958d;width: auto; margin-bottom: 5%;">Aggiunta dipendente CTT</button>
+                            </div>
+                            <div class="col-sm">
+                                <button class="btn btn-primary" onclick="location.href='RimozioneDipendenteCTTForm.html';" type="button" style="background-color: #13958d; width: auto; margin-bottom: 5%;">Rimozione dipendente CTT</button>
+                             </div>
+                        </div>
+                        <div class="row" style="padding-bottom: 5%;">
+                            <div class="col-sm">
+                                <button class="btn btn-primary" onclick="location.href='QueryMenuCTT.html';" type="button" style="background-color: #13958d; width: auto;">Report statistici</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+         
+        <div class="boxNotification col-sm-12 border shadow-sm profile-box" style="background-image: url(&quot;assets/img/bg-pattern.png&quot;);">
+            <h2>Notifiche</h2>
+            <div class="divNot" id="divNot">
+            </div> 
+        </div> 
+    </div>
+       
+    <script>
+        var token = sessionStorage.getItem("token");
+        var ruolo = sessionStorage.getItem("ruolo");
+        var name = sessionStorage.getItem("nome");
+        var surname = sessionStorage.getItem("cognome");
+
+
+        function start() {
+            verificoToken();
+            setPerson();
+        }
+        
+        function setPerson(){
+            document.getElementById("nome").textContent = "Nome: " + name;
+            document.getElementById("cognome").textContent = "Cognome: " + surname;
+        }
+        
+        verificoToken = function(){
+               if(token == null || ruolo != 'AmministratoreCTT'){
+                alert("E' necessario effettuare il login per accedere a questa risorsa");
+                window.location.href='Login.html';
+               }
+        };
+
+        logout = function(){
+
+            var xhttp = new XMLHttpRequest();
+            var host = document.location.origin;
+            var url = host + "/rest/autentificazione/logout";
+            xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200 ) {
+                             sessionStorage.removeItem("token");
+                             sessionStorage.removeItem("ruolo");
+                             sessionStorage.removeItem("nome");
+                             sessionStorage.removeItem("cognome");
+                             sessionStorage.removeItem("cdf");
+                             window.location.href='Login.html';
+                        }else {
+                            if(this.readyState == 4 && this.status != 200 ){
+                                alert(this.response);
+                            }
+                        }
+            };
+     
+     
+                 xhttp.onerror = function(){
+                            alert("impossibile inviare la richiesta");
+                 };
+     
+     
+                 xhttp.open("DELETE", url, true);
+                 xhttp.setRequestHeader('Authorization', 'Basic '+token);
+                 xhttp.withCredentials = true;
+                 xhttp.send();
+ 
+         };
+    </script>
+    
+    <div class="footer"></div>
+</body>
+
+</html>
