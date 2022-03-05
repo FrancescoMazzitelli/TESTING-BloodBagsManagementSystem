@@ -17,7 +17,8 @@
     Tools utilizzati nel progetto corrente
 </p>
 <p align="center">
-    <img src = "https://img.shields.io/badge/cucumber for java-v213.5744.125-green">
+    <img src = "https://img.shields.io/badge/Cucumber for java-v213.5744.125-green">
+    <img src = "https://img.shields.io/badge/Selenium-v4.1.2-green">
 </p>
 
 #Progetto Ingegneria del Software - Magistrale 2022
