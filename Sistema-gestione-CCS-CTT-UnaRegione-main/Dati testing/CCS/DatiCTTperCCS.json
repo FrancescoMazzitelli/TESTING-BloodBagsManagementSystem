@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "622c835630e4094450e59a93"
+  },
+  "denominazione": "CTT001",
+  "provincia": "BN",
+  "citta": "Benevento",
+  "telefono": "1235468791",
+  "indirizzo": "via dei test1",
+  "e_mail": "test1@gmail.com",
+  "latitudine": 85.1,
+  "longitudine": 26.2
+},{
+  "_id": {
+    "$oid": "622c839c30e4094450e59ac3"
+  },
+  "denominazione": "CTT002",
+  "provincia": "NA",
+  "citta": "Napoli",
+  "telefono": "3216549871",
+  "indirizzo": "via dei test2",
+  "e_mail": "test2@gmail.com",
+  "latitudine": 83.4,
+  "longitudine": 29.3
+}]

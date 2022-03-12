@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CCS/CCS_DataBaseRest.iml" filepath="$PROJECT_DIR$/CCS/CCS_DataBaseRest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CTT/CTT_DataBaseRest.iml" filepath="$PROJECT_DIR$/CTT/CTT_DataBaseRest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Sistema-gestione-CCS-CTT-UnaRegione-main.iml" filepath="$PROJECT_DIR$/.idea/Sistema-gestione-CCS-CTT-UnaRegione-main.iml" />
+    </modules>
+  </component>
+</project>

@@ -24,9 +24,13 @@ public class Settings {
     static {
         Properties loadNetworkProps = new Properties();
         Properties loadDatabaseProps = new Properties();
-        try {
-            loadNetworkProps.loadFromXML(new FileInputStream("localsettings/network_settings.xml"));
-            loadDatabaseProps.loadFromXML(new FileInputStream("localsettings/database_settings.xml"));
+        NetworkProperties np = new NetworkProperties();
+        DatabaseProperties dp = new DatabaseProperties();
+        /*try {
+            String localDir = System.getProperty("user.dir");
+            loadNetworkProps.loadFromXML(new FileInputStream("Sistema-gestione-CCS-CTT-UnaRegione-main\\CTT\\src\\localsettings\\network_settings.xml"));
+            loadDatabaseProps.loadFromXML(new FileInputStream("Sistema-gestione-CCS-CTT-UnaRegione-main\\CTT\\src\\localsettings\\database_settings.xml"));
+
         } catch (InvalidPropertiesFormatException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
@@ -34,10 +38,11 @@ public class Settings {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ccsIp = loadNetworkProps.getProperty("CCSIP");
-        ccsWebSocket = loadNetworkProps.getProperty("CCSWebSocketIP");
-        retry = Integer.valueOf(loadNetworkProps.getProperty("CCS_retry_connection"));
-        ccsIpPort = loadNetworkProps.getProperty("CCS_PORT");
+        */
+        ccsIp = np.getCCSIP();
+        ccsWebSocket = np.getCCSWebSocketIP();
+        retry = np.getCCS_retry_connection();
+        ccsIpPort = np.getCCS_PORT();
 
         //carico ip sicuri
         trustedIp = new ArrayList<>();
@@ -48,10 +53,10 @@ public class Settings {
         }
 
         //carico impostazioni DB
-        DB_NAME = loadDatabaseProps.getProperty("DB_NAME");
-        COLLECTION_DIPENDENTI = loadDatabaseProps.getProperty("COLLECTION_DIPENDENTI");
-        COLLECTION_SACCHE = loadDatabaseProps.getProperty("COLLECTION_SACCHE");
-        COLLECTION_DATISACCHE = loadDatabaseProps.getProperty("COLLECTION_DATISACCHE");
+        DB_NAME = dp.getDB_NAME();
+        COLLECTION_DIPENDENTI = dp.getCOLLECTION_DIPENDENTI();
+        COLLECTION_SACCHE = dp.getCOLLECTION_SACCHE();
+        COLLECTION_DATISACCHE = dp.getCOLLECTION_DATISACCHE();
     }
 
 }

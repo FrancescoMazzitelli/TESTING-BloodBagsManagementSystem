@@ -24,9 +24,10 @@ public class CTTName {
     /**Costruisco il seriale a partire da configurazioni presenti in /localsettings/serial_settings.xml
      * @throws InvalidPropertiesFormatException, FileNotFoundException, IOException*/
     static {
+
         Properties loadProps = new Properties();
         try {
-            loadProps.loadFromXML(new FileInputStream("localsettings/cttname_settings.xml"));
+            loadProps.loadFromXML(new FileInputStream("Sistema-gestione-CCS-CTT-UnaRegione-main/CCS/localsettings/cttname_settings.xml"));
         } catch (InvalidPropertiesFormatException e) {
             e.printStackTrace();
         } catch (FileNotFoundException e) {

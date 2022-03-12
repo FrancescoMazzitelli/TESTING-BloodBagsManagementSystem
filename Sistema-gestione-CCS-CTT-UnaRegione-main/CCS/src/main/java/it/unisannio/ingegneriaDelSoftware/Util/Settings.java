@@ -23,7 +23,10 @@ public class Settings {
     public static final String PORTA;
 
     static{
-        Properties loadNetworkProps = new Properties();
+        DatabaseProperties dp = new DatabaseProperties();
+        NetworkProperties np = new NetworkProperties();
+
+        /*Properties loadNetworkProps = new Properties();
         Properties loadDatabaseProps = new Properties();
 
         try {
@@ -36,25 +39,26 @@ public class Settings {
         } catch (IOException e) {
             CcsRestApplication.logger.error("Errore durante l'apertura dei file del settings");
         }
+        */
+
         //carico impostazioni DB
-        DB_NAME = loadDatabaseProps.getProperty("DB_NAME");
-        COLLECTION_DIPENDENTI = loadDatabaseProps.getProperty("COLLECTION_DIPENDENTI");
-        COLLECTION_SACCHE = loadDatabaseProps.getProperty("COLLECTION_SACCHE");
-        COLLECTION_CTT = loadDatabaseProps.getProperty("COLLECTION_CTT");
+        DB_NAME = dp.getDB_NAME();
+        COLLECTION_DIPENDENTI = dp.getCOLLECTION_DIPENDENTI();
+        COLLECTION_SACCHE = dp.getCOLLECTION_SACCHE();
+        COLLECTION_CTT = dp.getCOLLECTION_CTT();
 
 
         //carico indirizzi ip
-        for (Object key :loadNetworkProps.keySet()) {
-            String keyS = (String) key;
-            if(!keyS.equals("PORT")) {
+        for (String key : np.getIP()) {
+            if(!key.equals("PORT")) {
                 try {
-                    ip.put(MongoDataManager.getInstance().getCTT(CTTName.getCttName((String)key)),loadNetworkProps.getProperty((String)key));
+                    ip.put(MongoDataManager.getInstance().getCTT(CTTName.getCttName(key)), key);
                 } catch (EntityNotFoundException e) {
                     //do nothing
                 }
             }
         }
-        PORTA = loadNetworkProps.getProperty("PORT");
+        PORTA = np.getPORT();
     }
 }
 
