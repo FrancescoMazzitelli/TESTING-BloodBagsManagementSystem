@@ -19,4 +19,4 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
-        run: mvn -B test --file CCS\pom.xml
+        run: mvn -B test --file "Sistema-gestione-CCS-CTT-UnaRegione-main\CCS\pom.xml"
