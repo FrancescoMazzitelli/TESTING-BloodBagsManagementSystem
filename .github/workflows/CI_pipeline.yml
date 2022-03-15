@@ -19,10 +19,10 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Maven clean of target dir
-        run: mvn clean
+        run: mvn clean --file "D:\a\Ingegneria-del-software-magistrale-2022\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CCS
       - name: Run CCS tests with Maven
         run: mvn test --file "D:\a\Ingegneria-del-software-magistrale-2022\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CCS\pom.xml"
       - name: Maven clean of target dir
-        run: mvn clean
+        run: mvn clean --file "D:\a\Ingegneria-del-software-magistrale-2022\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT
       - name: Run CTT tests with Maven
         run: mvn test --file "D:\a\Ingegneria-del-software-magistrale-2022\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT\pom.xml"
