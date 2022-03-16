@@ -19,7 +19,7 @@ import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsExceptio
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.DatiSacca;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
@@ -127,7 +127,7 @@ public class EvasioneSaccaTest {
 		NotificaEvasione not= new NotificaEvasione(listaSeriali, enteRichiedente, indirizzoEnte, "messaggio");
 		
 		Response evasioneSaccaMagazz = evasioneSacca.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.json(not));
-		assertEquals(Status.CREATED.getStatusCode(), evasioneSaccaMagazz.getStatus());
+		Assertions.assertEquals(Status.CREATED.getStatusCode(), evasioneSaccaMagazz.getStatus());
 	}
 
 	/** Test per il metodo rest/magazziniere/evasione del magazziniereCTT, 
@@ -145,7 +145,7 @@ public class EvasioneSaccaTest {
 		NotificaEvasione not= new NotificaEvasione(listaSeriali, enteRichiedente, indirizzoEnte, "messaggio");
 		
 		Response evasioneSaccaMagazz = evasioneSacca.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.json(not));
-		assertEquals(Status.NOT_FOUND.getStatusCode(), evasioneSaccaMagazz.getStatus());
+		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), evasioneSaccaMagazz.getStatus());
 	}
 
 	

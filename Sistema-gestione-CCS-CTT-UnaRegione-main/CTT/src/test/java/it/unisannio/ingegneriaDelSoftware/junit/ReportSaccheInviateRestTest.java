@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response.Status;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.DatiSacca;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
@@ -602,7 +602,7 @@ public class ReportSaccheInviateRestTest {
     @Test
     public void testCorretto(){
         Response responseReport = reportSaccheInviate.queryParam("dataInizio", "2000-07-10").queryParam("dataFine", "2022-07-10").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
+        Assertions.assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
     }
     
     /** Test per il metodo /rest/amministratore/reportLocaleSaccheInviate dell'amministratoreCTT,
@@ -610,6 +610,6 @@ public class ReportSaccheInviateRestTest {
     @Test
     public void testFormatoErrato(){
         Response responseReport = reportSaccheInviate.queryParam("dataInizio", "07-10-2000").queryParam("dataFine", "07-10-2022").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        assertEquals(Status.BAD_REQUEST.getStatusCode(), responseReport.getStatus());
+        Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseReport.getStatus());
     }
 }

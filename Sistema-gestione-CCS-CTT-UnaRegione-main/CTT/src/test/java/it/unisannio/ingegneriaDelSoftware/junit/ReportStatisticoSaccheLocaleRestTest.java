@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response.Status;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.DatiSacca;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
@@ -602,6 +602,6 @@ public class ReportStatisticoSaccheLocaleRestTest {
     @Test
     public void testCorretto(){
         Response responseReport = reportStatisticoSaccheLocale.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
+        Assertions.assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
     }
 }

@@ -16,7 +16,7 @@ import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsExceptio
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.DatiSacca;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
@@ -603,6 +603,6 @@ public class ReportGiacenzaMediaSaccheLocaleRestTest {
     @Test
     public void testCorretto(){
         Response responseReport = reportGiacenzaMediaSacche.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
+        Assertions.assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
     }
 }

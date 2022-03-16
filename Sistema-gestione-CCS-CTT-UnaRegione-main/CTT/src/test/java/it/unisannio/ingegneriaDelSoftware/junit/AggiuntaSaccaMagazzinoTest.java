@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response.Status;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.GruppoSanguigno;
@@ -55,7 +55,7 @@ public class AggiuntaSaccaMagazzinoTest {
 		form1.param("ente_donatore", "DonatoreProva1");
 
 		Response responseaddSaccaMagazz = aggiuntaSaccaMagazz.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
-		assertEquals(Status.CREATED.getStatusCode(), responseaddSaccaMagazz.getStatus());
+		Assertions.assertEquals(Status.CREATED.getStatusCode(), responseaddSaccaMagazz.getStatus());
 	}
 	
 	@Test public void testAggiuntaSaccaScaduta() {
@@ -66,7 +66,7 @@ public class AggiuntaSaccaMagazzinoTest {
 		form1.param("ente_donatore", "DonatoreProva1");
 
 		Response responseaddSaccaMagazz = aggiuntaSaccaMagazz.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
-		assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddSaccaMagazz.getStatus());
+		Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddSaccaMagazz.getStatus());
 	}
 	
 	@After public void dropDBSacche() {

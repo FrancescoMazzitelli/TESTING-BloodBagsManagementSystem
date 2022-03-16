@@ -17,7 +17,7 @@ import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityNotFoundException;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
@@ -83,7 +83,7 @@ public class LoginTest {
 		form.param("username", "admiN");
 		form.param("password", "Admin");
 		Response responseLogin = Login.request().post(Entity.form(form));
-		assertEquals(Status.NOT_FOUND.getStatusCode(), responseLogin.getStatus());  
+		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseLogin.getStatus());
 		}
 	  
 	  /**Test per verificare la presenza di un DipendenteCTT creato nel setUp e aggiunto nel database dei Dipendenti
@@ -95,6 +95,6 @@ public class LoginTest {
 		  form.param("username", "admin");
 		  form.param("password", "Adminadmin1");
 		  Response responseLogin = Login.request().post(Entity.form(form));
-		  assertEquals(Status.CREATED.getStatusCode(), responseLogin.getStatus());
+		  Assertions.assertEquals(Status.CREATED.getStatusCode(), responseLogin.getStatus());
 	  }
 }

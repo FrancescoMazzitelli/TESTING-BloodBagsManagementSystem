@@ -18,7 +18,7 @@ import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsExceptio
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.DatiSacca;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
@@ -541,7 +541,7 @@ public class RicercaSaccaLocaleTest {
 									 .queryParam("priorità", "TRUE");
 									 
 		Response responseRicerca = ricercaLocale1.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-		assertEquals(Status.OK.getStatusCode(), responseRicerca.getStatus());
+		Assertions.assertEquals(Status.OK.getStatusCode(), responseRicerca.getStatus());
 	}
 	
 	/** Test per il metodo /rest/operatore/ricerca dell'operatoreCTT, non va a buon fine,
@@ -556,7 +556,7 @@ public class RicercaSaccaLocaleTest {
 									 .queryParam("priorità", "TRUE");
 									 
 		Response responseRicerca = ricercaLocale1.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-		assertEquals(Status.NOT_FOUND.getStatusCode(), responseRicerca.getStatus());
+		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseRicerca.getStatus());
 	}
 	
 	/** Test per il metodo /rest/operatore/ricerca dell'operatoreCTT, non va a buon fine,
@@ -571,7 +571,7 @@ public class RicercaSaccaLocaleTest {
 									 .queryParam("priorità", "TRUE");
 									 
 		Response responseRicerca = ricercaLocale1.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-		assertEquals(Status.PARTIAL_CONTENT.getStatusCode(), responseRicerca.getStatus());
+		Assertions.assertEquals(Status.PARTIAL_CONTENT.getStatusCode(), responseRicerca.getStatus());
 	}
 	
 	/** Test per il metodo /rest/operatore/ricerca dell'operatoreCTT, non va a buon fine,
@@ -586,7 +586,7 @@ public class RicercaSaccaLocaleTest {
 									 .queryParam("priorità", "TRUE");
 									 
 		Response responseRicerca = ricercaLocale1.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-		assertEquals(Status.BAD_REQUEST.getStatusCode(), responseRicerca.getStatus());
+		Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseRicerca.getStatus());
 	}
 	
 	@After public void dropDBSacche() {

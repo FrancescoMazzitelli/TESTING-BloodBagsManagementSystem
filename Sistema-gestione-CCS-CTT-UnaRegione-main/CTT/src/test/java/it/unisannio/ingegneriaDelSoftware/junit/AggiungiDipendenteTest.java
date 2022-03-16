@@ -21,7 +21,7 @@ import it.unisannio.ingegneriaDelSoftware.Util.Constants;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
@@ -125,7 +125,7 @@ public class AggiungiDipendenteTest {
 			form1.param("username", "username 123");
 			form1.param("password", "Password123");
 			Response responseaddAmm = aggiuntaAmministratore.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
-			assertEquals(Status.CREATED.getStatusCode(), responseaddAmm.getStatus());	
+			Assertions.assertEquals(Status.CREATED.getStatusCode(), responseaddAmm.getStatus());
 		}
 		
 		
@@ -142,7 +142,7 @@ public class AggiungiDipendenteTest {
 			form1.param("username", "username 234");
 			form1.param("password", "Password234");
 			Response responseaddAmm = aggiuntaAmministratore.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
-			assertEquals(Status.CREATED.getStatusCode(), responseaddAmm.getStatus());	
+			Assertions.assertEquals(Status.CREATED.getStatusCode(), responseaddAmm.getStatus());
 		}
 		
 		
@@ -160,7 +160,7 @@ public class AggiungiDipendenteTest {
 			form1.param("username", "username 234");
 			form1.param("password", "Password234");
 			Response responseaddAmm = aggiuntaAmministratore.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
-			assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddAmm.getStatus());
+			Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddAmm.getStatus());
 		}
 		
 		

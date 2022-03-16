@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response.Status;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
@@ -120,20 +120,20 @@ public class ReportDipendentiCTTRestTest {
     @Test
     public void testMagazzinieri(){
         Response responseReport = ReportDipendentiCTT.queryParam("ruolo", RuoloDipendente.MagazziniereCTT).request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
+        Assertions.assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
     }
     
     /** Test per il metodo rest/amministratore/reportDipendentiCtt dell'amministratoreCTT, che filtra gli OperatoriCTT, va a buon fine*/
     @Test
     public void testReportOperatori(){
         Response responseReport = ReportDipendentiCTT.queryParam("ruolo", RuoloDipendente.OperatoreCTT).request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
+        Assertions.assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
     }
     
     /** Test per il metodo rest/amministratore/reportDipendentiCtt dell'amministratoreCTT, che filtra gli AmministratoriCTT, va a buon fine*/
     @Test
     public void testReportAmministratore(){
         Response responseReport = ReportDipendentiCTT.queryParam("ruolo", RuoloDipendente.AmministratoreCTT).request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
+        Assertions.assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
     }
 }

@@ -20,7 +20,7 @@ import it.unisannio.ingegneriaDelSoftware.Util.Constants;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
@@ -117,7 +117,7 @@ public class RemoveDipendenteCTTTest {
 	@Test public void testRimozioneDipendenteCTTCorretto(){	
 
 		Response responseRemDip = rimozioneDip.path("BVNZDG48A06D684R").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-		assertEquals(Status.OK.getStatusCode(), responseRemDip.getStatus());
+		Assertions.assertEquals(Status.OK.getStatusCode(), responseRemDip.getStatus());
 	} 	
 	
 	
@@ -127,7 +127,7 @@ public class RemoveDipendenteCTTTest {
 	@Test public void testRimozioneDipendenteCTTNonPresente(){
 		
 		Response responseRemDip = rimozioneDip.path("FALSOG48A06D684R").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-		assertEquals(Status.NOT_FOUND.getStatusCode(), responseRemDip.getStatus());
+		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseRemDip.getStatus());
 	} 
 	
 	
@@ -138,7 +138,7 @@ public class RemoveDipendenteCTTTest {
 	@Test public void testRimozioneDipendenteCTTSeStesso(){
 		
 		Response responseRemDip = rimozioneDip.path("CZGMJS46A28I333C").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-		assertEquals(Status.FORBIDDEN.getStatusCode(), responseRemDip.getStatus());
+		Assertions.assertEquals(Status.FORBIDDEN.getStatusCode(), responseRemDip.getStatus());
 	} 
 	
 	
