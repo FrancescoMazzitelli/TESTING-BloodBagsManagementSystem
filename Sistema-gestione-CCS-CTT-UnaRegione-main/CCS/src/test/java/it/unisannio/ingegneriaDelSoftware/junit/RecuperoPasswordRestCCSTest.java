@@ -16,7 +16,7 @@ import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityNotFoundException;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 
 import com.sun.research.ws.wadl.Request;
 
@@ -80,7 +80,7 @@ public class RecuperoPasswordRestCCSTest {
 	  public void testRecuperoPassword() throws EntityNotFoundException,WebApplicationException{
 		  String username = "admin";
 		  Response responseRecuperoPassword = RecuperoPassword.path("KTMFSW67T64I460X").request().put(Entity.text(username));
-		  assertEquals(Status.OK.getStatusCode(), responseRecuperoPassword.getStatus());
+		  Assertions.assertEquals(Status.OK.getStatusCode(), responseRecuperoPassword.getStatus());
 	  }
 	
 	
@@ -91,7 +91,7 @@ public class RecuperoPasswordRestCCSTest {
 	 public void testRecuperoPasswordUtenteNonPresente()  throws EntityNotFoundException,WebApplicationException{
 		String username = "admin";
 		Response responseRecuperoPassword = RecuperoPassword.path("FALSOW67T64I460X").request().put(Entity.text(username));
-		assertEquals(Status.NOT_FOUND.getStatusCode(), responseRecuperoPassword.getStatus());  
+		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseRecuperoPassword.getStatus());
 		}
 	
 	  
@@ -102,7 +102,7 @@ public class RecuperoPasswordRestCCSTest {
 	 public void testRecuperoPasswordAltroUtente()  throws EntityNotFoundException,WebApplicationException{
 		String username = "admin3";
 		Response responseRecuperoPassword = RecuperoPassword.path("MFDFSW67T89I460X").request().put(Entity.text(username));
-		assertEquals(Status.FORBIDDEN.getStatusCode(), responseRecuperoPassword.getStatus());  
+		Assertions.assertEquals(Status.FORBIDDEN.getStatusCode(), responseRecuperoPassword.getStatus());
 		}
 
 }

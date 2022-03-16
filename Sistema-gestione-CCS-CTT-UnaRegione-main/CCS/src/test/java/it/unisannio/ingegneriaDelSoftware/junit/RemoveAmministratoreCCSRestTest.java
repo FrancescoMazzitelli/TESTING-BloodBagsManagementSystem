@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response.Status;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
@@ -120,7 +120,7 @@ public class RemoveAmministratoreCCSRestTest {
 	 */
 	@Test public void testRimozioneAmministratoreCCSCorretto() throws EntityAlreadyExistsException{	
 		Response responseRemAmm = rimozioneAmm.path("BVNZDG48A06D684R").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-		assertEquals(Status.OK.getStatusCode(), responseRemAmm.getStatus());
+		Assertions.assertEquals(Status.OK.getStatusCode(), responseRemAmm.getStatus());
 	} 	
 	
 	/**Test del metodo REST rest/CCS/rimozioneAmministratore, non deve andare a buon fine in quanto si tenta di eliminare un Dipendente non presente nel database
@@ -128,7 +128,7 @@ public class RemoveAmministratoreCCSRestTest {
 	*/ 
 	@Test public void testRimozioneAmministratoreCCSNonPresente() throws EntityAlreadyExistsException{
 		Response responseRemAmm = rimozioneAmm.path("NONPRE53N07D684R").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-		assertEquals(Status.NOT_FOUND.getStatusCode(), responseRemAmm.getStatus());
+		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseRemAmm.getStatus());
 	} 
 	
 	/**Test del metodo REST rest/CCS/rimozioneAmministratore, non deve andare a buon fine in quanto l'AmministratoreCCS tenta di eliminare se stesso mentre è loggato
@@ -136,6 +136,6 @@ public class RemoveAmministratoreCCSRestTest {
 	*/ 
 	@Test public void testRimozioneAmministratoreCCSSeStesso() throws EntityAlreadyExistsException{
 		Response responseRemAmm = rimozioneAmm.path("CZGMJS46A28I333C").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-		assertEquals(Status.FORBIDDEN.getStatusCode(), responseRemAmm.getStatus());
+		Assertions.assertEquals(Status.FORBIDDEN.getStatusCode(), responseRemAmm.getStatus());
 	} 
 }

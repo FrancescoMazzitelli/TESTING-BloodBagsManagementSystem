@@ -17,7 +17,7 @@ import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityNotFoundException;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
@@ -78,7 +78,7 @@ public class CambioPasswordRestCCSTest {
 	  public void testCambioPassword() throws AssertionError, EntityNotFoundException,WebApplicationException{
 		  String password = "Password1";
 		  Response responseCambioPassword = CambioPassword.path("KTMFSW67T64I460X").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).put(Entity.text(password));
-		  assertEquals(Status.OK.getStatusCode(), responseCambioPassword.getStatus());
+		  Assertions.assertEquals(Status.OK.getStatusCode(), responseCambioPassword.getStatus());
 	  }
 	
 	
@@ -89,7 +89,7 @@ public class CambioPasswordRestCCSTest {
 	 public void testCambioPasswordTokenErrato()  throws AssertionError, EntityNotFoundException,WebApplicationException{
 		String password = "passworderrata";
 		Response responseCambioPassword = CambioPassword.path("KTMFSW67T64I460X").request().header(HttpHeaders.AUTHORIZATION, "errato "+token).put(Entity.text(password));
-		assertEquals(Status.NOT_FOUND.getStatusCode(), responseCambioPassword.getStatus());  
+		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseCambioPassword.getStatus());
 		}
 	
 	
@@ -100,7 +100,7 @@ public class CambioPasswordRestCCSTest {
 	 public void testCambioPasswordNonRiuscito()  throws AssertionError, EntityNotFoundException,WebApplicationException {
 		String password = "passworderrata";
 		Response responseCambioPassword = CambioPassword.path("KTMFSW67T64I460X").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).put(Entity.text(password));
-		assertEquals(Status.BAD_REQUEST.getStatusCode(), responseCambioPassword.getStatus());  
+		Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseCambioPassword.getStatus());
 		}
 	
 	  
@@ -111,7 +111,7 @@ public class CambioPasswordRestCCSTest {
 	 public void testCambioPasswordAltroUtente()  throws AssertionError, EntityNotFoundException,WebApplicationException{
 		String password = "Password1";
 		Response responseCambioPassword = CambioPassword.path("MFDFSW67T89I460X").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).put(Entity.text(password));
-		assertEquals(Status.FORBIDDEN.getStatusCode(), responseCambioPassword.getStatus());  
+		Assertions.assertEquals(Status.FORBIDDEN.getStatusCode(), responseCambioPassword.getStatus());
 		}
 
 }

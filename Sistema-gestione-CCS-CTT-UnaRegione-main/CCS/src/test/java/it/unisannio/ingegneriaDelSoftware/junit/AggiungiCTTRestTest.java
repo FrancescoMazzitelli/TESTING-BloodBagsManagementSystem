@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response.Status;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
@@ -75,7 +75,7 @@ public class AggiungiCTTRestTest {
 		form1.param("latitude", "65");
 		form1.param("longitude", "41");
 		Response responseaddCTT = aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
-		assertEquals(Status.OK.getStatusCode(), responseaddCTT.getStatus());
+		Assertions.assertEquals(Status.OK.getStatusCode(), responseaddCTT.getStatus());
 	}
 
 	/** Test per il metodo rest/CCS/aggiuntaCTT dell'amministratoreCCS, non va a buon fine siccome mancano i parametri numero_ctt e nome_ctt
@@ -91,7 +91,7 @@ public class AggiungiCTTRestTest {
 		form1.param("latitude", "65");
 		form1.param("longitude", "41");
 		Response responseaddCTT = aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
-		assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddCTT.getStatus());
+		Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddCTT.getStatus());
 	}
 
 	/** Test per il metodo rest/CCS/aggiuntaCTT dell'amministratoreCCS, non va a buon fine siccome il parametro telefono è in un formato errato
@@ -107,7 +107,7 @@ public class AggiungiCTTRestTest {
 		form1.param("latitude", "65");
 		form1.param("longitude", "41");
 		Response responseaddCTT = aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
-		assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddCTT.getStatus());
+		Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddCTT.getStatus());
 	}
 
 	/**Test per il metodo rest/CCS/aggiuntaCTT dell'amministratoreCCS, non va a buon fine siccome la letitudine inserita non esiste e non è valida
@@ -123,6 +123,6 @@ public class AggiungiCTTRestTest {
 		form1.param("latitude", "190");			//è stato inserito un input non valido per la latitudine
 		form1.param("longitude", "41");
 		Response responseaddCTT = aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
-		assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddCTT.getStatus());
+		Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddCTT.getStatus());
 	}
 }

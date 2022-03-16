@@ -15,7 +15,7 @@ import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityNotFoundException;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
@@ -67,7 +67,7 @@ public class LogOutRestTest {
 	  @Test
 	 public void testRimozioneTokenNonPresente() throws EntityNotFoundException {
 		Response responseLogout = LogOut.request().header(HttpHeaders.AUTHORIZATION, "errato "+token).delete();
-		assertEquals(Status.NOT_FOUND.getStatusCode(), responseLogout.getStatus());  
+		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseLogout.getStatus());
 		}
 	  
 	  
@@ -77,6 +77,6 @@ public class LogOutRestTest {
 	  @Test
 	  public void testRimozioneToken() throws EntityNotFoundException{
 		  Response responseLogout = LogOut.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-		  assertEquals(Status.OK.getStatusCode(), responseLogout.getStatus());
+		  Assertions.assertEquals(Status.OK.getStatusCode(), responseLogout.getStatus());
 	  }
 }

@@ -17,7 +17,7 @@ import it.unisannio.ingegneriaDelSoftware.DomainTypes.Beans.User;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
 
 public class RemoveCTTRestTest {
@@ -148,7 +148,7 @@ public class RemoveCTTRestTest {
 	 */
 	@Test public void testRimozioneCTTCorretto() throws EntityAlreadyExistsException{	
 		Response responseRemCTT = rimozioneCTT.path("CTT001").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-		assertEquals(Status.OK.getStatusCode(), responseRemCTT.getStatus());
+		Assertions.assertEquals(Status.OK.getStatusCode(), responseRemCTT.getStatus());
 	} 	
 	
 	/**Test del metodo REST rest/CCS/rimozioneCTT, non deve andare a buon fine in quanto si tenta di eliminare un CTT non presente nel database
@@ -156,6 +156,6 @@ public class RemoveCTTRestTest {
 	*/ 
 	@Test public void testRimozioneCTTNonPresente() throws EntityAlreadyExistsException{
 		Response responseRemCTT = rimozioneCTT.path("CTT008").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-		assertEquals(Status.NOT_FOUND.getStatusCode(), responseRemCTT.getStatus());
+		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseRemCTT.getStatus());
 	} 	
 }

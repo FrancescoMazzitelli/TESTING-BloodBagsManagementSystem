@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
@@ -78,7 +78,7 @@ public class ListaCTTRestTest {
         form1.param("longitude", "41");
         aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        assertEquals(1,mm.getListaCTT().size());
+        Assertions.assertEquals(1, mm.getListaCTT().size());
     }
 
     /** Test per il metodo rest/CCS/centers dell'amministratoreCCS, non va a buon fine siccome il parametro telefono è in un formato errato
@@ -95,7 +95,7 @@ public class ListaCTTRestTest {
         form1.param("longitude", "41");
         aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        assertNotEquals(2,mm.getListaCTT().size());
+        Assertions.assertNotEquals(2, mm.getListaCTT().size());
     }
 
 }
