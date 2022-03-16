@@ -25,11 +25,11 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
           
       - name: Maven clean of target dir
-        run: mvn clean --file "/home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CCS"
+        run: mvn clean --file "/home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CCS"
       - name: Run CCS tests with Maven
-        run: mvn test --file "/home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CCS\pom.xml"
+        run: mvn test --file "/home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CCS/pom.xml"
       
       - name: Maven clean of target dir
-        run: mvn clean --file "/home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT"
+        run: mvn clean --file "/home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CTT"
       - name: Run CTT tests with Maven
-        run: mvn test --file "/home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT\pom.xml"
+        run: mvn test --file "/home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CTT/pom.xml"
