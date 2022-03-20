@@ -36,7 +36,7 @@ jobs:
         run: sudo systemctl start mongod
         
       - name: Opening the mongo shell
-        run: mongo
+        run: mongosh
         
       - name: Creating the CCS database
         run: use CCS 
