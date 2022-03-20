@@ -18,16 +18,18 @@ jobs:
         run: sudo apt-get update
         
       - name: Install MongoDB
-        run: sudo apt-get install -y mongodb-org
+        run: | 
+          sudo apt-get install gnupg
+          wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+          sudo apt-get install -y mongodb-org
         
       #- name: Setting up MongoDB on standard port
       #  uses: supercharge/mongodb-github-action@1.7.0
         
       - name: Trick from stackoverflow for letting the remote system execute mongo service
-        run: sudo systemctl enable mongod
-        
-      - name: Another trick from stackoverflow
-        run: mongod --dbpath /usr/local/var/mongodb
+        run: |
+          sudo systemctl enable mongod
+          sudo systemctl daemon-reload
         
       - name: Starting MongoDB
         #run: sudo service mongod start
