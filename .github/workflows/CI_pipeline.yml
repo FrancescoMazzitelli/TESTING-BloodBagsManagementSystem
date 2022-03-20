@@ -23,6 +23,9 @@ jobs:
       #- name: Setting up MongoDB on standard port
       #  uses: supercharge/mongodb-github-action@1.7.0
         
+      - name: Trick from stackoverflow for letting the remote system execute mongo service
+        run: sudo systemctl enable mongod
+        
       - name: Starting MongoDB
         run: sudo service mongodb start
         
