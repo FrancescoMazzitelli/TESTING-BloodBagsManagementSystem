@@ -27,7 +27,8 @@ jobs:
         run: sudo systemctl enable mongod
         
       - name: Starting MongoDB
-        run: sudo service mongod start
+        #run: sudo service mongod start
+        run: systemctl start mongod
         
       - name: Opening the mongo shell
         run: mongo
