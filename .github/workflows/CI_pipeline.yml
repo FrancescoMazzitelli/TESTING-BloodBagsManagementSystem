@@ -39,7 +39,7 @@ jobs:
         run: mongosh
         
       - name: Creating the CCS database
-        run: use CCS 
+        run: mongosh use CCS 
         
       - name: Adding CTT-DATA for testing
         run: db.CTT.insertMany([
