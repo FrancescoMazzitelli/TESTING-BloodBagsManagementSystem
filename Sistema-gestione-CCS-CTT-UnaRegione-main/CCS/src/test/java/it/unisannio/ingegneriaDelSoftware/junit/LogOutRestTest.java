@@ -26,6 +26,7 @@ public class LogOutRestTest {
 	
 	static String token = null;
 	Client client = ClientBuilder.newClient();
+	WebTarget Login = client.target("http://127.0.0.1:8080/rest/autentificazione");
 	WebTarget LogOut = client.target("http://127.0.0.1:8080/rest/autentificazione/logout");
 	
 	/**Aggiunge al database dei Dipendenti un amministratoreCCS necessario per testare il metodo successivo ed esegue il Login
@@ -43,12 +44,11 @@ public class LogOutRestTest {
 	    mm.createDipendente(dip);
 	    
 	    Client client = ClientBuilder.newClient();
-		WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
 		Form form1 = new Form();
 		form1.param("username", "admin");
 		form1.param("password", "Adminadmin1");
 		
-		Response responselogin = login.request().post(Entity.form(form1));
+		Response responselogin = Login.request().post(Entity.form(form1));
 		User user = responselogin.readEntity(User.class);
 		token = user.getToken();
 	}
@@ -66,7 +66,13 @@ public class LogOutRestTest {
 	 */
 	  @Test
 	 public void testRimozioneTokenNonPresente() throws EntityNotFoundException {
-		Response responseLogout = LogOut.request().header(HttpHeaders.AUTHORIZATION, "errato "+token).delete();
+		  Form form1 = new Form();
+		  form1.param("username", "admin");
+		  form1.param("password", "Adminadmin1");
+		  Response responselogin = Login.request().post(Entity.form(form1));
+		  User user = responselogin.readEntity(User.class);
+		  token = user.getToken();
+		  Response responseLogout = LogOut.request().header(HttpHeaders.AUTHORIZATION, "errato "+token).delete();
 		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseLogout.getStatus());
 		}
 	  
@@ -76,6 +82,12 @@ public class LogOutRestTest {
 		 */
 	  @Test
 	  public void testRimozioneToken() throws EntityNotFoundException{
+		  Form form1 = new Form();
+		  form1.param("username", "admin");
+		  form1.param("password", "Adminadmin1");
+		  Response responselogin = Login.request().post(Entity.form(form1));
+		  User user = responselogin.readEntity(User.class);
+		  token = user.getToken();
 		  Response responseLogout = LogOut.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
 		  Assertions.assertEquals(Status.OK.getStatusCode(), responseLogout.getStatus());
 	  }

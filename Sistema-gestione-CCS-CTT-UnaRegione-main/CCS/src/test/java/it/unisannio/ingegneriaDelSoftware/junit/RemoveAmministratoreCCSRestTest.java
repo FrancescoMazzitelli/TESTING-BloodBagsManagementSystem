@@ -26,6 +26,7 @@ public class RemoveAmministratoreCCSRestTest {
 	
 	static String token = null;
 	Client client = ClientBuilder.newClient();
+    WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
 	WebTarget rimozioneAmm = client.target("http://127.0.0.1:8080/rest/CCS/rimozioneAmministratore");
 	
 	/**Aggiunge al database dei Dipendenti quelli necessari per testare il metodo successivo
@@ -118,7 +119,15 @@ public class RemoveAmministratoreCCSRestTest {
 	/**Test del metodo REST rest/CCS/rimozioneAmministratore, deve andare a buon fine in quanto si tenta di eliminare un Dipendente inserito nel setUp
 	 * @throws EntityAlreadyExistsException 
 	 */
-	@Test public void testRimozioneAmministratoreCCSCorretto() throws EntityAlreadyExistsException{	
+	@Test public void testRimozioneAmministratoreCCSCorretto() throws EntityAlreadyExistsException{
+        Form form1 = new Form();
+        form1.param("username", "username 003");
+        form1.param("password", "Password3");
+
+        Response responselogin = login.request().post(Entity.form(form1));
+        User user = responselogin.readEntity(User.class);
+        token = user.getToken();
+
 		Response responseRemAmm = rimozioneAmm.path("BVNZDG48A06D684R").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
 		Assertions.assertEquals(Status.OK.getStatusCode(), responseRemAmm.getStatus());
 	} 	
@@ -127,6 +136,14 @@ public class RemoveAmministratoreCCSRestTest {
 	 * @throws EntityAlreadyExistsException 
 	*/ 
 	@Test public void testRimozioneAmministratoreCCSNonPresente() throws EntityAlreadyExistsException{
+        Form form1 = new Form();
+        form1.param("username", "username 003");
+        form1.param("password", "Password3");
+
+        Response responselogin = login.request().post(Entity.form(form1));
+        User user = responselogin.readEntity(User.class);
+        token = user.getToken();
+
 		Response responseRemAmm = rimozioneAmm.path("NONPRE53N07D684R").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
 		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseRemAmm.getStatus());
 	} 
@@ -135,6 +152,14 @@ public class RemoveAmministratoreCCSRestTest {
 	 * @throws EntityAlreadyExistsException 
 	*/ 
 	@Test public void testRimozioneAmministratoreCCSSeStesso() throws EntityAlreadyExistsException{
+        Form form1 = new Form();
+        form1.param("username", "username 003");
+        form1.param("password", "Password3");
+
+        Response responselogin = login.request().post(Entity.form(form1));
+        User user = responselogin.readEntity(User.class);
+        token = user.getToken();
+
 		Response responseRemAmm = rimozioneAmm.path("CZGMJS46A28I333C").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
 		Assertions.assertEquals(Status.FORBIDDEN.getStatusCode(), responseRemAmm.getStatus());
 	} 

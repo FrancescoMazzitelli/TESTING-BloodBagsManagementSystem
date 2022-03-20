@@ -26,6 +26,7 @@ public class ListaCTTRestTest {
     MongoDataManager mm = MongoDataManager.getInstance();
     static String token = null;
     Client client = ClientBuilder.newClient();
+    WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
     WebTarget aggiuntaCTT = client.target("http://127.0.0.1:8080/rest/CCS/aggiuntaCTT");
     WebTarget listaCTT = client.target("http://127.0.0.1:8080/rest/CCS/centers");
 
@@ -67,16 +68,24 @@ public class ListaCTTRestTest {
     @Test public void testCorrettoNumeroCTT() throws EntityAlreadyExistsException{
 
         Form form1 = new Form();
-        form1.param("numero_ctt", "5");
-        form1.param("nome_ctt", "CTT005");
-        form1.param("provincia", "BN");
-        form1.param("citta", "Campolattaro");
-        form1.param("indirizzo", "Via del testing 12");
-        form1.param("telefono", "0821432576");
-        form1.param("email", "CTT005@gmail.com");
-        form1.param("latitude", "65");
-        form1.param("longitude", "41");
-        aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
+        form1.param("username", "admin");
+        form1.param("password", "Adminadmin1");
+
+        Response responselogin = login.request().post(Entity.form(form1));
+        User user = responselogin.readEntity(User.class);
+        token = user.getToken();
+
+        Form form2 = new Form();
+        form2.param("numero_ctt", "5");
+        form2.param("nome_ctt", "CTT005");
+        form2.param("provincia", "BN");
+        form2.param("citta", "Campolattaro");
+        form2.param("indirizzo", "Via del testing 12");
+        form2.param("telefono", "0821432576");
+        form2.param("email", "CTT005@gmail.com");
+        form2.param("latitude", "65");
+        form2.param("longitude", "41");
+        aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
         Assertions.assertEquals(1, mm.getListaCTT().size());
     }
@@ -86,14 +95,22 @@ public class ListaCTTRestTest {
     */
     @Test public void testWrongNumberCTT() throws EntityAlreadyExistsException{
         Form form1 = new Form();
-        form1.param("provincia", "BN");
-        form1.param("citta", "Campolattaro");
-        form1.param("indirizzo", "Via del testing 12");
-        form1.param("telefono", "0821432576a");			//è stato inserito un input non valido per il campo telefono
-        form1.param("email", "CTT005@gmail.com");
-        form1.param("latitude", "65");
-        form1.param("longitude", "41");
-        aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
+        form1.param("username", "admin");
+        form1.param("password", "Adminadmin1");
+
+        Response responselogin = login.request().post(Entity.form(form1));
+        User user = responselogin.readEntity(User.class);
+        token = user.getToken();
+
+        Form form2 = new Form();
+        form2.param("provincia", "BN");
+        form2.param("citta", "Campolattaro");
+        form2.param("indirizzo", "Via del testing 12");
+        form2.param("telefono", "0821432576a");			//è stato inserito un input non valido per il campo telefono
+        form2.param("email", "CTT005@gmail.com");
+        form2.param("latitude", "65");
+        form2.param("longitude", "41");
+        aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
         Assertions.assertNotEquals(2, mm.getListaCTT().size());
     }

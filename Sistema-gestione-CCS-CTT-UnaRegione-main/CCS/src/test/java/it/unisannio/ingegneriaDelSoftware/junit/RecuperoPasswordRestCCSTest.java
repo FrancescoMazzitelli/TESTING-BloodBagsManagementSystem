@@ -59,8 +59,8 @@ public class RecuperoPasswordRestCCSTest {
 		cdf = Cdf.getCDF("MFDFSW67T89I460X");
 	    ld = LocalDate.parse("1987-10-10");
 	    ruolo = RuoloDipendente.AmministratoreCCS;
-	    username = "admin2";
-	    password = "Adminadmin2";
+	    username = "admin3";
+	    password = "Adminadmin3";
 	    dip = new Dipendente(cdf, "Marco", "Liverani", ld, ruolo, username, password);
 	    mm.createDipendente(dip);
 	}
@@ -78,8 +78,8 @@ public class RecuperoPasswordRestCCSTest {
 		 */
 	  @Test
 	  public void testRecuperoPassword() throws EntityNotFoundException,WebApplicationException{
-		  String username = "admin";
-		  Response responseRecuperoPassword = RecuperoPassword.path("KTMFSW67T64I460X").request().put(Entity.text(username));
+		  String username = "admin2";
+		  Response responseRecuperoPassword = RecuperoPassword.path("KTMFSW67T64I460F").request().put(Entity.text(username));
 		  Assertions.assertEquals(Status.OK.getStatusCode(), responseRecuperoPassword.getStatus());
 	  }
 	
@@ -100,8 +100,8 @@ public class RecuperoPasswordRestCCSTest {
 	 */
 	  @Test
 	 public void testRecuperoPasswordAltroUtente()  throws EntityNotFoundException,WebApplicationException{
-		String username = "admin3";
-		Response responseRecuperoPassword = RecuperoPassword.path("MFDFSW67T89I460X").request().put(Entity.text(username));
+		String username = "admin4";
+		Response responseRecuperoPassword = RecuperoPassword.path("KTMFSW67T64I460X").request().put(Entity.text(username));
 		Assertions.assertEquals(Status.FORBIDDEN.getStatusCode(), responseRecuperoPassword.getStatus());
 		}
 

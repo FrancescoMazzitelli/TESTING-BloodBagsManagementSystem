@@ -24,6 +24,7 @@ public class RemoveCTTRestTest {
 	
 	static String token = null;
 	Client client = ClientBuilder.newClient();
+    WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
 	WebTarget rimozioneCTT = client.target("http://127.0.0.1:8080/rest/CCS/rimozioneCTT");
 	
 	/**Popola il database dei CTT			
@@ -146,7 +147,34 @@ public class RemoveCTTRestTest {
 	/**Test del metodo REST rest/CCS/rimozioneCTT, va a buon fine in quanto si tenta di eliminare un CTT inserito nel setUp
 	 * @throws EntityAlreadyExistsException 
 	 */
-	@Test public void testRimozioneCTTCorretto() throws EntityAlreadyExistsException{	
+	@Test public void testRimozioneCTTCorretto() throws EntityAlreadyExistsException{
+        List<CTT> listaCTT = new ArrayList<CTT>();
+
+        int numero=1;
+        String provincia = "NA";
+        String citta = "Giugliano";
+        String telefono = "0818955111";
+        String indirizzo = "Via Montello 21";
+        String email = "sangiuliano@aruba.com";
+        double latitudine = 44.5;
+        double longitudine = 20.6;
+        CTT CTT001 = new CTT(CTTName.getCttName("CTT00"+numero), provincia, citta, telefono, indirizzo, email, latitudine, longitudine);
+        listaCTT.add(CTT001);
+
+        MongoDataManager mm = MongoDataManager.getInstance();
+
+        for(CTT ctt : listaCTT) {
+            mm.createCTT(ctt);
+        }
+
+        Form form1 = new Form();
+        form1.param("username", "admin");
+        form1.param("password", "Adminadmin1");
+
+        Response responselogin = login.request().post(Entity.form(form1));
+        User user = responselogin.readEntity(User.class);
+        token = user.getToken();
+
 		Response responseRemCTT = rimozioneCTT.path("CTT001").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
 		Assertions.assertEquals(Status.OK.getStatusCode(), responseRemCTT.getStatus());
 	} 	
@@ -155,6 +183,14 @@ public class RemoveCTTRestTest {
 	 * @throws EntityAlreadyExistsException 
 	*/ 
 	@Test public void testRimozioneCTTNonPresente() throws EntityAlreadyExistsException{
+        Form form1 = new Form();
+        form1.param("username", "admin");
+        form1.param("password", "Adminadmin1");
+
+        Response responselogin = login.request().post(Entity.form(form1));
+        User user = responselogin.readEntity(User.class);
+        token = user.getToken();
+
 		Response responseRemCTT = rimozioneCTT.path("CTT008").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
 		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseRemCTT.getStatus());
 	} 	

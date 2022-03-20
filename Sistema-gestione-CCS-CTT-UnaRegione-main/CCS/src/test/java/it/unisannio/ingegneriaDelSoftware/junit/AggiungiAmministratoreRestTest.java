@@ -26,6 +26,7 @@ public class AggiungiAmministratoreRestTest {
 
 	static String token = null;
 	Client client = ClientBuilder.newClient();
+	WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
 	WebTarget aggiuntaAmministratore = client.target("http://127.0.0.1:8080/rest/CCS/aggiuntaAmministratore");
 	
 	/**Popola il database di Dipendenti
@@ -120,15 +121,26 @@ public class AggiungiAmministratoreRestTest {
 		 */
 		@Test	
 		public void testCorretto() throws EntityAlreadyExistsException{
+			Client client = ClientBuilder.newClient();
+			WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
 			Form form1 = new Form();
-			form1.param("cdf", "SRNGJZ50B54C143L");
-			form1.param("nome", "Ario");
-			form1.param("cognome", "lucarelli");
-			form1.param("dataDiNascita", "1988-07-04");
-			form1.param("ruolo", RuoloDipendente.AmministratoreCCS.toString());
-			form1.param("username", "username 123");
-			form1.param("password", "Password123");
-			Response responseaddAmm = aggiuntaAmministratore.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
+			form1.param("username", "username 003");
+			form1.param("password", "Password3");
+
+			Response responselogin = login.request().post(Entity.form(form1));
+			User user = responselogin.readEntity(User.class);
+			token = user.getToken();
+
+			Form form2 = new Form();
+			form2.param("cdf", "SRNGJZ50B54C143L");
+			form2.param("nome", "Ario");
+			form2.param("cognome", "Lucarelli");
+			form2.param("dataDiNascita", "1988-07-04");
+			form2.param("ruolo", RuoloDipendente.AmministratoreCCS.toString());
+			form2.param("username", "username 123");
+			form2.param("password", "Password123");
+			Response responseaddAmm = aggiuntaAmministratore.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
+			System.out.println(responseaddAmm);
 			Assertions.assertEquals(Status.CREATED.getStatusCode(), responseaddAmm.getStatus());
 		}
 

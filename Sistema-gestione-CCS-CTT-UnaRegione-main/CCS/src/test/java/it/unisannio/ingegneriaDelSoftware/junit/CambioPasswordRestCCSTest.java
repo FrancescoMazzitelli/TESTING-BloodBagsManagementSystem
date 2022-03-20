@@ -28,6 +28,7 @@ public class CambioPasswordRestCCSTest {
 	
 	static String token = null;
 	Client client = ClientBuilder.newClient();
+	WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
 	WebTarget CambioPassword = client.target("http://127.0.0.1:8080/rest/autentificazione/cambiopassword");
 	MongoDataManager mm = MongoDataManager.getInstance();
 	
@@ -76,7 +77,17 @@ public class CambioPasswordRestCCSTest {
 		 */
 	  @Test
 	  public void testCambioPassword() throws AssertionError, EntityNotFoundException,WebApplicationException{
-		  String password = "Password1";
+		  Client client = ClientBuilder.newClient();
+		  WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
+		  Form form1 = new Form();
+		  form1.param("username", "admin");
+		  form1.param("password", "Adminadmin1");
+
+		  Response responselogin = login.request().post(Entity.form(form1));
+		  User user = responselogin.readEntity(User.class);
+		  token = user.getToken();
+
+		  String password = "Adminadmin1";
 		  Response responseCambioPassword = CambioPassword.path("KTMFSW67T64I460X").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).put(Entity.text(password));
 		  Assertions.assertEquals(Status.OK.getStatusCode(), responseCambioPassword.getStatus());
 	  }
@@ -87,10 +98,20 @@ public class CambioPasswordRestCCSTest {
 	 */
 	  @Test
 	 public void testCambioPasswordTokenErrato()  throws AssertionError, EntityNotFoundException,WebApplicationException{
-		String password = "passworderrata";
-		Response responseCambioPassword = CambioPassword.path("KTMFSW67T64I460X").request().header(HttpHeaders.AUTHORIZATION, "errato "+token).put(Entity.text(password));
-		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseCambioPassword.getStatus());
-		}
+		  Client client = ClientBuilder.newClient();
+		  WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
+		  Form form1 = new Form();
+		  form1.param("username", "admin");
+		  form1.param("password", "Adminadmin1");
+
+		  Response responselogin = login.request().post(Entity.form(form1));
+		  User user = responselogin.readEntity(User.class);
+		  token = user.getToken();
+
+		  String password = "passworderrata";
+		  Response responseCambioPassword = CambioPassword.path("KTMFSW67T64I460X").request().header(HttpHeaders.AUTHORIZATION, "errato "+token).put(Entity.text(password));
+		  Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseCambioPassword.getStatus());
+	  }
 	
 	
 	/**Test per verificare che il Cambio password non vada a buon fine se non rispetto il formato della password
@@ -98,7 +119,17 @@ public class CambioPasswordRestCCSTest {
 	 */
 	  @Test
 	 public void testCambioPasswordNonRiuscito()  throws AssertionError, EntityNotFoundException,WebApplicationException {
-		String password = "passworderrata";
+		  Client client = ClientBuilder.newClient();
+		  WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
+		  Form form1 = new Form();
+		  form1.param("username", "admin");
+		  form1.param("password", "Adminadmin1");
+
+		  Response responselogin = login.request().post(Entity.form(form1));
+		  User user = responselogin.readEntity(User.class);
+		  token = user.getToken();
+
+		  String password = "passworderrata";
 		Response responseCambioPassword = CambioPassword.path("KTMFSW67T64I460X").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).put(Entity.text(password));
 		Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseCambioPassword.getStatus());
 		}

@@ -26,6 +26,7 @@ public class ReportSaccheInviateRestTest {
 
     static String token = null;
     Client client = ClientBuilder.newClient();
+    WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
     WebTarget reportSaccheInviate = client.target("http://127.0.0.1:8080/rest/CCS/reportSaccheInviateCCS");
 
     /**Popola il database di Dipendenti
@@ -118,6 +119,14 @@ public class ReportSaccheInviateRestTest {
     /** Test per il metodo rest/CCS/reportSaccheInviateCCS dell'amministratoreCCS, va a buon fine*/
     @Test
     public void testCorretto(){
+        Form form1 = new Form();
+        form1.param("username", "username 003");
+        form1.param("password", "Password3");
+
+        Response responselogin = login.request().post(Entity.form(form1));
+        User user = responselogin.readEntity(User.class);
+        token = user.getToken();
+
         Response responseReport = reportSaccheInviate.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
         Assertions.assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
     }
