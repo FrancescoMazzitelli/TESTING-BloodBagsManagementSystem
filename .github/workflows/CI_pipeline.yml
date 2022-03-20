@@ -26,6 +26,9 @@ jobs:
       - name: Trick from stackoverflow for letting the remote system execute mongo service
         run: sudo systemctl enable mongod
         
+      - name: Another trick from stackoverflow
+        run: mongod --dbpath /usr/local/var/mongodb
+        
       - name: Starting MongoDB
         #run: sudo service mongod start
         run: sudo systemctl start mongod
