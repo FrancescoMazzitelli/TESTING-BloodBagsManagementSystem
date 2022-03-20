@@ -39,10 +39,10 @@ jobs:
         run: mongosh
         
       - name: Creating the CCS database
-        run: mongosh use CCS 
+        run: mongosh use "CCS" 
         
       - name: Adding CTT-DATA for testing
-        run: db.CTT.insertMany([
+        run: mongosh db.CTT.insertMany([
           {
           "_id":{"$oid":"622c835630e4094450e59a93"},
           "denominazione":"CTT001",
@@ -78,7 +78,7 @@ jobs:
           }]) 
 
       - name: Adding DIPENDENTI-DATA for testing
-        run: db.DIPENDENTI.insertMany([
+        run: mongosh db.DIPENDENTI.insertMany([
           {
           "_id":{"$oid":"623340aaffd9b1d1e4e6e060"},
           "cdf":"KTMFSW67T64I460X",
