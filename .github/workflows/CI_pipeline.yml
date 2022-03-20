@@ -14,8 +14,14 @@ jobs:
         with:
           java-version: 14
           
-      - name: Setting up MongoDB on standard port
-        uses: supercharge/mongodb-github-action@1.7.0
+      - name: Getting apt updates
+        run: sudo apt-get update
+        
+      - name: Install MongoDB
+        run: sudo apt-get install -y mongodb-org
+        
+      #- name: Setting up MongoDB on standard port
+      #  uses: supercharge/mongodb-github-action@1.7.0
         
       - name: Starting MongoDB
         run: sudo service mongodb start
