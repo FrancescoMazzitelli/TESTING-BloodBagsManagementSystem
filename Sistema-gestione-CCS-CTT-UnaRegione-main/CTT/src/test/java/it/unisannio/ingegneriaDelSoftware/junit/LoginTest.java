@@ -1,9 +1,15 @@
 package it.unisannio.ingegneriaDelSoftware.junit;
 
-import static org.junit.Assert.assertEquals;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
+import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
+import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
+import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
+import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
+import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityNotFoundException;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -12,16 +18,9 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Form;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
-import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityNotFoundException;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.*;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
-import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginTest {
 	

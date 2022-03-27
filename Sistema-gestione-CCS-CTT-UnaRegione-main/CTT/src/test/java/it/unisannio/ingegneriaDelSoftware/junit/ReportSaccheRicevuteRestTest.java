@@ -1,9 +1,14 @@
 package it.unisannio.ingegneriaDelSoftware.junit;
 
-import static org.junit.Assert.assertEquals;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
+import it.unisannio.ingegneriaDelSoftware.DomainTypes.Beans.User;
+import it.unisannio.ingegneriaDelSoftware.DomainTypes.*;
+import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -12,23 +17,15 @@ import javax.ws.rs.core.Form;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.*;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.DatiSacca;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.GruppoSanguigno;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.Sacca;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.Beans.User;
-import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ReportSaccheRicevuteRestTest {
 
     static String token = null;
     Client client = ClientBuilder.newClient();
+	WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
     WebTarget reportSaccheRicevute = client.target("http://127.0.0.1:8081/rest/amministratore/reportLocaleSaccheRicevute");
 
     /**Popola il database di Sacche, aggiunge un AmministratoreCTT per eseguire la query ed effettua il login
@@ -581,7 +578,7 @@ public class ReportSaccheRicevuteRestTest {
         mm.createDipendente(dip);
 
         Client client = ClientBuilder.newClient();
-        WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
+
         Form form1 = new Form();
         form1.param("username", "username 002");
         form1.param("password", "Password2");
@@ -601,6 +598,16 @@ public class ReportSaccheRicevuteRestTest {
     /** Test per il metodo /rest/amministratore/reportLocaleSaccheRicevute dell'amministratoreCTT, va a buon fine*/
     @Test
     public void testCorretto(){
+		Client client = ClientBuilder.newClient();
+
+		Form form1 = new Form();
+		form1.param("username", "admin1");
+		form1.param("password", "Adminadmin1");
+
+		Response responselogin = login.request().post(Entity.form(form1));
+		User user = responselogin.readEntity(User.class);
+		token = user.getToken();
+
         Response responseReport = reportSaccheRicevute.queryParam("dataInizio", "2000-07-10").queryParam("dataFine", "2022-07-10").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
         Assertions.assertEquals(Status.OK.getStatusCode(), responseReport.getStatus());
     }
@@ -609,6 +616,16 @@ public class ReportSaccheRicevuteRestTest {
      *  non va a buon fine siccome le date sono inserite in un formato errato*/
     @Test
     public void testFormatoErrato(){
+		Client client = ClientBuilder.newClient();
+
+		Form form1 = new Form();
+		form1.param("username", "admin1");
+		form1.param("password", "Adminadmin1");
+
+		Response responselogin = login.request().post(Entity.form(form1));
+		User user = responselogin.readEntity(User.class);
+		token = user.getToken();
+
         Response responseReport = reportSaccheRicevute.queryParam("dataInizio", "07-10-2000").queryParam("dataFine", "07-10-2022").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
         Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseReport.getStatus());
     }

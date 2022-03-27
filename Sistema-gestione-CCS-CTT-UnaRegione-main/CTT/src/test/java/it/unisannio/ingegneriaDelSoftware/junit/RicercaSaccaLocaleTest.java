@@ -1,10 +1,14 @@
 package it.unisannio.ingegneriaDelSoftware.junit;
 
-import static org.junit.Assert.assertEquals;
+import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
+import it.unisannio.ingegneriaDelSoftware.DomainTypes.Beans.User;
+import it.unisannio.ingegneriaDelSoftware.DomainTypes.*;
+import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -13,26 +17,16 @@ import javax.ws.rs.core.Form;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-
-import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.*;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.DatiSacca;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.GruppoSanguigno;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.Sacca;
-import it.unisannio.ingegneriaDelSoftware.DomainTypes.Beans.User;
-import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RicercaSaccaLocaleTest {
 
 	static MongoDataManager md = MongoDataManager.getInstance();
 	static String token = null;
 	Client client = ClientBuilder.newClient();
+	WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
 	WebTarget ricercaLocale = client.target("http://127.0.0.1:8081/rest/operatore/ricerca");
 	
   /**Popola il database di Sacche, aggiunge un AmministratoreCTT per eseguire la query ed effettua il login
@@ -520,7 +514,6 @@ public class RicercaSaccaLocaleTest {
         mm.createDipendente(dip);
 
         Client client = ClientBuilder.newClient();
-        WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
         Form form1 = new Form();
         form1.param("username", "username 002");
         form1.param("password", "Password2");
@@ -533,9 +526,18 @@ public class RicercaSaccaLocaleTest {
     /** Test per il metodo /rest/operatore/ricerca dell'operatoreCTT, va a buon fine*/
 	@Test
 	public void testCorretto(){
+		Client client = ClientBuilder.newClient();
+		Form form1 = new Form();
+		form1.param("username", "username 004");
+		form1.param("password", "Password4");
+
+		Response responselogin = login.request().post(Entity.form(form1));
+		User user = responselogin.readEntity(User.class);
+		token = user.getToken();
+
 		WebTarget ricercaLocale1 = ricercaLocale.queryParam("gruppoSanguigno", "Bp")
-									 .queryParam("numeroSacche", "5")
-									 .queryParam("dataArrivoMassima", "2021-12-22")
+									 .queryParam("numeroSacche", "2")
+									 .queryParam("dataArrivoMassima", "2022-12-22")
 									 .queryParam("enteRichiedente", "Ospedale Rummo")
 									 .queryParam("indirizzoEnte", "Benevento, via pacevecchia 2")
 									 .queryParam("priorità", "TRUE");
@@ -548,9 +550,18 @@ public class RicercaSaccaLocaleTest {
 	 *  siccome non esiste nessuna Sacca ZERO- nel database delle Sacche*/
 	@Test
 	public void testNessunaSaccaTrovata(){
+		Client client = ClientBuilder.newClient();
+		Form form1 = new Form();
+		form1.param("username", "username 004");
+		form1.param("password", "Password4");
+
+		Response responselogin = login.request().post(Entity.form(form1));
+		User user = responselogin.readEntity(User.class);
+		token = user.getToken();
+
 		WebTarget ricercaLocale1 = ricercaLocale.queryParam("gruppoSanguigno", "ZEROm")
 									 .queryParam("numeroSacche", "1")
-									 .queryParam("dataArrivoMassima", "2021-12-22")
+									 .queryParam("dataArrivoMassima", "2022-12-22")
 									 .queryParam("enteRichiedente", "Ospedale Rummo")
 									 .queryParam("indirizzoEnte", "Benevento, via pacevecchia 2")
 									 .queryParam("priorità", "TRUE");
@@ -558,14 +569,23 @@ public class RicercaSaccaLocaleTest {
 		Response responseRicerca = ricercaLocale1.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
 		Assertions.assertEquals(Status.NOT_FOUND.getStatusCode(), responseRicerca.getStatus());
 	}
-	
+
 	/** Test per il metodo /rest/operatore/ricerca dell'operatoreCTT, non va a buon fine,
 	 *  siccome non esistono abbastanza Sacche ZERO+ nel database delle Sacche per soddisfare completamente la richiesta in locale*/
 	@Test
 	public void testAlcuneSaccheTrovate(){
+		Client client = ClientBuilder.newClient();
+		Form form1 = new Form();
+		form1.param("username", "username 004");
+		form1.param("password", "Password4");
+
+		Response responselogin = login.request().post(Entity.form(form1));
+		User user = responselogin.readEntity(User.class);
+		token = user.getToken();
+
 		WebTarget ricercaLocale1 = ricercaLocale.queryParam("gruppoSanguigno", "ZEROp")
 									 .queryParam("numeroSacche", "10")
-									 .queryParam("dataArrivoMassima", "2021-12-22")
+									 .queryParam("dataArrivoMassima", "2022-12-22")
 									 .queryParam("enteRichiedente", "Ospedale Rummo")
 									 .queryParam("indirizzoEnte", "Benevento, via pacevecchia 2")
 									 .queryParam("priorità", "TRUE");
@@ -573,11 +593,20 @@ public class RicercaSaccaLocaleTest {
 		Response responseRicerca = ricercaLocale1.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
 		Assertions.assertEquals(Status.PARTIAL_CONTENT.getStatusCode(), responseRicerca.getStatus());
 	}
-	
+
 	/** Test per il metodo /rest/operatore/ricerca dell'operatoreCTT, non va a buon fine,
 	 *  siccome il formato della data di arrivo massima è errato*/
 	@Test
 	public void testDatiFormatoErrato(){
+		Client client = ClientBuilder.newClient();
+		Form form1 = new Form();
+		form1.param("username", "username 004");
+		form1.param("password", "Password4");
+
+		Response responselogin = login.request().post(Entity.form(form1));
+		User user = responselogin.readEntity(User.class);
+		token = user.getToken();
+
 		WebTarget ricercaLocale1 = ricercaLocale.queryParam("gruppoSanguigno", "Ap")
 									 .queryParam("numeroSacche", "5")
 									 .queryParam("dataArrivoMassima", "04-12-2021")
