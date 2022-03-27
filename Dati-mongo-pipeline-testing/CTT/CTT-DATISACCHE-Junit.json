@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "623b3b9852ac1295af173f38"
+  },
+  "seriale": "CTT001-00000001",
+  "gruppo": "Ap",
+  "dataArrivo": "2021-03-15",
+  "dataAffidamento": "2022-03-23",
+  "enteDonatore": "AVIS - Benevento",
+  "enteRichiedente": "Ospedale Rummo",
+  "indirizzoEnte": "Benevento, via pacevecchia 12"
+},{
+  "_id": {
+    "$oid": "623b3b9852ac1295af173f3b"
+  },
+  "seriale": "CTT001-00000002",
+  "gruppo": "Ap",
+  "dataArrivo": "2021-03-09",
+  "dataAffidamento": "2022-03-23",
+  "enteDonatore": "AVIS - Avellino",
+  "enteRichiedente": "Ospedale Rummo",
+  "indirizzoEnte": "Benevento, via pacevecchia 12"
+},{
+  "_id": {
+    "$oid": "623b3b9852ac1295af173f3e"
+  },
+  "seriale": "CTT001-00000003",
+  "gruppo": "Ap",
+  "dataArrivo": "2021-05-02",
+  "dataAffidamento": "2022-03-23",
+  "enteDonatore": "AVIS - Napoli_Centrale",
+  "enteRichiedente": "Ospedale Rummo",
+  "indirizzoEnte": "Benevento, via pacevecchia 12"
+}]

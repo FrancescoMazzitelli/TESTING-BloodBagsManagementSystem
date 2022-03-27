@@ -1,0 +1,133 @@
+[{
+  "_id": {
+    "$oid": "623af6ce52ac1295af171928"
+  },
+  "cdf": "CZGMJS46A28I333C",
+  "nome": "Giovanni",
+  "cognome": "Rana",
+  "dataDiNascita": "1999-01-12",
+  "ruolo": "AmministratoreCTT",
+  "username": "username 003",
+  "password": "2538f153f36161c45c3c90afaa3f9ccc5b0fa5554c7c582efe67193abb2d5202CryptoCTT"
+},{
+  "_id": {
+    "$oid": "623af6ce52ac1295af17192b"
+  },
+  "cdf": "FZDTSS79C20F641W",
+  "nome": "Pietro",
+  "cognome": "Spini",
+  "dataDiNascita": "1996-12-10",
+  "ruolo": "OperatoreCTT",
+  "username": "username 004",
+  "password": "db514f5b3285acaa1ad28290f5fefc38f2761a1f297b1d24f8129dd64638825dCryptoCTT"
+},{
+  "_id": {
+    "$oid": "623af6ce52ac1295af17192e"
+  },
+  "cdf": "BVNZDG48A06D684R",
+  "nome": "Gionata",
+  "cognome": "Boschetto",
+  "dataDiNascita": "1998-01-29",
+  "ruolo": "OperatoreCTT",
+  "username": "username 005",
+  "password": "8180d5783fea9f86479e748f6d2d1196c4a8e143643119398c16367d2c3d50f2CryptoCTT"
+},{
+  "_id": {
+    "$oid": "623af6ce52ac1295af171931"
+  },
+  "cdf": "KCHXSP82M66M295O",
+  "nome": "Marco",
+  "cognome": "Aspini",
+  "dataDiNascita": "1992-04-10",
+  "ruolo": "MagazziniereCTT",
+  "username": "username 006",
+  "password": "75f9793a7639faa0b83a2707d60cb21c42fe9f50992fc692390a26ac2a21b29eCryptoCTT"
+},{
+  "_id": {
+    "$oid": "623af6ce52ac1295af171934"
+  },
+  "cdf": "VYHBLK93H24B888J",
+  "nome": "Luca",
+  "cognome": "Barra",
+  "dataDiNascita": "1982-10-20",
+  "ruolo": "MagazziniereCTT",
+  "username": "username 007",
+  "password": "5bfdfaaf7e1b1244192a1ede1ea70f09f5642190821c0005669a9afbca2dee2eCryptoCTT"
+},{
+  "_id": {
+    "$oid": "623af6ce52ac1295af171937"
+  },
+  "cdf": "XLFBJN93A04F885H",
+  "nome": "Andrea",
+  "cognome": "Lezzi",
+  "dataDiNascita": "2001-12-12",
+  "ruolo": "AmministratoreCTT",
+  "username": "username 008",
+  "password": "2ced6e7160a9e2cb4be29c200852bfc4fe29d7531ff3ffc51fc1407399d8d8b8CryptoCTT"
+},{
+  "_id": {
+    "$oid": "623af8fc52ac1295af171de3"
+  },
+  "cdf": "XDDBHH45H57H684W",
+  "nome": "Pino",
+  "cognome": "Sfatto",
+  "dataDiNascita": "2000-07-10",
+  "ruolo": "AmministratoreCTT",
+  "username": "username 002",
+  "password": "1be0222750aaf3889ab95b5d593ba12e4ff1046474702d6b4779f4b527305b23CryptoCTT"
+},{
+  "_id": {
+    "$oid": "623af96c52ac1295af171ea2"
+  },
+  "cdf": "SRNGJZ50B54C143L",
+  "nome": "Ario",
+  "cognome": "lucarelli",
+  "dataDiNascita": "1988-07-04",
+  "ruolo": "MagazziniereCTT",
+  "username": "username 123",
+  "password": "ae508b45a3209c7c029c89388f41e0bb46c9f726bab34d55c4b5188d15930be2CryptoCTT"
+},{
+  "_id": {
+    "$oid": "623afc5b52ac1295af17232b"
+  },
+  "cdf": "LZZBHR41C46C446V",
+  "nome": "Lucio",
+  "cognome": "Spora",
+  "dataDiNascita": "1977-04-01",
+  "ruolo": "OperatoreCTT",
+  "username": "username 234",
+  "password": "15bece1e158a61fe6b4afe25a218c1630173122b77d8ea23c56c915375f9287bCryptoCTT"
+},{
+  "_id": {
+    "$oid": "623b014e52ac1295af172738"
+  },
+  "cdf": "RLISNR72C54F356H",
+  "nome": "Mario",
+  "cognome": "Magazz",
+  "dataDiNascita": "1950-07-10",
+  "ruolo": "MagazziniereCTT",
+  "username": "admin",
+  "password": "a644c646dc14f9a855fda36b5d56f0d434d6f0a878950bca47cded8b578413a6CryptoCTT"
+},{
+  "_id": {
+    "$oid": "623b07e152ac1295af172c52"
+  },
+  "cdf": "KTMFSW67T64I460X",
+  "nome": "TestAdmin",
+  "cognome": "TestAdmin",
+  "dataDiNascita": "1978-10-10",
+  "ruolo": "AmministratoreCTT",
+  "username": "admin",
+  "password": "a644c646dc14f9a855fda36b5d56f0d434d6f0a878950bca47cded8b578413a6CryptoCTT"
+},{
+  "_id": {
+    "$oid": "623b086152ac1295af172d8e"
+  },
+  "cdf": "KTMFSW67T64I460A",
+  "nome": "TestAdmin",
+  "cognome": "TestAdmin",
+  "dataDiNascita": "1978-10-10",
+  "ruolo": "AmministratoreCTT",
+  "username": "admin1",
+  "password": "a644c646dc14f9a855fda36b5d56f0d434d6f0a878950bca47cded8b578413a6CryptoCTT"
+}]

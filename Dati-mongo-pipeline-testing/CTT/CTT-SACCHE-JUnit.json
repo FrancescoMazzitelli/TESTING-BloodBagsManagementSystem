@@ -1,0 +1,388 @@
+[{
+  "_id": {
+    "$oid": "623b3c8e52ac1295af1745a0"
+  },
+  "seriale": "CTT001-00000002",
+  "gruppo": "Ap",
+  "dataProduzione": "2020-05-10",
+  "dataScadenza": "2022-05-10",
+  "prenotato": true
+},{
+  "_id": {
+    "$oid": "623b3c8e52ac1295af1745a3"
+  },
+  "seriale": "CTT001-00000003",
+  "gruppo": "Ap",
+  "dataProduzione": "2020-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": true
+},{
+  "_id": {
+    "$oid": "623b3c8e52ac1295af17459d"
+  },
+  "seriale": "CTT001-00000001",
+  "gruppo": "Ap",
+  "dataProduzione": "2020-04-10",
+  "dataScadenza": "2022-03-25",
+  "prenotato": true
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e300"
+  },
+  "seriale": "CTT001-00000004",
+  "gruppo": "Ap",
+  "dataProduzione": "2020-04-10",
+  "dataScadenza": "2022-03-29",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e303"
+  },
+  "seriale": "CTT001-00000005",
+  "gruppo": "Ap",
+  "dataProduzione": "2020-05-10",
+  "dataScadenza": "2022-05-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e306"
+  },
+  "seriale": "CTT001-00000006",
+  "gruppo": "Ap",
+  "dataProduzione": "2020-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e309"
+  },
+  "seriale": "CTT001-00000007",
+  "gruppo": "Ap",
+  "dataProduzione": "2020-07-12",
+  "dataScadenza": "2022-07-12",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e30c"
+  },
+  "seriale": "CTT001-00000008",
+  "gruppo": "Ap",
+  "dataProduzione": "2018-06-10",
+  "dataScadenza": "2023-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e30f"
+  },
+  "seriale": "CTT001-00000009",
+  "gruppo": "Am",
+  "dataProduzione": "2020-04-10",
+  "dataScadenza": "2022-04-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e312"
+  },
+  "seriale": "CTT001-00000010",
+  "gruppo": "Am",
+  "dataProduzione": "2020-05-10",
+  "dataScadenza": "2022-05-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e315"
+  },
+  "seriale": "CTT001-00000011",
+  "gruppo": "Am",
+  "dataProduzione": "2020-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e318"
+  },
+  "seriale": "CTT001-00000012",
+  "gruppo": "Am",
+  "dataProduzione": "2020-07-12",
+  "dataScadenza": "2022-07-12",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e31b"
+  },
+  "seriale": "CTT001-00000013",
+  "gruppo": "Am",
+  "dataProduzione": "2018-06-10",
+  "dataScadenza": "2023-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e31e"
+  },
+  "seriale": "CTT001-00000014",
+  "gruppo": "Bp",
+  "dataProduzione": "2020-04-10",
+  "dataScadenza": "2022-04-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e321"
+  },
+  "seriale": "CTT001-00000015",
+  "gruppo": "Bp",
+  "dataProduzione": "2020-05-10",
+  "dataScadenza": "2022-05-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e324"
+  },
+  "seriale": "CTT001-00000016",
+  "gruppo": "Bp",
+  "dataProduzione": "2020-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e327"
+  },
+  "seriale": "CTT001-00000017",
+  "gruppo": "Bp",
+  "dataProduzione": "2020-07-12",
+  "dataScadenza": "2022-07-12",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e32a"
+  },
+  "seriale": "CTT001-00000018",
+  "gruppo": "Bp",
+  "dataProduzione": "2018-06-10",
+  "dataScadenza": "2023-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e32d"
+  },
+  "seriale": "CTT001-00000019",
+  "gruppo": "Bm",
+  "dataProduzione": "2020-04-10",
+  "dataScadenza": "2022-03-29",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e330"
+  },
+  "seriale": "CTT001-00000020",
+  "gruppo": "Bm",
+  "dataProduzione": "2020-05-10",
+  "dataScadenza": "2022-05-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e333"
+  },
+  "seriale": "CTT001-00000021",
+  "gruppo": "Bm",
+  "dataProduzione": "2020-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e336"
+  },
+  "seriale": "CTT001-00000022",
+  "gruppo": "Bm",
+  "dataProduzione": "2020-07-12",
+  "dataScadenza": "2022-07-12",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e339"
+  },
+  "seriale": "CTT001-00000023",
+  "gruppo": "Bm",
+  "dataProduzione": "2018-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e33c"
+  },
+  "seriale": "CTT001-00000024",
+  "gruppo": "ABp",
+  "dataProduzione": "2020-04-10",
+  "dataScadenza": "2022-04-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e33f"
+  },
+  "seriale": "CTT001-00000025",
+  "gruppo": "ABp",
+  "dataProduzione": "2020-05-10",
+  "dataScadenza": "2022-05-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e342"
+  },
+  "seriale": "CTT001-00000026",
+  "gruppo": "ABp",
+  "dataProduzione": "2020-06-10",
+  "dataScadenza": "2022-03-29",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e345"
+  },
+  "seriale": "CTT001-00000027",
+  "gruppo": "ABp",
+  "dataProduzione": "2020-07-12",
+  "dataScadenza": "2022-07-12",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e348"
+  },
+  "seriale": "CTT001-00000028",
+  "gruppo": "ABp",
+  "dataProduzione": "2018-06-10",
+  "dataScadenza": "2023-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e34b"
+  },
+  "seriale": "CTT001-00000029",
+  "gruppo": "ABm",
+  "dataProduzione": "2020-04-10",
+  "dataScadenza": "2022-04-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e34e"
+  },
+  "seriale": "CTT001-00000030",
+  "gruppo": "ABm",
+  "dataProduzione": "2020-05-10",
+  "dataScadenza": "2022-05-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e351"
+  },
+  "seriale": "CTT001-00000031",
+  "gruppo": "ABm",
+  "dataProduzione": "2020-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e354"
+  },
+  "seriale": "CTT001-00000032",
+  "gruppo": "ABm",
+  "dataProduzione": "2020-07-12",
+  "dataScadenza": "2022-07-12",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e357"
+  },
+  "seriale": "CTT001-00000033",
+  "gruppo": "ABm",
+  "dataProduzione": "2018-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e35a"
+  },
+  "seriale": "CTT001-00000034",
+  "gruppo": "ZEROp",
+  "dataProduzione": "2020-04-10",
+  "dataScadenza": "2022-04-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e35d"
+  },
+  "seriale": "CTT001-00000035",
+  "gruppo": "ZEROp",
+  "dataProduzione": "2020-05-10",
+  "dataScadenza": "2022-05-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e360"
+  },
+  "seriale": "CTT001-00000036",
+  "gruppo": "ZEROp",
+  "dataProduzione": "2020-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e363"
+  },
+  "seriale": "CTT001-00000037",
+  "gruppo": "ZEROp",
+  "dataProduzione": "2020-07-12",
+  "dataScadenza": "2022-07-12",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e366"
+  },
+  "seriale": "CTT001-00000038",
+  "gruppo": "ZEROp",
+  "dataProduzione": "2018-06-10",
+  "dataScadenza": "2023-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e369"
+  },
+  "seriale": "CTT001-00000039",
+  "gruppo": "ZEROm",
+  "dataProduzione": "2020-04-10",
+  "dataScadenza": "2022-04-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e36c"
+  },
+  "seriale": "CTT001-00000040",
+  "gruppo": "ZEROm",
+  "dataProduzione": "2020-05-10",
+  "dataScadenza": "2022-05-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e36f"
+  },
+  "seriale": "CTT001-00000041",
+  "gruppo": "ZEROm",
+  "dataProduzione": "2020-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e372"
+  },
+  "seriale": "CTT001-00000042",
+  "gruppo": "ZEROm",
+  "dataProduzione": "2020-07-12",
+  "dataScadenza": "2022-07-12",
+  "prenotato": false
+},{
+  "_id": {
+    "$oid": "6240208c1417662c6094e375"
+  },
+  "seriale": "CTT001-00000043",
+  "gruppo": "ZEROm",
+  "dataProduzione": "2018-06-10",
+  "dataScadenza": "2022-06-10",
+  "prenotato": false
+}]
