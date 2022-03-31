@@ -1,5 +1,7 @@
 package it.unisannio.ingegneriaDelSoftware.DomainTypes;
 
+import it.unisannio.ingegneriaDelSoftware.Util.CTTNameProperties;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,6 +27,7 @@ public class CTTName {
 
     /**Costruisco il nome del CTT a partire da configurazioni presenti in localsettings/cttname_settings.xmll*/
     static {
+        /*
         Properties loadProps = new Properties();
         try {
             loadProps.loadFromXML(new FileInputStream("localsettings/cttname_settings.xml"));
@@ -35,8 +38,11 @@ public class CTTName {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        radice = loadProps.getProperty(TAG_RADICE);
-        number = Integer.valueOf(loadProps.getProperty(NUMBER));
+
+         */
+        CTTNameProperties cp = new CTTNameProperties();
+        radice = cp.getRadice();
+        number = cp.getNumber();
         cttNameInstance = new CTTName();
     }
 

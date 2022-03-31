@@ -2,6 +2,7 @@ package it.unisannio.ingegneriaDelSoftware.DataManagers;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
+import com.mongodb.MongoClientURI;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.*;
@@ -34,23 +35,24 @@ public class MongoDataManager implements DataManager {
 
     /**Singleton instance*/
     private static MongoDataManager instance = new MongoDataManager();
-
+    CodecRegistry pojoCodecRegistry;
     public static MongoDataManager getInstance(){
         return instance;
     }
 
     /**Costruisce un' istanza di mongoClient*/
    private MongoDataManager(){
-        CodecRegistry pojoCodecRegistry =fromRegistries(
+        pojoCodecRegistry =fromRegistries(
                 CodecRegistries.fromCodecs(new SaccaCodec(), new DipendenteCodec(), new DatiSaccaCodec()),
                 MongoClient.getDefaultCodecRegistry()
         );
-        mongoClient = new MongoClient("localhost", MongoClientOptions.builder().codecRegistry(pojoCodecRegistry).build());
+       MongoClientURI connectionString = new MongoClientURI("mongodb+srv://francescomazzitelli:kekko1999@cluster0.qemvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+       mongoClient = new MongoClient(connectionString);
     }
 
     /**Rimuove il CTT DataBase*/
     public void dropDB() {
-        MongoDatabase database = mongoClient.getDatabase(Settings.DB_NAME);
+        MongoDatabase database = mongoClient.getDatabase("CTT001");
         database.drop();
         Seriale.restartSettings();
     }
@@ -61,22 +63,22 @@ public class MongoDataManager implements DataManager {
     /**Restituisce una MongoCollection<Sacca> registrando il codec di base di Mongo per la serializzazione in BSON
      * @return MongoCollection<Sacca>*/
     private MongoCollection<Sacca> getCollectionSacca(){
-        MongoDatabase database = mongoClient.getDatabase(Settings.DB_NAME);
-        return  database.getCollection(Settings.COLLECTION_SACCHE,Sacca.class);
+        MongoDatabase database = mongoClient.getDatabase("CTT001").withCodecRegistry(pojoCodecRegistry);
+        return  database.getCollection("SACCHE",Sacca.class);
     }
 
     /**Restituisce una MongoCollection<DatiSacca> registrando il codec di base di Mongo per la serializzazione in BSON
      * @return MongoCollection<DatiSacca>*/
     private MongoCollection<DatiSacca> getCollectionDatiSacca(){
-        MongoDatabase database = mongoClient.getDatabase(Settings.DB_NAME);
-        return database.getCollection(Settings.COLLECTION_DATISACCHE, DatiSacca.class);
+        MongoDatabase database = mongoClient.getDatabase("CTT001").withCodecRegistry(pojoCodecRegistry);
+        return database.getCollection("DATISACCHE", DatiSacca.class);
     }
 
     /**Restituisce una MongoCollection<Dipendenti> registrando il codec di base di Mongo per la serializzazione in BSON
      * @return MongoCollection<Dipendenti>*/
     private MongoCollection<Dipendente> getCollectionDipendente(){
-        MongoDatabase database = mongoClient.getDatabase(Settings.DB_NAME);
-        return database.getCollection(Settings.COLLECTION_DIPENDENTI, Dipendente.class);
+        MongoDatabase database = mongoClient.getDatabase("CTT001").withCodecRegistry(pojoCodecRegistry);
+        return database.getCollection("DIPENDENTI", Dipendente.class);
     }
 
     

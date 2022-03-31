@@ -1,5 +1,7 @@
 package it.unisannio.ingegneriaDelSoftware.DomainTypes;
 
+import it.unisannio.ingegneriaDelSoftware.Util.CTTNameProperties;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -24,7 +26,7 @@ public class CTTName {
     /**Costruisco il seriale a partire da configurazioni presenti in /localsettings/serial_settings.xml
      * @throws InvalidPropertiesFormatException, FileNotFoundException, IOException*/
     static {
-
+/*
         Properties loadProps = new Properties();
         try {
             loadProps.loadFromXML(new FileInputStream("Sistema-gestione-CCS-CTT-UnaRegione-main/CCS/localsettings/cttname_settings.xml"));
@@ -35,8 +37,11 @@ public class CTTName {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        radice = loadProps.getProperty(TAG_RADICE);
-        lastAssigned = Integer.valueOf(loadProps.getProperty(TAG_LAST_ASSIGNED));
+
+ */
+        CTTNameProperties cp = new CTTNameProperties();
+        radice = cp.getRadice();
+        lastAssigned = cp.getLast_assigned();
     }
 
     /**Restituisce il nome del CTT partendo da una stringa

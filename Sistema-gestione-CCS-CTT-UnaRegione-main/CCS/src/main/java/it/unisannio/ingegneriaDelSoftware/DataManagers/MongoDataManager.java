@@ -1,7 +1,7 @@
 package it.unisannio.ingegneriaDelSoftware.DataManagers;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientOptions;
+import com.mongodb.*;
+import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.*;
@@ -25,6 +25,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 public class MongoDataManager {
 	
 	private MongoClient mongoClient;
+	private CodecRegistry pojoCodecRegistry;
 	private static MongoDataManager instance = new MongoDataManager();
 
 	/**
@@ -39,15 +40,16 @@ public class MongoDataManager {
 	 * Metodo costruttore del MongoClient
 	 */
 	private MongoDataManager(){
-	    CodecRegistry pojoCodecRegistry = fromRegistries(CodecRegistries.fromCodecs(new DipendenteCodec(), new CTTCodec(), new SaccaCodec()), MongoClient.getDefaultCodecRegistry());
-	    mongoClient = new MongoClient("localhost", MongoClientOptions.builder().codecRegistry(pojoCodecRegistry).build());
+	    pojoCodecRegistry = fromRegistries(CodecRegistries.fromCodecs(new DipendenteCodec(), new CTTCodec(), new SaccaCodec()), MongoClient.getDefaultCodecRegistry());
+		MongoClientURI connectionString = new MongoClientURI("mongodb+srv://francescomazzitelli:kekko1999@cluster0.qemvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+		mongoClient = new MongoClient(connectionString);
 	}
 	
 	/**
 	 * Metodo che rimuove un database
 	 */
 	public void dropDB() {
-	    MongoDatabase database = mongoClient.getDatabase(Settings.DB_NAME);
+	    MongoDatabase database = mongoClient.getDatabase("CCS").withCodecRegistry(pojoCodecRegistry);
 	    database.drop();
 	}
 
@@ -64,8 +66,8 @@ public class MongoDataManager {
 	 * @return MongoCollection<SaccaBean>
 	 */
 	private MongoCollection<Sacca> getCollectionSacca(){
-	    MongoDatabase database = mongoClient.getDatabase(Settings.DB_NAME);
-	    return  database.getCollection(Settings.COLLECTION_SACCHE, Sacca.class);
+	    MongoDatabase database = mongoClient.getDatabase("CCS").withCodecRegistry(pojoCodecRegistry);
+	    return  database.getCollection("SACCHE_IN_SCADENZA", Sacca.class);
 	}
 	
 	/**
@@ -73,8 +75,8 @@ public class MongoDataManager {
 	 * @return MongoCollection<CTT>
 	 */
 	private MongoCollection<CTT> getCollectionCTT(){
-	    MongoDatabase database = mongoClient.getDatabase(Settings.DB_NAME);
-	    return  database.getCollection(Settings.COLLECTION_CTT, CTT.class);
+	    MongoDatabase database = mongoClient.getDatabase("CCS").withCodecRegistry(pojoCodecRegistry);
+	    return  database.getCollection("CTT", CTT.class);
 	}
 	
 	/**
@@ -82,8 +84,8 @@ public class MongoDataManager {
 	 * @return MongoCollection<Dipendente>
 	 */
 	private MongoCollection<Dipendente> getCollectionDipendente(){
-		MongoDatabase database = mongoClient.getDatabase(Settings.DB_NAME);
-	    return database.getCollection(Settings.COLLECTION_DIPENDENTI, Dipendente.class);
+		MongoDatabase database = mongoClient.getDatabase("CCS").withCodecRegistry(pojoCodecRegistry);
+	    return database.getCollection("DIPENDENTI", Dipendente.class);
 	}
 	
 	/**
