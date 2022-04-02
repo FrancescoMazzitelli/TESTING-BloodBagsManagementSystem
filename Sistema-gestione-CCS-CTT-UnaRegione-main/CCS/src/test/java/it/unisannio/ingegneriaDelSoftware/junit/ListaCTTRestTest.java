@@ -54,7 +54,7 @@ public class ListaCTTRestTest {
 
         Form form2 = new Form();
         form2.param("numero_ctt", "4");
-        form2.param("nome_ctt", "CTT005");
+        form2.param("nome_ctt", "CTT004");
         form2.param("provincia", "BN");
         form2.param("citta", "Campolattaro");
         form2.param("indirizzo", "Via del testing 12");
