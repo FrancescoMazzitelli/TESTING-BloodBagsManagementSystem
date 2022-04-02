@@ -4,6 +4,7 @@ import com.mongodb.*;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.connection.netty.NettyStreamFactoryFactory;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Beans.Sacca;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Beans.Seriale;
@@ -24,7 +25,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 public class MongoDataManager {
 	
-	private MongoClient mongoClient;
+	private com.mongodb.client.MongoClient mongoClient;
 	private CodecRegistry pojoCodecRegistry;
 	private static MongoDataManager instance = new MongoDataManager();
 
@@ -41,8 +42,10 @@ public class MongoDataManager {
 	 */
 	private MongoDataManager(){
 	    pojoCodecRegistry = fromRegistries(CodecRegistries.fromCodecs(new DipendenteCodec(), new CTTCodec(), new SaccaCodec()), MongoClient.getDefaultCodecRegistry());
-		MongoClientURI connectionString = new MongoClientURI("mongodb+srv://francescomazzitelli:kekko1999@cluster0.qemvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-		mongoClient = new MongoClient(connectionString);
+		String connectionString = "mongodb+srv://francescomazzitelli:kekko1999@cluster0.qemvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+		MongoClientSettings settings = MongoClientSettings.builder().applyConnectionString(new ConnectionString(connectionString)).build();
+		mongoClient = MongoClients.create(settings);
+		//mongoClient = new MongoClient(connectionString);
 	}
 	
 	/**
