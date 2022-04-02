@@ -52,4 +52,10 @@ public class CcsRestApplication extends ResourceConfig {
 		MongoDataManager.getInstance().dropSaccheInScadenza();
 		SpringApplication.run(CcsRestApplication.class, args);
 	}
+
+	public static void main(){
+		MongoDataManager.getInstance().dropSaccheInScadenza();
+		SpringApplication.run(CcsRestApplication.class);
+	}
+
 }

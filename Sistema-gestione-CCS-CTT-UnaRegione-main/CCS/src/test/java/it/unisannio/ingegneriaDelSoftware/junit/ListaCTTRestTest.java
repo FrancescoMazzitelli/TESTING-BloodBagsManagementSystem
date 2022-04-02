@@ -11,6 +11,8 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Form;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
+
+import it.unisannio.ingegneriaDelSoftware.CcsRestApplication;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import org.junit.After;
 import org.junit.Before;
@@ -29,31 +31,6 @@ public class ListaCTTRestTest {
     WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
     WebTarget aggiuntaCTT = client.target("http://127.0.0.1:8080/rest/CCS/aggiuntaCTT");
     WebTarget listaCTT = client.target("http://127.0.0.1:8080/rest/CCS/centers");
-
-    /**Aggiunge al database dei Dipendenti un Amministratore CCS con i permessi necessari per testare il metodo successivo
-     * @throws EntityAlreadyExistsException
-     */
-    @Before
-    public  void setUp() throws EntityAlreadyExistsException {
-
-        Cdf cdf = Cdf.getCDF("KTMFSW67T64I460X");
-        LocalDate ld = LocalDate.parse("1978-10-10");
-        RuoloDipendente ruolo = RuoloDipendente.AmministratoreCCS;
-        String username = "admin";
-        String password = "Adminadmin1";
-        Dipendente dip = new Dipendente(cdf, "TestAdmin", "TestAdmin", ld, ruolo, username, password);
-        mm.createDipendente(dip);
-
-        Client client = ClientBuilder.newClient();
-        WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
-        Form form1 = new Form();
-        form1.param("username", "admin");
-        form1.param("password", "Adminadmin1");
-
-        Response responselogin = login.request().post(Entity.form(form1));
-        User user = responselogin.readEntity(User.class);
-        token = user.getToken();
-    }
 
     /**Droppa il database*/
     @After
@@ -76,7 +53,7 @@ public class ListaCTTRestTest {
         token = user.getToken();
 
         Form form2 = new Form();
-        form2.param("numero_ctt", "5");
+        form2.param("numero_ctt", "4");
         form2.param("nome_ctt", "CTT005");
         form2.param("provincia", "BN");
         form2.param("citta", "Campolattaro");
@@ -87,7 +64,7 @@ public class ListaCTTRestTest {
         form2.param("longitude", "41");
         aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        Assertions.assertEquals(1, mm.getListaCTT().size());
+        Assertions.assertEquals(4, mm.getListaCTT().size());
     }
 
     /** Test per il metodo rest/CCS/centers dell'amministratoreCCS, non va a buon fine siccome il parametro telefono è in un formato errato

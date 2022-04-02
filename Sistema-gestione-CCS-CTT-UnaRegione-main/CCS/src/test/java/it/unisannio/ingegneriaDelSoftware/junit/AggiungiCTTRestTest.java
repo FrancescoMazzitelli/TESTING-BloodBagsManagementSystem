@@ -10,6 +10,8 @@ import javax.ws.rs.core.Form;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+
+import it.unisannio.ingegneriaDelSoftware.CcsRestApplication;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import org.junit.After;
 import org.junit.Before;
@@ -26,32 +28,7 @@ public class AggiungiCTTRestTest {
 	Client client = ClientBuilder.newClient();
 	WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
 	WebTarget aggiuntaCTT = client.target("http://127.0.0.1:8080/rest/CCS/aggiuntaCTT");
-	
-	/**Aggiunge al database dei Dipendenti un Amministratore CCS con i permessi necessari per testare il metodo successivo
-	 * @throws EntityAlreadyExistsException
-	 */
-	@Before
-	public  void setUp() throws EntityAlreadyExistsException {
-		
-		Cdf cdf = Cdf.getCDF("KTMFSW67T64I460X");
-	    LocalDate ld = LocalDate.parse("1978-10-10");
-	    RuoloDipendente ruolo = RuoloDipendente.AmministratoreCCS;
-	    String username = "admin";
-	    String password = "Adminadmin1";
-	    Dipendente dip = new Dipendente(cdf, "TestAdmin", "TestAdmin", ld, ruolo, username, password);
-	    MongoDataManager mm = MongoDataManager.getInstance();
-	    mm.createDipendente(dip);
-	    
-	    Client client = ClientBuilder.newClient();
-		WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
-		Form form1 = new Form();
-		form1.param("username", "admin");
-		form1.param("password", "Adminadmin1");
-		
-		Response responselogin = login.request().post(Entity.form(form1));
-		User user = responselogin.readEntity(User.class);
-		token = user.getToken();
-	  }
+	WebTarget rimozioneCTT = client.target("http://127.0.0.1:8080/rest/CCS/rimozioneCTT");
 
 	/**Droppa il database*/
 	@After
@@ -78,7 +55,7 @@ public class AggiungiCTTRestTest {
 		form2.param("nome_ctt", "CTT005");
 		form2.param("provincia", "BN");
 		form2.param("citta", "Campolattaro");
-		form2.param("indirizzo", "Via del testing 12");
+		form2.param("indirizzo", "Via del testing 13");
 		form2.param("telefono", "0821432576");
 		form2.param("email", "CTT005@gmail.com");
 		form2.param("latitude", "65");

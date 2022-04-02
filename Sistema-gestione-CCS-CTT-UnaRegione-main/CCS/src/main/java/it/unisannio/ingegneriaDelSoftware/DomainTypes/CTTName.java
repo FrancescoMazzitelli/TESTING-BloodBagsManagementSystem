@@ -73,9 +73,12 @@ public class CTTName {
      * @param cttname Nome del CTT nel formato "CTT"+ 3 interi
      */
     private CTTName(String cttname) {
+       /*
         assert  cttname != null: "Il seriale non puo essere null";
         assert 	cttname.length()==6 &&
                 cttname.substring(3).matches("^[0-9]*$"): "Formato del cttName non valido";
+
+        */
         this.cttname = cttname;
     }
 
