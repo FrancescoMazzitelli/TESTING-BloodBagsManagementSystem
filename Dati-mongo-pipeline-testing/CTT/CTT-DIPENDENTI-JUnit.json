@@ -22,17 +22,6 @@
   "password": "db514f5b3285acaa1ad28290f5fefc38f2761a1f297b1d24f8129dd64638825dCryptoCTT"
 },{
   "_id": {
-    "$oid": "623af6ce52ac1295af17192e"
-  },
-  "cdf": "BVNZDG48A06D684R",
-  "nome": "Gionata",
-  "cognome": "Boschetto",
-  "dataDiNascita": "1998-01-29",
-  "ruolo": "OperatoreCTT",
-  "username": "username 005",
-  "password": "8180d5783fea9f86479e748f6d2d1196c4a8e143643119398c16367d2c3d50f2CryptoCTT"
-},{
-  "_id": {
     "$oid": "623af6ce52ac1295af171931"
   },
   "cdf": "KCHXSP82M66M295O",
@@ -77,28 +66,6 @@
   "password": "1be0222750aaf3889ab95b5d593ba12e4ff1046474702d6b4779f4b527305b23CryptoCTT"
 },{
   "_id": {
-    "$oid": "623af96c52ac1295af171ea2"
-  },
-  "cdf": "SRNGJZ50B54C143L",
-  "nome": "Ario",
-  "cognome": "lucarelli",
-  "dataDiNascita": "1988-07-04",
-  "ruolo": "MagazziniereCTT",
-  "username": "username 123",
-  "password": "ae508b45a3209c7c029c89388f41e0bb46c9f726bab34d55c4b5188d15930be2CryptoCTT"
-},{
-  "_id": {
-    "$oid": "623afc5b52ac1295af17232b"
-  },
-  "cdf": "LZZBHR41C46C446V",
-  "nome": "Lucio",
-  "cognome": "Spora",
-  "dataDiNascita": "1977-04-01",
-  "ruolo": "OperatoreCTT",
-  "username": "username 234",
-  "password": "15bece1e158a61fe6b4afe25a218c1630173122b77d8ea23c56c915375f9287bCryptoCTT"
-},{
-  "_id": {
     "$oid": "623b014e52ac1295af172738"
   },
   "cdf": "RLISNR72C54F356H",
@@ -118,7 +85,7 @@
   "dataDiNascita": "1978-10-10",
   "ruolo": "AmministratoreCTT",
   "username": "admin",
-  "password": "a644c646dc14f9a855fda36b5d56f0d434d6f0a878950bca47cded8b578413a6CryptoCTT"
+  "password": "a2d38b62ed6b374e16906e426c2ade163217b09b2f6affc6ec8fbed59f36cbefCryptoCTT"
 },{
   "_id": {
     "$oid": "623b086152ac1295af172d8e"
