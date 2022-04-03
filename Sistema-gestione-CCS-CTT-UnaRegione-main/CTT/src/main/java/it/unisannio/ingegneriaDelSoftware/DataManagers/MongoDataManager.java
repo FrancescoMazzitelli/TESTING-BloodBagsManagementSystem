@@ -46,7 +46,7 @@ public class MongoDataManager implements DataManager {
                 CodecRegistries.fromCodecs(new SaccaCodec(), new DipendenteCodec(), new DatiSaccaCodec()),
                 MongoClient.getDefaultCodecRegistry()
         );
-       MongoClientURI connectionString = new MongoClientURI("mongodb+srv://francescomazzitelli:kekko1999@cluster0.qemvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+       MongoClientURI connectionString = new MongoClientURI("mongodb+srv://francescomazzitelli:kekko1999@ingegneriadelsoftware.qemvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
        mongoClient = new MongoClient(connectionString);
     }
 

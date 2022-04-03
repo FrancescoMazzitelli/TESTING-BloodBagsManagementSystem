@@ -29,25 +29,7 @@ public class AggiuntaSaccaMagazzinoTest {
 	Client client = ClientBuilder.newClient();
 	WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
 	WebTarget aggiuntaSaccaMagazz = client.target("http://127.0.0.1:8081/rest/magazziniere/aggiuntaSacca");
-	
-	@Before public void setUp() throws EntityAlreadyExistsException {
-		
-		MongoDataManager md = MongoDataManager.getInstance();
-		 
-        Dipendente d = new Dipendente(Cdf.getCDF("RLISNR72C54F356H"), "Mario", "Magazz", LocalDate.parse("1950-07-10", DateTimeFormatter.ofPattern(Constants.DATEFORMAT)), RuoloDipendente.MagazziniereCTT, "admin", "Adminadmin1");
-        md.createDipendente(d);
-    	
-        Client client = ClientBuilder.newClient();
-		//WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
-		Form form1 = new Form();
-		form1.param("username", "admin");
-		form1.param("password", "Adminadmin1");
-		
-		Response responselogin = login.request().post(Entity.form(form1));
-		User user = responselogin.readEntity(User.class);
-		token = user.getToken();
-	}
-	
+
 	@Test public void testAggiuntaSaccaCorretto() {
 		Client client = ClientBuilder.newClient();
 		//WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
@@ -62,7 +44,7 @@ public class AggiuntaSaccaMagazzinoTest {
 		Form form2 = new Form();
 		form2.param("gruppo_sanguigno", GruppoSanguigno.Ap.toString());
 		form2.param("data_scadenza", "2023-11-10");
-		form2.param("data_produzione", "2020-11-12");
+		form2.param("data_produzione", "2022-02-12");
 		form2.param("ente_donatore", "DonatoreProva1");
 
 		Response responseaddSaccaMagazz = aggiuntaSaccaMagazz.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));

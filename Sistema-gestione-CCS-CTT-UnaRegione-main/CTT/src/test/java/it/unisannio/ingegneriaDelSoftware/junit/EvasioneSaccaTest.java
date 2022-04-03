@@ -37,66 +37,7 @@ public class EvasioneSaccaTest {
 	Seriale ser6 = new Seriale();
 	
 	@Before public  void populateDBSacche() throws EntityAlreadyExistsException {
-	/*
-    	List<Sacca> listaSacche = new ArrayList<Sacca>();
-    	List<DatiSacca> listaDatiSacche = new ArrayList<DatiSacca>();
-    	
-    	//Caricamento sul sistema di cinque Sacche di tipo A+, 4 sacche sono arrivate nel magazzino tra il 15-07-2020 e il 02-05-2021 e hanno data di scadenza lontana (2022)
-    	//Una sacca è arrivata nel 2018 ed è già scaduta
-    	//Tutte le Sacche sono non prenotate e quindi affidabili ad un ente esterno 
 
-    	//Prima sacca
-		//simuliamo sia stata prenotata.
-    	GruppoSanguigno gs = GruppoSanguigno.Ap;
-    	LocalDate localDataProduzione = LocalDate.of(2020,04,10);
-    	LocalDate localDataScadenza = LocalDate.now().plusDays(2);
-    	Sacca sacca = new Sacca(ser1, gs, localDataProduzione, localDataScadenza, false);
-    	sacca.setPrenotato();
-    	listaSacche.add(sacca);
-    	        
-    	LocalDate localDataArrivo = LocalDate.of(2021,03,15);
-    	String enteDonatore = "AVIS - Benevento";
-    	DatiSacca datisacca = new DatiSacca(sacca.getSeriale(), gs, localDataArrivo, null, enteDonatore, null,null);
-    	listaDatiSacche.add(datisacca); 
-
-    	//Seconda sacca
-		//simuliamo sia stata prenotata.
-    	 gs = GruppoSanguigno.Ap;
-    	 localDataProduzione = LocalDate.of(2020,05,10);
-    	 localDataScadenza = LocalDate.of(2022,05,10);
-    	 sacca = new Sacca(ser2, gs, localDataProduzione, localDataScadenza, false);
-    	 sacca.setPrenotato();
-    	 listaSacche.add(sacca);
-    	        
-    	 localDataArrivo = LocalDate.of(2021,03,9);
-    	 enteDonatore = "AVIS - Avellino";
-    	 datisacca = new DatiSacca(sacca.getSeriale(), gs, localDataArrivo, null, enteDonatore, null,null);
-    	 listaDatiSacche.add(datisacca); 
-
-    	//Terza sacca
-		//simuliamo sia stata prenotata
-    	 gs = GruppoSanguigno.Ap;
-    	 localDataProduzione = LocalDate.of(2020,06,10);
-    	 localDataScadenza = LocalDate.of(2022,06,10);
-    	 sacca = new Sacca(ser3, gs, localDataProduzione, localDataScadenza, false);
-    	 sacca.setPrenotato();
-    	 listaSacche.add(sacca);
-    	        
-    	 localDataArrivo = LocalDate.of(2021,05,02);
-    	 enteDonatore = "AVIS - Napoli_Centrale";
-    	 datisacca = new DatiSacca(sacca.getSeriale(), gs, localDataArrivo, null, enteDonatore, null,null);
-    	 listaDatiSacche.add(datisacca);
-
-    	MongoDataManager md = MongoDataManager.getInstance();
-    	for(Sacca sac : listaSacche) {
-    		md.createSacca(sac);
-        }
-    	
-    	for(DatiSacca datisac : listaDatiSacche) {
-    		md.createDatiSacca(datisac);
-        }
-
-	 */
 		MongoDataManager md = MongoDataManager.getInstance();
     	Dipendente d = new Dipendente(Cdf.getCDF("PVFDTP90P61I426D"), "Mario", "Magazz", LocalDate.parse("1950-07-23", DateTimeFormatter.ofPattern(Constants.DATEFORMAT)), RuoloDipendente.MagazziniereCTT, "admin", "Adminadmin1");
         md.createDipendente(d);
@@ -124,9 +65,10 @@ public class EvasioneSaccaTest {
 		token = user.getToken();
 
 		List<Seriale> listaSeriali = new ArrayList<Seriale>();
-		listaSeriali.add(ser4);
-		listaSeriali.add(ser5);
-		listaSeriali.add(ser6);
+		listaSeriali.add(ser1);
+		listaSeriali.add(ser2);
+		listaSeriali.add(ser3);
+		System.err.println(ser3);
 		String enteRichiedente= "Ospedale Rummo";
 		String indirizzoEnte="Benevento, via pacevecchia 12";
 
@@ -150,10 +92,10 @@ public class EvasioneSaccaTest {
 		token = user.getToken();
 
 		List<Seriale> listaSeriali = new ArrayList<Seriale>();
-		listaSeriali.add(ser1);
+		listaSeriali.add(ser5);
 		Seriale nonPresente = new Seriale();
 		listaSeriali.add(nonPresente);
-		listaSeriali.add(ser3);
+		listaSeriali.add(ser6);
 		String enteRichiedente= "Ospedale Rummo";
 		String indirizzoEnte="Benevento, via pacevecchia 12";
 		

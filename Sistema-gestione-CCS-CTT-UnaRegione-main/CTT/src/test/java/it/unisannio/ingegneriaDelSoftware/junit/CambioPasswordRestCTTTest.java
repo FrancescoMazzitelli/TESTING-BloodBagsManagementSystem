@@ -30,37 +30,6 @@ public class CambioPasswordRestCTTTest {
 	WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
 	WebTarget CambioPassword = client.target("http://127.0.0.1:8081/rest/autentificazione/cambiopassword");
 	MongoDataManager mm = MongoDataManager.getInstance();
-	
-	/**Aggiunge al database dei Dipendenti un amministratoreCCS necessario per testare il metodo successivo ed esegue il Login
-	 * @throws EntityAlreadyExistsException
-	 */
-	@Before
-	public void setUp() throws EntityAlreadyExistsException {		
-		Cdf cdf = Cdf.getCDF("KTMFSW67T64I460X");
-	    LocalDate ld = LocalDate.parse("1978-10-10");
-	    RuoloDipendente ruolo = RuoloDipendente.AmministratoreCTT;
-	    String username = "admin";
-	    String password = "Adminadmin1";
-	    Dipendente dip = new Dipendente(cdf, "TestAdmin", "TestAdmin", ld, ruolo, username, password);
-	    mm.createDipendente(dip);
-	    
-	    Client client = ClientBuilder.newClient();
-		Form form1 = new Form();
-		form1.param("username", "admin");
-		form1.param("password", "Adminadmin1");
-		
-		Response responselogin = login.request().post(Entity.form(form1));
-		User user = responselogin.readEntity(User.class);
-		token = user.getToken();
-		
-		cdf = Cdf.getCDF("MFDFSW67T89I460X");
-	    ld = LocalDate.parse("1987-10-10");
-	    ruolo = RuoloDipendente.AmministratoreCTT;
-	    username = "admin";
-	    password = "Adminadmin2";
-	    dip = new Dipendente(cdf, "Marco", "Liverani", ld, ruolo, username, password);
-	    mm.createDipendente(dip);
-	}
 
 	/**Droppa i database*/
 	@After

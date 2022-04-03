@@ -27,44 +27,6 @@ public class LoginTest {
 	static String token = null;
 	Client client = ClientBuilder.newClient();
 	WebTarget Login = client.target("http://127.0.0.1:8081/rest/autentificazione");
-	
-	/**Aggiunge al database dei Dipendenti un amministratoreCCS necessario per testare il metodo successivo
-	 * @throws EntityAlreadyExistsException
-	 */
-	@Before
-	public void setUp() throws EntityAlreadyExistsException {
-		List<Dipendente> listaDipendenti = new ArrayList<Dipendente>();
-		
-		Cdf cdf = Cdf.getCDF("KTMFSW67T64I460X");
-	    LocalDate ld = LocalDate.parse("1978-10-10");
-	    RuoloDipendente ruolo = RuoloDipendente.AmministratoreCTT;
-	    String username = "admin";
-	    String password = "Adminadmin1";
-	    Dipendente dip1 = new Dipendente(cdf, "TestAdmin", "TestAdmin", ld, ruolo, username, password);
-        listaDipendenti.add(dip1);
-
-        cdf = Cdf.getCDF("FZDTSS79C20F641W");
-        ld = LocalDate.parse("1996-12-10");
-        ruolo = RuoloDipendente.OperatoreCTT;
-        username = "username 004";
-        password = "Password4";
-        Dipendente dip2 = new Dipendente(cdf, "Pietro", "Spini", ld, ruolo, username, password);
-        listaDipendenti.add(dip2);
-        
-	    cdf = Cdf.getCDF("CZGMJS46A28I333C");
-        ld = LocalDate.parse("1999-01-12");
-        ruolo = RuoloDipendente.MagazziniereCTT;
-        username = "username 003";
-        password = "Password3";
-        Dipendente dip3 = new Dipendente(cdf, "Giovanni", "Rana", ld, ruolo, username, password);
-        listaDipendenti.add(dip3);
-	    
-        MongoDataManager mm = MongoDataManager.getInstance();
-
-        for(Dipendente dip : listaDipendenti) {
-            mm.createDipendente(dip);
-        }
-	}
 
 	/**Droppa i database*/
 	@After

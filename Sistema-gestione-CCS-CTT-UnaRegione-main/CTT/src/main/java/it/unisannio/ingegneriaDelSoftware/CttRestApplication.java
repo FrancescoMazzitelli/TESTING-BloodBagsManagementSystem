@@ -90,5 +90,15 @@ public class CttRestApplication extends ResourceConfig {
 		SaccheInScadenzaClientEndPoint saccheInScadenzaClient = new SaccheInScadenzaClientEndPoint();
 	}
 
+	public static void main() throws InterruptedException {
+		SpringApplication.run(CttRestApplication.class);
+		Subject.addObserver(new EvasioneObserver(()-> EndPointRestNotificheMagazziniere.getNotificheEvasione()));
+		Subject.addObserver(new SmaltimentoObserver(()-> EndPointRestNotificheMagazziniere.getSerialiDaSmaltire()));
+		Subject.addObserver(new RisultatiRicercaGlobaleObserver( () -> EndPointRestNotificheOperatore.getNotificaRisultatiRicerca() ));
+		//andrebbe un get
+		Subject.addObserver(new SaccheInScadenzaObserver(()->SaccheInScadenzaClientEndPoint.notificheSaccheInScadenza));
+		SaccheInScadenzaClientEndPoint saccheInScadenzaClient = new SaccheInScadenzaClientEndPoint();
+	}
+
 
 }
