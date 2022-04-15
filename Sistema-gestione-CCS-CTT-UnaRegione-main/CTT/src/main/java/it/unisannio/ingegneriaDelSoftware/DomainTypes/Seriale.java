@@ -1,5 +1,7 @@
 package it.unisannio.ingegneriaDelSoftware.DomainTypes;
 
+import it.unisannio.ingegneriaDelSoftware.Util.SerialSettings;
+
 import java.io.*;
 import java.text.DecimalFormat;
 import java.util.*;
@@ -22,19 +24,10 @@ public class Seriale {
 	private static Map<String,Seriale> seriali = new HashMap<String,Seriale>();
 
 	/**Costruisce il seriale a partire da configurazioni presenti in /localsettings/serial_settings.xml*/
+	static SerialSettings ss = new SerialSettings(0);
 	static {
-		Properties loadProps = new Properties();
-	    try {
-			loadProps.loadFromXML(new FileInputStream("localsettings/serial_settings.xml"));
-		} catch (InvalidPropertiesFormatException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	    radice = CTTName.getInstance().getCttname();
-	    lastAssigned = Integer.valueOf(loadProps.getProperty(TAG_LAST_ASSIGNED));
+	    lastAssigned = ss.getLast_assigned();
 	}
 
 
@@ -62,7 +55,7 @@ public class Seriale {
 	/**Costruisce il seriale a partire da una stringa
 	 * @param seriale deve essere una stringa di 15 caratteri con '-' in 6 posizione
 	 */
-	private Seriale(String seriale) {
+	public Seriale(String seriale) {
 		assert  seriale != null: "Il seriale non può essere null";
 		assert 	seriale.length()==15 &&
 				seriale.charAt(6)=='-' &&
@@ -74,15 +67,7 @@ public class Seriale {
 	/**Aggiorna il file xml di settings per la generazione del seriale
 	 */
 	public static void updateSettings() {
-		Properties saveProps = new Properties();
-		saveProps.setProperty(TAG_LAST_ASSIGNED, Integer.toString(lastAssigned));
-		try {
-			FileOutputStream fos = new FileOutputStream("localsettings/serial_settings.xml");
-			saveProps.storeToXML(fos, "");
-			fos.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		ss.setLast_assigned(lastAssigned+1);
 	}
 	
 	

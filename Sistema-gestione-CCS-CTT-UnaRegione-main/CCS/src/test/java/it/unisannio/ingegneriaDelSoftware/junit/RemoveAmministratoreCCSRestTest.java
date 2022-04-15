@@ -38,7 +38,7 @@ public class RemoveAmministratoreCCSRestTest {
 		mm.dropDB();
 	}
 	
-	/**Test del metodo REST rest/CCS/rimozioneAmministratore, deve andare a buon fine in quanto si tenta di eliminare un Dipendente inserito nel setUp
+	/**Test del metodo REST rest/CCS/rimozioneAmministratore, deve andare a buon fine in quanto si tenta di eliminare un Dipendente inserito nel db
 	 * @throws EntityAlreadyExistsException 
 	 */
 	@Test public void testRimozioneAmministratoreCCSCorretto() throws EntityAlreadyExistsException{

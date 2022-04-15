@@ -31,8 +31,6 @@ public class AggiuntaSaccaMagazzinoTest {
 	WebTarget aggiuntaSaccaMagazz = client.target("http://127.0.0.1:8081/rest/magazziniere/aggiuntaSacca");
 
 	@Test public void testAggiuntaSaccaCorretto() {
-		Client client = ClientBuilder.newClient();
-		//WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
 		Form form1 = new Form();
 		form1.param("username", "username 006");
 		form1.param("password", "Password6");
@@ -44,11 +42,29 @@ public class AggiuntaSaccaMagazzinoTest {
 		Form form2 = new Form();
 		form2.param("gruppo_sanguigno", GruppoSanguigno.Ap.toString());
 		form2.param("data_scadenza", "2023-11-10");
-		form2.param("data_produzione", "2022-02-12");
+		form2.param("data_produzione", "2022-04-12");
 		form2.param("ente_donatore", "DonatoreProva1");
+
+		Form form3 = new Form();
+		form3.param("gruppo_sanguigno", GruppoSanguigno.Ap.toString());
+		form3.param("data_scadenza", "2023-11-10");
+		form3.param("data_produzione", "2022-04-12");
+		form3.param("ente_donatore", "DonatoreProva1");
+
+		Form form4 = new Form();
+		form4.param("gruppo_sanguigno", GruppoSanguigno.Ap.toString());
+		form4.param("data_scadenza", "2023-11-10");
+		form4.param("data_produzione", "2022-04-12");
+		form4.param("ente_donatore", "DonatoreProva1");
 
 		Response responseaddSaccaMagazz = aggiuntaSaccaMagazz.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
 		Assertions.assertEquals(Status.CREATED.getStatusCode(), responseaddSaccaMagazz.getStatus());
+
+		Response responseaddSaccaMagazz1 = aggiuntaSaccaMagazz.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form3));
+		Assertions.assertEquals(Status.CREATED.getStatusCode(), responseaddSaccaMagazz1.getStatus());
+
+		Response responseaddSaccaMagazz2 = aggiuntaSaccaMagazz.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form4));
+		Assertions.assertEquals(Status.CREATED.getStatusCode(), responseaddSaccaMagazz2.getStatus());
 	}
 	
 	@Test public void testAggiuntaSaccaScaduta() {

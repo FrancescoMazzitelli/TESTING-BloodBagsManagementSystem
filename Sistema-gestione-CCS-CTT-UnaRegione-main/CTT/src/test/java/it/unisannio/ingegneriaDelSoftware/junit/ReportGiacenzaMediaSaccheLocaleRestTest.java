@@ -41,8 +41,8 @@ public class ReportGiacenzaMediaSaccheLocaleRestTest {
 		Client client = ClientBuilder.newClient();
 
 		Form form1 = new Form();
-		form1.param("username", "admin1");
-		form1.param("password", "Adminadmin1");
+		form1.param("username", "username 003");
+		form1.param("password", "Password3");
 
 		Response responselogin = login.request().post(Entity.form(form1));
 		User user = responselogin.readEntity(User.class);

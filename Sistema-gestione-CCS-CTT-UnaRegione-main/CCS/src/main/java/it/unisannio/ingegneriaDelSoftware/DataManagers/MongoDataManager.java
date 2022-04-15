@@ -25,7 +25,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
 public class MongoDataManager {
 	
-	private com.mongodb.client.MongoClient mongoClient;
+	private MongoClient mongoClient;
 	private CodecRegistry pojoCodecRegistry;
 	private static MongoDataManager instance = new MongoDataManager();
 
@@ -42,10 +42,10 @@ public class MongoDataManager {
 	 */
 	private MongoDataManager(){
 	    pojoCodecRegistry = fromRegistries(CodecRegistries.fromCodecs(new DipendenteCodec(), new CTTCodec(), new SaccaCodec()), MongoClient.getDefaultCodecRegistry());
-		String connectionString = "mongodb+srv://francescomazzitelli:kekko1999@ingegneriadelsoftware.qemvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-		MongoClientSettings settings = MongoClientSettings.builder().applyConnectionString(new ConnectionString(connectionString)).build();
-		mongoClient = MongoClients.create(settings);
-		//mongoClient = new MongoClient(connectionString);
+		MongoClientURI connectionString = new MongoClientURI("mongodb+srv://francescomazzitelli:kekko1999@ingegneriadelsoftware.qemvb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+		//MongoClientSettings settings = MongoClientSettings.builder().applyConnectionString(new ConnectionString(connectionString)).build();
+		//mongoClient = MongoClients.create(settings);
+		mongoClient = new MongoClient(connectionString);
 	}
 	
 	/**

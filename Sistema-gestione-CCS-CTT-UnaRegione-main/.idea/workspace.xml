@@ -5,16 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e614c052-8e34-470b-a03c-d54e7a30dad8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/CTTNameProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/MongoDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/MongoDataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/CTTName.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/CTTName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/MongoDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/MongoDataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/CTTName.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/CTTName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/AmministratoreCCS.html" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/main/resources/static/AmministratoreCCS.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/RemoveAmministratoreCCSRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/RemoveAmministratoreCCSRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/localsettings/cttname_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/localsettings/database_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/localsettings/img/logoCTTpdf.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/localsettings/network_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/localsettings/serial_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Seriale.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Seriale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/NetworkProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/NetworkProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/AggiungiDipendenteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/AggiungiDipendenteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/AggiuntaSaccaMagazzinoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/AggiuntaSaccaMagazzinoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/CambioPasswordRestCTTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/CambioPasswordRestCTTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/EvasioneSaccaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/EvasioneSaccaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/LogOutRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/LogOutRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/RecuperoPasswordRestCTTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/RecuperoPasswordRestCTTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/RemoveDipendenteCTTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/RemoveDipendenteCTTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/ReportDipendentiCTTRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/ReportDipendentiCTTRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/ReportGiacenzaMediaSaccheLocaleRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/ReportGiacenzaMediaSaccheLocaleRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/ReportSaccheInviateRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/ReportSaccheInviateRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/ReportSaccheRicevuteRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/ReportSaccheRicevuteRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/ReportStatisticoSaccheLocaleRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/ReportStatisticoSaccheLocaleRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/RicercaSaccaLocaleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/it/unisannio/ingegneriaDelSoftware/junit/RicercaSaccaLocaleTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +49,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -42,7 +68,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2666ZflUmfdbFbVQEKglMM8oPat" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -50,14 +78,27 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CTT/pom.xml" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CCS/src/test/java/stepDefinitions/Steps" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CCS\src\test" />
+      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT\src\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT\src\test\resources\Features" />
+      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CCS\src\test\resources\Features" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Selenium" />
+      <recent name="stepDefinitions" />
+      <recent name="stepDefinitions.Steps" />
       <recent name="it.unisannio.ingegneriaDelSoftware.Util" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CttRestApplication">
+  <component name="RunManager" selected="JUnit.TestRunner">
     <configuration name="CcsRestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.unisannio.ingegneriaDelSoftware.CcsRestApplication" />
       <module name="CCS_DataBaseRest" />
@@ -71,12 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CttRestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.unisannio.ingegneriaDelSoftware.CttRestApplication" />
-      <module name="CTT_DataBaseRest" />
+    <configuration name="LoginTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Selenium.Steps.LoginTest" />
+      <module name="CCS_DataBaseRest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.unisannio.ingegneriaDelSoftware.*" />
+          <option name="PATTERN" value="Selenium.Steps.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,31 +125,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginRestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCS_DataBaseRest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.unisannio.ingegneriaDelSoftware.junit.*" />
+          <option name="PATTERN" value="Selenium.Steps.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.unisannio.ingegneriaDelSoftware.junit" />
-      <option name="MAIN_CLASS_NAME" value="it.unisannio.ingegneriaDelSoftware.junit.LoginRestTest" />
+      <option name="PACKAGE_NAME" value="Selenium.Steps" />
+      <option name="MAIN_CLASS_NAME" value="Selenium.Steps.LoginTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReportSaccheRicevuteRestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCS_DataBaseRest" />
+    <configuration name="TestRunner (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CTT_DataBaseRest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.unisannio.ingegneriaDelSoftware.junit.*" />
+          <option name="PATTERN" value="stepDefinitions.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="it.unisannio.ingegneriaDelSoftware.junit" />
-      <option name="MAIN_CLASS_NAME" value="it.unisannio.ingegneriaDelSoftware.junit.ReportSaccheRicevuteRestTest" />
+      <option name="PACKAGE_NAME" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="stepDefinitions.TestRunner" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCS_DataBaseRest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Selenium.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Selenium" />
+      <option name="MAIN_CLASS_NAME" value="Selenium.TestRunner" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,10 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CttRestApplication" />
+        <item itemvalue="JUnit.TestRunner" />
         <item itemvalue="Application.CcsRestApplication" />
-        <item itemvalue="JUnit.LoginRestTest" />
-        <item itemvalue="JUnit.ReportSaccheRicevuteRestTest" />
+        <item itemvalue="JUnit.LoginTest" />
+        <item itemvalue="Application.LoginTest" />
+        <item itemvalue="JUnit.TestRunner (1)" />
       </list>
     </recent_temporary>
   </component>

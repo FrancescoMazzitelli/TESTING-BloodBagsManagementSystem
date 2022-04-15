@@ -30,12 +30,15 @@ public class AggiungiDipendenteTest {
 	Client client = ClientBuilder.newClient();
 	WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
 	WebTarget aggiuntaAmministratore = client.target("http://127.0.0.1:8081/rest/amministratore/aggiuntaDipendente");
-		
-	/**Mettonin esecuzione l'applicazione*/
+
+	/**Metto in esecuzione l'applicazione*/
+	/*
 	@BeforeAll
 	public static void run() throws InterruptedException {
 		CttRestApplication.main();
 	}
+
+	 */
 
 		/** Test per il metodo rest/amministratore/aggiuntaDipendente dell'amministratoreCTT, che va a buon fine
 		 */
@@ -58,7 +61,7 @@ public class AggiungiDipendenteTest {
 			form2.param("dataDiNascita", "1988-07-04");
 			form2.param("ruolo", RuoloDipendente.MagazziniereCTT.toString());
 			form2.param("username", "username 123");
-			form2.param("password", "Password123");
+			//form2.param("password", "Password123");
 			Response responseaddAmm = aggiuntaAmministratore.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
 			Assertions.assertEquals(Status.CREATED.getStatusCode(), responseaddAmm.getStatus());
 		}
@@ -84,7 +87,7 @@ public class AggiungiDipendenteTest {
 			form2.param("dataDiNascita", "1977-04-01");
 			form2.param("ruolo", RuoloDipendente.OperatoreCTT.toString());
 			form2.param("username", "username 234");
-			form2.param("password", "Password234");
+			//form2.param("password", "Password234");
 			Response responseaddAmm = aggiuntaAmministratore.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
 			Assertions.assertEquals(Status.CREATED.getStatusCode(), responseaddAmm.getStatus());
 		}
@@ -111,7 +114,7 @@ public class AggiungiDipendenteTest {
 			form2.param("dataDiNascita", "01-04-1977"); //formato errato
 			form2.param("ruolo", RuoloDipendente.AmministratoreCTT.toString());
 			form2.param("username", "username 234");
-			form2.param("password", "Password234");
+			//form2.param("password", "Password234");
 			Response responseaddAmm = aggiuntaAmministratore.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
 			Assertions.assertEquals(Status.BAD_REQUEST.getStatusCode(), responseaddAmm.getStatus());
 		}

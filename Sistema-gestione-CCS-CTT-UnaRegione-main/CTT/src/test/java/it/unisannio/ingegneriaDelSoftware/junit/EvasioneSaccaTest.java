@@ -29,9 +29,9 @@ public class EvasioneSaccaTest {
 	Client client = ClientBuilder.newClient();
 	WebTarget login = client.target("http://127.0.0.1:8081/rest/autentificazione");
 	WebTarget evasioneSacca = client.target("http://127.0.0.1:8081/rest/magazziniere/evasione");
-	Seriale ser1 = new Seriale();
-	Seriale ser2 = new Seriale();
-	Seriale ser3 = new Seriale();
+	Seriale ser1 = new Seriale("CTT001-00000044");
+	Seriale ser2 = new Seriale("CTT001-00000045");
+	Seriale ser3 = new Seriale("CTT001-00000046");
 	Seriale ser4 = new Seriale();
 	Seriale ser5 = new Seriale();
 	Seriale ser6 = new Seriale();
@@ -92,13 +92,12 @@ public class EvasioneSaccaTest {
 		token = user.getToken();
 
 		List<Seriale> listaSeriali = new ArrayList<Seriale>();
-		listaSeriali.add(ser5);
 		Seriale nonPresente = new Seriale();
 		listaSeriali.add(nonPresente);
-		listaSeriali.add(ser6);
 		String enteRichiedente= "Ospedale Rummo";
 		String indirizzoEnte="Benevento, via pacevecchia 12";
-		
+
+		System.out.println(nonPresente);
 		NotificaEvasione not= new NotificaEvasione(listaSeriali, enteRichiedente, indirizzoEnte, "messaggio");
 
 		Response evasioneSaccaMagazz = evasioneSacca.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.json(not));

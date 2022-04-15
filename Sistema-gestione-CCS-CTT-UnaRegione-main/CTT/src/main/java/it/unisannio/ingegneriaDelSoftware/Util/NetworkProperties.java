@@ -1,12 +1,12 @@
 package it.unisannio.ingegneriaDelSoftware.Util;
 
 public class NetworkProperties {
-    private static final String CCSIP = "127.0.0.1";
+    private static final String CCSIP = "128.1.1.1";
     private static final String CCSWebSocketIP = "ws://127.0.0.1:8081/ws/saccheInScadenza";
     private static final int CCS_retry_connection = 30;
     private static final String MagazziniereIP = "192.168.193.57";
     private static final String OperatoreIP = "192.168.193.28";
-    private static final String AmministratoreIP = "127.0.0.1";
+    private static final String AmministratoreIP = "128.0.0.1";
     private static final String CCS_PORT = "8080";
 
     public NetworkProperties() {
