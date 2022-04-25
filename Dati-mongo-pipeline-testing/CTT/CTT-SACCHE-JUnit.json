@@ -1,41 +1,5 @@
 [{
   "_id": {
-    "$oid": "623b3c8e52ac1295af1745a0"
-  },
-  "seriale": "CTT001-00000002",
-  "gruppo": "Ap",
-  "dataProduzione": "2020-05-10",
-  "dataScadenza": "2022-05-10",
-  "prenotato": true
-},{
-  "_id": {
-    "$oid": "623b3c8e52ac1295af1745a3"
-  },
-  "seriale": "CTT001-00000003",
-  "gruppo": "Ap",
-  "dataProduzione": "2020-06-10",
-  "dataScadenza": "2022-06-10",
-  "prenotato": true
-},{
-  "_id": {
-    "$oid": "623b3c8e52ac1295af17459d"
-  },
-  "seriale": "CTT001-00000001",
-  "gruppo": "Ap",
-  "dataProduzione": "2020-04-10",
-  "dataScadenza": "2022-03-25",
-  "prenotato": true
-},{
-  "_id": {
-    "$oid": "6240208c1417662c6094e300"
-  },
-  "seriale": "CTT001-00000004",
-  "gruppo": "Ap",
-  "dataProduzione": "2020-04-10",
-  "dataScadenza": "2022-03-29",
-  "prenotato": false
-},{
-  "_id": {
     "$oid": "6240208c1417662c6094e303"
   },
   "seriale": "CTT001-00000005",
@@ -72,15 +36,6 @@
   "prenotato": false
 },{
   "_id": {
-    "$oid": "6240208c1417662c6094e30f"
-  },
-  "seriale": "CTT001-00000009",
-  "gruppo": "Am",
-  "dataProduzione": "2020-04-10",
-  "dataScadenza": "2022-04-10",
-  "prenotato": false
-},{
-  "_id": {
     "$oid": "6240208c1417662c6094e312"
   },
   "seriale": "CTT001-00000010",
@@ -99,30 +54,12 @@
   "prenotato": false
 },{
   "_id": {
-    "$oid": "6240208c1417662c6094e318"
-  },
-  "seriale": "CTT001-00000012",
-  "gruppo": "Am",
-  "dataProduzione": "2020-07-12",
-  "dataScadenza": "2022-07-12",
-  "prenotato": false
-},{
-  "_id": {
     "$oid": "6240208c1417662c6094e31b"
   },
   "seriale": "CTT001-00000013",
   "gruppo": "Am",
   "dataProduzione": "2018-06-10",
   "dataScadenza": "2023-06-10",
-  "prenotato": false
-},{
-  "_id": {
-    "$oid": "6240208c1417662c6094e31e"
-  },
-  "seriale": "CTT001-00000014",
-  "gruppo": "Bp",
-  "dataProduzione": "2020-04-10",
-  "dataScadenza": "2022-04-10",
   "prenotato": false
 },{
   "_id": {
@@ -162,15 +99,6 @@
   "prenotato": false
 },{
   "_id": {
-    "$oid": "6240208c1417662c6094e32d"
-  },
-  "seriale": "CTT001-00000019",
-  "gruppo": "Bm",
-  "dataProduzione": "2020-04-10",
-  "dataScadenza": "2022-03-29",
-  "prenotato": false
-},{
-  "_id": {
     "$oid": "6240208c1417662c6094e330"
   },
   "seriale": "CTT001-00000020",
@@ -204,15 +132,6 @@
   "gruppo": "Bm",
   "dataProduzione": "2018-06-10",
   "dataScadenza": "2022-06-10",
-  "prenotato": false
-},{
-  "_id": {
-    "$oid": "6240208c1417662c6094e33c"
-  },
-  "seriale": "CTT001-00000024",
-  "gruppo": "ABp",
-  "dataProduzione": "2020-04-10",
-  "dataScadenza": "2022-04-10",
   "prenotato": false
 },{
   "_id": {
