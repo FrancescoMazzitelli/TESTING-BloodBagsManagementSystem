@@ -142,9 +142,11 @@
     </div>
 
     <script>
+
+        var xhttp = new XMLHttpRequest();
         var token = sessionStorage.getItem("token");
         var ruolo = sessionStorage.getItem("ruolo");
-        var xhttp = new XMLHttpRequest();
+        var host = document.location.origin;
 
 
         verificoToken = function(){
@@ -155,7 +157,7 @@
         };
 
         function addDip(){
-        	  	var host = document.location.origin;
+
                 var url = host + "/rest/amministratore/aggiuntaDipendente";
 
                 var cdf = codice.value;
@@ -184,7 +186,7 @@
                 };
 
                 xhttp.onerror = function(){
-                    document.getElementById("result").innerHTML = "[Error 401] Impossibile Aggiungere Dipendente ";
+                    alert("[Error 401] Impossibile Aggiungere Dipendente");
                 };
 
 

@@ -1,9 +1,9 @@
 Feature: Aggiunta dipendente
 
     Scenario: Test per il metodo rest/amministratore/aggiuntaDipendente del magazziniere, che va a buon fine
-      Given BeforeAll
+      #Given BeforeAll
       Given L'utente effettua l'accesso sull'apposito portale
-      When Viene compilato il form per l'aggiunta di un amministratore
+      When Viene compilato il form per l'aggiunta di un magazziniere
       Then Viene sottomesso il form e creato un nuovo magazziniere
 
     Scenario: Test per il metodo rest/amministratore/aggiuntaDipendente dell'operatore, che va a buon fine

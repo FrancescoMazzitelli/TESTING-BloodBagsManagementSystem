@@ -65,7 +65,7 @@ public class EndPointRestAmministratoreCTT implements EndPointAmministratoreCTT 
 		md.createDipendente(d);
 		return Response
 			.status(Response.Status.CREATED)
-			.entity(getPDF(cdf, username, password))
+			.entity("Corretta aggiunta del Dipendente: " + cdf)
 			.build();
 	}
 

@@ -75,7 +75,6 @@ public class EndPointRestAutentificazione implements EndPointAutentificazione {
         }
         throw new WebApplicationException(Response.status(Response.Status.FORBIDDEN)
                 .entity("Non puoi cambiare la password di un altro utente").type(MediaType.TEXT_PLAIN).build());
-
     }
 
 

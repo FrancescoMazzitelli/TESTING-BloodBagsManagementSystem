@@ -61,7 +61,7 @@
                         <p id="p1"></p>
                     </div>
                     <div style="margin-top: 2%; text-align: center">
-                        <button class="btn btn-primary" type="submit" onclick = "removeCTT();" style="font-family: Calibri light;font-size: 1.6vmax;">Conferma</button>
+                        <button class="btn btn-primary" type="submit" onclick = "rimozione();" style="font-family: Calibri light;font-size: 1.6vmax;">Conferma</button>
                     </div>
                 </div>
             </div>
@@ -70,11 +70,10 @@
     <script type="application/javascript">
     
         var obj;
-        var xhttp = new XMLHttpRequest();
         var token = sessionStorage.getItem("token");
         var ruolo = sessionStorage.getItem("ruolo");
-        var res;
         var host = document.location.origin;
+        var res;
         
         function start() {
         	verificoToken();
@@ -88,10 +87,10 @@
            }
         }
         
-        function removeCTT(){
+        rimozione = function(){
             
-            
-            var url = host + "/rest/CCS/rimozioneCTT/"+ numctt.value;
+            var xhttp = new XMLHttpRequest();
+            var url = host + "/rest/CCS/rimozioneCTT/"+numctt.value;
           
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -103,7 +102,7 @@
             };
 
             xhttp.onerror = function(){
-                document.getElementById("result").innerHTML = "[Error 401] Impossibile Rimuovere CTT ";
+                alert("Impossibile Rimuovere CTT");
             };
 
             setTimeout(reloadPage, 500);
@@ -125,7 +124,7 @@
                 
         	
                 xhttp = new XMLHttpRequest(); 	
-                url = host + "/rest/CCS/centers";
+                url = host +"/rest/CCS/centers";
                 
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
@@ -180,7 +179,7 @@
     </script>   
         
     <div class="footer"></div>
-
+    <script src="assets/js/scriptControl.js"></script>
 </body>
 
 </html>

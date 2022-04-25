@@ -11,7 +11,7 @@ Feature: Report CCS REST
     Then Viene richiesto il report sacche inviate
 
   Scenario: Test per il metodo rest/CCS/reportSaccheRicevuteCCS dell'amministratoreCCS, va a buon fine
-    Then Viene richiesto il report sacche inviate
+    Then Viene richiesto il report sacche ricevute
 
   Scenario: Test per il metodo rest/CCS/reportStatisticoSaccheCCS dell'amministratoreCCS, va a buon fine
     Then Viene richiesto il report statistico sacche

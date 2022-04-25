@@ -49,7 +49,7 @@ public class Settings {
 
 
         //carico indirizzi ip
-        for (String key : np.getIP()) {
+        for (String key : np.getIPs()) {
             if(!key.equals("PORT")) {
                 try {
                     ip.put(MongoDataManager.getInstance().getCTT(CTTName.getCttName(key)), key);

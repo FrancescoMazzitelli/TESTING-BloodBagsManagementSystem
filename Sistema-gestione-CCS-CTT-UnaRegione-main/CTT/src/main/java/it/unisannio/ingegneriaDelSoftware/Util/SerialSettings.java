@@ -1,7 +1,7 @@
 package it.unisannio.ingegneriaDelSoftware.Util;
 
 public class SerialSettings {
-    private static Integer last_assigned = 44;
+    private static Integer last_assigned = 1;
 
     public SerialSettings(Integer last_assigned) {
         this.last_assigned = last_assigned;

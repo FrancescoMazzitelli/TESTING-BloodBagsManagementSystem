@@ -77,7 +77,7 @@ public class EndPointRestMagazziniereCTT implements EndPointMagazziniereCTT {
 		return Response
 				.status(Response.Status.CREATED)
 				.entity("Sacca con seriale " + unaSacca.getSeriale().getSeriale() + " aggiunta correttamente")
-				.header("Location",uriInfo.getBaseUri()+"/sacche/"+unaSacca.getSeriale().getSeriale())
+				//.header("Location",uriInfo.getBaseUri()+"/sacche/"+unaSacca.getSeriale().getSeriale())
 				.build();
 	}
 
@@ -111,7 +111,7 @@ public class EndPointRestMagazziniereCTT implements EndPointMagazziniereCTT {
 
 		return Response
 				.status(Response.Status.CREATED)
-				.entity(getPDF(notificaEvasione.getListaSeriali(), notificaEvasione.getEnteRichiedente(), notificaEvasione.getIndirizzoEnte(), LocalDate.now()))
+				//.entity(getPDF(notificaEvasione.getListaSeriali(), notificaEvasione.getEnteRichiedente(), notificaEvasione.getIndirizzoEnte(), LocalDate.now()))
 				.build();
 	}
 

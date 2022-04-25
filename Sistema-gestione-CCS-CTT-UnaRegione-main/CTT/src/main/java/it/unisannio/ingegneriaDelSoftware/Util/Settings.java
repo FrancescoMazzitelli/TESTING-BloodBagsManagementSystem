@@ -3,10 +3,7 @@ package it.unisannio.ingegneriaDelSoftware.Util;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.InvalidPropertiesFormatException;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 /**Classe che carica i settings dai file XML presenti in /localsettings*/
 public class Settings {
@@ -44,12 +41,17 @@ public class Settings {
         retry = np.getCCS_retry_connection();
         ccsIpPort = np.getCCS_PORT();
 
+        LinkedHashMap<String, String> propIP = new LinkedHashMap<String, String>();
+        propIP.put("AmministratoreIP",np.getAmministratoreIP());
+        propIP.put("MagazziniereIP", np.getMagazziniereIP());
+        propIP.put("OperatoreIP", np.getOperatoreIP());
+        Set<String> ips = propIP.keySet();
+
         //carico ip sicuri
         trustedIp = new ArrayList<>();
-        for (Object key :loadNetworkProps.keySet()) {
-            String keyS = (String) key;
-            if(keyS.equals("MagazziniereIP") || keyS.equals("OperatoreIP") || keyS.equals("AmminsitratoreIP") )
-                trustedIp.add(loadNetworkProps.getProperty((String)key));
+        for (String keyS : ips) {
+            if(keyS.equals("MagazziniereIP") || keyS.equals("OperatoreIP") || keyS.equals("AmministratoreIP") )
+                trustedIp.add(propIP.get(keyS));
         }
 
         //carico impostazioni DB

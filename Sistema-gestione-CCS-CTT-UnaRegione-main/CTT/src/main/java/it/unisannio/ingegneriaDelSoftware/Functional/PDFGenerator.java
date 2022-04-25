@@ -22,6 +22,7 @@ public class PDFGenerator {
      * @throws DocumentException
      * @throws IOException
      */
+
     public static void  makeDocumentDipendente(OutputStream output, String cdf, String username , String password) throws DocumentException, IOException {
         Document document = new Document();
         PdfWriter.getInstance(document, output);
@@ -37,16 +38,12 @@ public class PDFGenerator {
         title.setSpacingAfter(10);
         document.add(title);
         PdfPTable table = new PdfPTable(2);
-        //prima riga
         table.addCell("Codice Fiscale");
         table.addCell(cdf);
-        //seconda riga
         table.addCell("Username");
         table.addCell(username);
-        //terza riga
         table.addCell("password");
         table.addCell(password);
-        //aggiungo al pdf
         document.add(table);
         document.close();
     }

@@ -38,7 +38,7 @@ public class AggiungiAmministratoreRestTest {
     @When("Viene compilato il form per l'aggiunta di un nuovo amministratore")
     public void viene_compilato_il_form_per_l_aggiunta_di_un_nuovo_amministratore() throws InterruptedException {
         System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         driver1.findElement(By.id("AggiungiAmministratore")).click();
         //driver1.findElement(By.xpath("//button[@onclick = 'location.href='location.href='AggiuntaNuovoAmministratoreCCSForm.html']"));
 
@@ -51,7 +51,7 @@ public class AggiungiAmministratoreRestTest {
     }
 
     @Then("Viene sottomesso il form e creato un nuovo amministratore")
-    public void viene_sottomesso_il_form_e_creato_un_nuovo_amministratore(){
+    public void viene_sottomesso_il_form_e_creato_un_nuovo_amministratore() throws InterruptedException {
         System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
         driver1.findElement(By.xpath("//button[contains(text(),'Conferma')]")).click();
 
@@ -64,6 +64,7 @@ public class AggiungiAmministratoreRestTest {
         WebElement p4 = driver1.findElement(By.id("p4"));
         WebElement p5 = driver1.findElement(By.id("p5"));
 
+        Thread.sleep(2000);
         try{
             if(url.equalsIgnoreCase(urlAgg)){
                 flag = true;

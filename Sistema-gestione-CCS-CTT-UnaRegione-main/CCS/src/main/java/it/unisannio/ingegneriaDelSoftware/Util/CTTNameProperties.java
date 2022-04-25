@@ -1,7 +1,7 @@
 package it.unisannio.ingegneriaDelSoftware.Util;
 
 public class CTTNameProperties {
-    private final int last_assigned = 0;
+    private final int last_assigned = 1;
     private final String radice = "CTT";
 
    public CTTNameProperties() {}

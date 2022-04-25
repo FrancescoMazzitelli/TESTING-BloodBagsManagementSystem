@@ -36,4 +36,20 @@ public class LogoutTest {
         Assertions.assertTrue(flag);
         driver1.close();
     }
+
+    @Then("Non viene rimosso il token poichè è errato")
+    public void non_viene_rimosso_il_token_poichè_è_errato() throws InterruptedException {
+        driver2 = new EdgeDriver();
+        boolean flag = false;
+        driver2.get(urlOut);
+        Thread.sleep(2000);
+        String alert = driver2.switchTo().alert().getText();
+        //driver2.findElement(By.xpath("//button[contains(text(),'Log out')]")).click();
+        driver2.switchTo().alert().accept();
+        Thread.sleep(2000);
+        String alertChk = "E' necessario effettuare il login per accedere a questa risorsa";
+        if(alert.equalsIgnoreCase(alertChk)) flag = true;
+        Assertions.assertTrue(flag);
+        driver2.close();
+    }
 }

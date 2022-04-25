@@ -7,17 +7,17 @@ public class NetworkProperties {
     private final String CTT002 = "192.168.193.162";
     private final String CTT003 = "192.168.193.214";
     private final String PORT = "8081";
-    private LinkedList<String> IP;
+    private LinkedList<String> IPs;
 
     public NetworkProperties() {
-        this.IP = new LinkedList<String>();
-        IP.add(getCTT001());
-        IP.add(getCTT002());
-        IP.add(getCTT003());
+        this.IPs = new LinkedList<String>();
+        IPs.add(getCTT001());
+        IPs.add(getCTT002());
+        IPs.add(getCTT003());
     }
 
-    public LinkedList<String> getIP() {
-        return IP;
+    public LinkedList<String> getIPs() {
+        return IPs;
     }
 
     public String getCTT001() {
