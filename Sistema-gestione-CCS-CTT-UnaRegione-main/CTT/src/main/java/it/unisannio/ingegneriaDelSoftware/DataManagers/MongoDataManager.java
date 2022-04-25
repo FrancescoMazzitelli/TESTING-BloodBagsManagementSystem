@@ -69,7 +69,7 @@ public class MongoDataManager implements DataManager {
 
     /**Restituisce una MongoCollection<DatiSacca> registrando il codec di base di Mongo per la serializzazione in BSON
      * @return MongoCollection<DatiSacca>*/
-    private MongoCollection<DatiSacca> getCollectionDatiSacca(){
+    public MongoCollection<DatiSacca> getCollectionDatiSacca(){
         MongoDatabase database = mongoClient.getDatabase("CTT001").withCodecRegistry(pojoCodecRegistry);
         return database.getCollection("DATISACCHE", DatiSacca.class);
     }

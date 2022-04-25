@@ -1,13 +1,17 @@
 package JUnit;
 
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.result.DeleteResult;
 import it.unisannio.ingegneriaDelSoftware.CttRestApplication;
 import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Beans.User;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
+import it.unisannio.ingegneriaDelSoftware.DomainTypes.DatiSacca;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.RuoloDipendente;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
 import it.unisannio.ingegneriaDelSoftware.Util.Constants;
+import org.bson.conversions.Bson;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.*;
@@ -23,7 +27,10 @@ import javax.ws.rs.core.Response.Status;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+
+import static com.mongodb.client.model.Filters.eq;
 
 public class AggiungiDipendenteTest {
 	static String token = null;
@@ -44,7 +51,6 @@ public class AggiungiDipendenteTest {
 		 */
 		@Test	
 		public void testAggiuntaMagazziniere() throws EntityAlreadyExistsException {
-
 			Client client = ClientBuilder.newClient();
 			Form form1 = new Form();
 			form1.param("username", "username 003");
@@ -71,6 +77,21 @@ public class AggiungiDipendenteTest {
 		 */
 		@Test	
 		public void testAggiuntaOperatore(){
+			MongoDataManager md = MongoDataManager.getInstance();
+			Bson query1, query2, query3;
+			query1 = eq("seriale", "CTT001-00000001");
+			query2 = eq("seriale", "CTT001-00000002");
+			query3 = eq("seriale", "CTT001-00000003");
+			MongoCollection collection = md.getCollectionDatiSacca();
+			DeleteResult result1 = collection.deleteOne(query1);
+			DeleteResult result2 = collection.deleteOne(query2);
+			DeleteResult result3 = collection.deleteOne(query3);
+
+			System.out.println("CTT001-00000001 "+result1.wasAcknowledged());
+			System.out.println("CTT001-00000002 "+result2.wasAcknowledged());
+			System.out.println("CTT001-00000003 "+result3.wasAcknowledged());
+
+
 			Client client = ClientBuilder.newClient();
 			Form form1 = new Form();
 			form1.param("username", "username 003");

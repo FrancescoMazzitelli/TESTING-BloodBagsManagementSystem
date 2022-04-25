@@ -1,13 +1,18 @@
 package Selenium.Steps;
 
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.result.DeleteResult;
 import io.cucumber.java.en.*;
 import it.unisannio.ingegneriaDelSoftware.CttRestApplication;
 import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
+import org.bson.conversions.Bson;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+
+import static com.mongodb.client.model.Filters.eq;
 
 
 public class AggiungiDipendenteTest {
@@ -26,6 +31,20 @@ public class AggiungiDipendenteTest {
 */
     @Given("L'utente effettua l'accesso sull'apposito portale")
     public void l_utente_effettua_l_accesso_sull_apposito_portale(){
+        MongoDataManager md = MongoDataManager.getInstance();
+        Bson query1, query2, query3;
+        query1 = eq("seriale", "CTT001-00000001");
+        query2 = eq("seriale", "CTT001-00000002");
+        query3 = eq("seriale", "CTT001-00000003");
+        MongoCollection collection = md.getCollectionDatiSacca();
+        DeleteResult result1 = collection.deleteOne(query1);
+        DeleteResult result2 = collection.deleteOne(query2);
+        DeleteResult result3 = collection.deleteOne(query3);
+
+        System.out.println("CTT001-00000001 "+result1.wasAcknowledged());
+        System.out.println("CTT001-00000002 "+result2.wasAcknowledged());
+        System.out.println("CTT001-00000003 "+result3.wasAcknowledged());
+
         System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
         driver1 = new EdgeDriver();
         driver1.get(urlIn);
