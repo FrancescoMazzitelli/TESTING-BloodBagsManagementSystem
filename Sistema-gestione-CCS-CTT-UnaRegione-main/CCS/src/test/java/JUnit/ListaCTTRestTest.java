@@ -64,7 +64,7 @@ public class ListaCTTRestTest {
         form2.param("longitude", "41");
         aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        Assertions.assertEquals(3, mm.getListaCTT().size());
+        Assertions.assertEquals(2, mm.getListaCTT().size());
     }
 
     /** Test per il metodo rest/CCS/centers dell'amministratoreCCS, non va a buon fine siccome il parametro telefono è in un formato errato
@@ -89,7 +89,7 @@ public class ListaCTTRestTest {
         form2.param("longitude", "41");
         aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        Assertions.assertNotEquals(2, mm.getListaCTT().size());
+        Assertions.assertNotEquals(3, mm.getListaCTT().size());
     }
 
 }

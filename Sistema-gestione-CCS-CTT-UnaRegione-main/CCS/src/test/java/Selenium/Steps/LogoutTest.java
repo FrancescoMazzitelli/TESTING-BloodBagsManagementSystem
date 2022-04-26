@@ -30,6 +30,7 @@ public class LogoutTest {
         Thread.sleep(1000);
         //driver1.findElement(By.cssSelector("button[class='btn btn-primary' onclick='logout();' type='button']")).click();
         driver1.findElement(By.xpath("//button[contains(text(),'Log out')]")).click();
+        Thread.sleep(1000);
         String current = driver1.getCurrentUrl();
         boolean flag = false;
         if(current.equalsIgnoreCase(urlIn)) flag = true;

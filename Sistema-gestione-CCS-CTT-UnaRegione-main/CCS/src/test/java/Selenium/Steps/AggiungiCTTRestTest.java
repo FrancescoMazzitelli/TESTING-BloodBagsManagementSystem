@@ -56,9 +56,9 @@ public class AggiungiCTTRestTest {
 
         alert.accept();
         System.out.println(alertMex);
-        String alertChk = "CTT001 aggiunto correttamente";
+        String alertChk = "aggiunto correttamente";
 
-        if(alertMex.equalsIgnoreCase(alertChk)) flag = true;
+        if(alertMex.contains(alertChk)) flag = true;
 
         Assertions.assertTrue(flag);
     }

@@ -48,10 +48,8 @@ public class ListaCTTRestSteps {
 
     @Then("Viene sottomesso il form e restituita la dimensione di una lista di CTT")
     public void vieneSottomessoIlFormERestituitaLaDimensioneDiUnaListaDiCTT() {
-        Response responseaddCTT = aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form1));
-        Assertions.assertEquals(Response.Status.OK.getStatusCode(), responseaddCTT.getStatus());
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        Assertions.assertEquals(3, mm.getListaCTT().size());
+        Assertions.assertEquals(2, mm.getListaCTT().size());
     }
 
     @When("Viene compilato il form per l'aggiunta di un nuovo CTT sbagliato per auementare il numero in lista")
@@ -70,6 +68,6 @@ public class ListaCTTRestSteps {
     public void vieneSottomessoIlFormENonRestituitaLaDimensioneDiUnaListaDiCTT() {
         aggiuntaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).post(Entity.form(form2));
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        Assertions.assertNotEquals(2, mm.getListaCTT().size());
+        Assertions.assertNotEquals(3, mm.getListaCTT().size());
     }
 }

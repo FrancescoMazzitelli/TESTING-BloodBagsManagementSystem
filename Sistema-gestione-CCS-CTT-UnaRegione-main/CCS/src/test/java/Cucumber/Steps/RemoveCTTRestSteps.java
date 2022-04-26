@@ -34,10 +34,8 @@ public class RemoveCTTRestSteps {
 
     @Then("Vengono eliminati due CTT")
     public void vengonoEliminatiDueCTT() {
-        Response responseRemCTT5 = rimozioneCTT.path("CTT005").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
+        Response responseRemCTT5 = rimozioneCTT.path("CTT002").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
         Assertions.assertEquals(Response.Status.OK.getStatusCode(), responseRemCTT5.getStatus());
-        Response responseRemCTT4 = rimozioneCTT.path("CTT001").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-        Assertions.assertEquals(Response.Status.OK.getStatusCode(), responseRemCTT4.getStatus());
     }
 
     @Then("Non viene eliminato il CTT target")

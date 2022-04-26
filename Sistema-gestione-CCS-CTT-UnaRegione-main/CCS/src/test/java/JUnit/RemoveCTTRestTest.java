@@ -71,8 +71,6 @@ public class RemoveCTTRestTest {
 
 		Response responseRemCTT5 = rimozioneCTT.path("CTT005").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
 		Assertions.assertEquals(Status.OK.getStatusCode(), responseRemCTT5.getStatus());
-        Response responseRemCTT4 = rimozioneCTT.path("CTT004").request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).delete();
-        Assertions.assertEquals(Status.OK.getStatusCode(), responseRemCTT4.getStatus());
 	} 	
 	
 	/**Test del metodo REST rest/CCS/rimozioneCTT, non deve andare a buon fine in quanto si tenta di eliminare un CTT non presente nel database

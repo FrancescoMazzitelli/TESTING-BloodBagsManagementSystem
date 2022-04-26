@@ -73,7 +73,7 @@ public class ListaCTTRestTest {
         token = user.getToken();
 
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        Assertions.assertEquals(3, mm.getListaCTT().size());
+        Assertions.assertEquals(2, mm.getListaCTT().size());
     }
 
     @When("Viene compilato il form per l'aggiunta di un nuovo CTT sbagliato per auementare il numero in lista")
@@ -100,7 +100,7 @@ public class ListaCTTRestTest {
     @Then("Viene sottomesso il form e non restituita la dimensione di una lista di CTT")
     public void viene_sottomesso_il_form_e_non_restituita_la_dimensione_di_una_lista_di_CTT(){
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        Assertions.assertEquals(3, mm.getListaCTT().size());
+        Assertions.assertEquals(2, mm.getListaCTT().size());
         driver1.close();
     }
 

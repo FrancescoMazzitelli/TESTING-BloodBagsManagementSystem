@@ -6,10 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="e614c052-8e34-470b-a03c-d54e7a30dad8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/MongoDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/MongoDataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/AggiungiDipendenteSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/AggiungiDipendenteSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/AggiungiDipendenteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/JUnit/AggiungiDipendenteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/AggiungiDipendenteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/AggiungiDipendenteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/localsettings/cttname_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/localsettings/cttname_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/ListaCTTRestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/ListaCTTRestSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/RemoveCTTRestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/RemoveCTTRestSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/ListaCTTRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/JUnit/ListaCTTRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/RemoveCTTRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/JUnit/RemoveCTTRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/AggiungiCTTRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/AggiungiCTTRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/ListaCTTRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/ListaCTTRestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/LogoutTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/LogoutTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RemoveCTTRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RemoveCTTRestTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +81,7 @@
       <recent name="it.unisannio.ingegneriaDelSoftware.Util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CambioPasswordRestCTTTest.testCambioPasswordNonRiuscito">
+  <component name="RunManager" selected="JUnit.JUnit in CCS_DataBaseRest">
     <configuration name="CttRestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.unisannio.ingegneriaDelSoftware.CttRestApplication" />
       <module name="CTT_DataBaseRest" />
@@ -90,24 +95,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CambioPasswordRestCTTTest.testCambioPasswordNonRiuscito" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CTT_DataBaseRest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="JUnit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="JUnit" />
-      <option name="MAIN_CLASS_NAME" value="JUnit.CambioPasswordRestCTTTest" />
-      <option name="METHOD_NAME" value="testCambioPasswordNonRiuscito" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JUnit in CTT_DataBaseRest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CTT_DataBaseRest" />
+    <configuration name="JUnit in CCS_DataBaseRest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCS_DataBaseRest" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="JUnit.*" />
@@ -135,8 +124,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestRunner (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCS_DataBaseRest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Cucumber.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Cucumber" />
+      <option name="MAIN_CLASS_NAME" value="Cucumber.TestRunner" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CTT_DataBaseRest" />
+      <module name="CCS_DataBaseRest" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Selenium.*" />
@@ -152,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JUnit in CCS_DataBaseRest" />
+        <item itemvalue="JUnit.TestRunner" />
+        <item itemvalue="JUnit.TestRunner (2)" />
         <item itemvalue="JUnit.TestRunner (1)" />
         <item itemvalue="Application.CttRestApplication" />
-        <item itemvalue="JUnit.JUnit in CTT_DataBaseRest" />
-        <item itemvalue="JUnit.TestRunner" />
-        <item itemvalue="JUnit.CambioPasswordRestCTTTest.testCambioPasswordNonRiuscito" />
       </list>
     </recent_temporary>
   </component>
