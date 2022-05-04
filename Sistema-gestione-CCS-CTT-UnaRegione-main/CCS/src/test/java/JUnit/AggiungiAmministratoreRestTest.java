@@ -1,6 +1,5 @@
 package JUnit;
 
-import static org.junit.Assert.assertEquals;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +12,9 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import io.cucumber.java.*;
 import it.unisannio.ingegneriaDelSoftware.CcsRestApplication;
 import it.unisannio.ingegneriaDelSoftware.Exceptions.EntityAlreadyExistsException;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.jupiter.api.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Cdf;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Dipendente;
@@ -30,12 +28,12 @@ public class AggiungiAmministratoreRestTest {
 	Client client = ClientBuilder.newClient();
 	WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
 	WebTarget aggiuntaAmministratore = client.target("http://127.0.0.1:8080/rest/CCS/aggiuntaAmministratore");
-
-	/**Esegui l'applicazione*/
+/*
 	@BeforeAll
 	public static void run(){
 		CcsRestApplication.main();
 	}
+*/
 
 	/**Droppa il database*/
 	@After

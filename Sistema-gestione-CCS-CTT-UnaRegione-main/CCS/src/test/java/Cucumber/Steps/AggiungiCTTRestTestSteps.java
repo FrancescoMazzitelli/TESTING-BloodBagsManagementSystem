@@ -3,7 +3,6 @@ package Cucumber.Steps;
 import io.cucumber.java.en.*;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Beans.User;
 import org.junit.jupiter.api.Assertions;
-
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;

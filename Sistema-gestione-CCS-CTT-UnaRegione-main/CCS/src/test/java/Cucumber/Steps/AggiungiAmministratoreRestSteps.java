@@ -23,12 +23,12 @@ public class AggiungiAmministratoreRestSteps {
     WebTarget login = client.target("http://127.0.0.1:8080/rest/autentificazione");
     WebTarget aggiuntaAmministratore = client.target("http://127.0.0.1:8080/rest/CCS/aggiuntaAmministratore");
     Form form1, form2;
-
+/*
     @Given("BeforeAll")
     public void BeforeAll(){
         CcsRestApplication.main();
     }
-
+*/
     @Given("L'utente si autentica sull'apposito portale tramite form")
     public void l_utente_si_autentica_sull_apposito_portale_tramite_form() {
 

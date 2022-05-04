@@ -4,27 +4,52 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class CambioPasswordRestCCSTest {
 
-    public static WebDriver driver1, driver2;
+    public static WebDriver driver1;
     String urlIn = "http://127.0.0.1:8080/Login.html";
+    String urlHub = "http://127.0.0.1:8080/AmministratoreCCS.html";
     String urlOut = "http://127.0.0.1:8080/ChangePasswordAfterLogin.html";
 
     @Given("L'utente si autentica sull'apposito portale tramite form admin1")
-    public void l_utente_si_autentica_sull_apposito_portale_tramite_form_admin1(){
+    public void l_utente_si_autentica_sull_apposito_portale_tramite_form_admin1() throws MalformedURLException {
         System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
-        driver1 = new EdgeDriver();
+
+        EdgeOptions options = new EdgeOptions();
+
+        //WebDriverManager.edgedriver().setup();
+
+        options.addArguments("test-type");
+        options.addArguments("--disable-web-security");
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--incognito");
+
+        URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+
+        driver1 = new RemoteWebDriver(remoteUrl, options);
 
         driver1.get(urlIn);
         driver1.manage().window().maximize();
         driver1.findElement(By.id("user")).sendKeys("admin");
         driver1.findElement(By.id("pass")).sendKeys("Adminadmin1");
-        driver1.findElement(By.id("btnLogin")).click();
+        //driver1.findElement(By.id("btnLogin")).click();
+
+        WebElement element = driver1.findElement(By.id("btnLogin"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver1;
+        executor.executeScript("arguments[0].click();", element);
     }
 
     @When("Viene inserita la nuova password")
@@ -57,27 +82,45 @@ public class CambioPasswordRestCCSTest {
         if(alertMex.equalsIgnoreCase(alertChk)) flag = true;
 
         Assertions.assertTrue(flag);
+        driver1.close();
     }
 
     @Then("Viene sottomessa e non cambiata la password a causa del token errato")
     public void viene_sottomessa_e_non_cambiata_la_password_a_causa_del_token_errato() throws InterruptedException {
+        //System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
         System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
 
-        driver2 = new EdgeDriver();
-        driver2.get(urlOut);
-        driver2.manage().window().maximize();
-        Thread.sleep(1000);
+        EdgeOptions options = new EdgeOptions();
 
-        driver2.findElement(By.id("newPass")).sendKeys("Adminadmin1");
-        driver2.findElement(By.id("verifyPass")).sendKeys("Adminadmin1");
+        //WebDriverManager.edgedriver().setup();
 
-        driver2.findElement(By.id("runBtn")).click();
+        options.addArguments("test-type");
+        options.addArguments("--disable-web-security");
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.setCapability("SUPPORTS_NETWORK_CONNECTION", true);
+
+        //URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+
+        //driver = new RemoteWebDriver(remoteUrl, options);
+        driver1 = new EdgeDriver(options);
+
+        driver1.get(urlOut);
+
+        driver1.findElement(By.id("newPass")).sendKeys("Adminadmin1");
+        driver1.findElement(By.id("verifyPass")).sendKeys("Adminadmin1");
+
+        driver1.findElement(By.id("runBtn")).click();
 
         boolean flag = false;
 
         Thread.sleep(1000);
-        Alert alert = driver2.switchTo().alert();
-        String alertMex = driver2.switchTo().alert().getText();
+        Alert alert = driver1.switchTo().alert();
+        String alertMex = driver1.switchTo().alert().getText();
 
         alert.accept();
 
@@ -87,12 +130,25 @@ public class CambioPasswordRestCCSTest {
         if(alertMex.equalsIgnoreCase(alertChk)) flag = true;
 
         Assertions.assertTrue(flag);
-        driver2.close();
     }
 
     @When("Viene inserita la nuova password errata")
     public void viene_inserita_la_nuova_password_errata() throws InterruptedException {
-        driver1.get(urlOut);
+
+        Thread.sleep(2000);
+
+        driver1.get(urlIn);
+        driver1.findElement(By.id("user")).sendKeys("admin");
+        driver1.findElement(By.id("pass")).sendKeys("Adminadmin1");
+        //driver1.findElement(By.id("btnLogin")).click();
+
+        WebElement element = driver1.findElement(By.id("btnLogin"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver1;
+        executor.executeScript("arguments[0].click();", element);
+
+        Thread.sleep(2000);
+        driver1.findElement(By.id("chngpsswrd")).click();
+        Thread.sleep(1000);
 
         Thread.sleep(1000);
         driver1.findElement(By.id("newPass")).sendKeys("admin");
@@ -137,6 +193,7 @@ public class CambioPasswordRestCCSTest {
         String alertChk = "username e codice fiscale non coincidono";
         if(alert.equalsIgnoreCase(alertChk)) flag = true;
         Assertions.assertTrue(flag);
+
         driver1.close();
     }
 }

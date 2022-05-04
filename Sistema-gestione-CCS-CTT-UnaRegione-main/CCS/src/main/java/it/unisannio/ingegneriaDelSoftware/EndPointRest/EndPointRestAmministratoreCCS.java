@@ -125,7 +125,7 @@ public class EndPointRestAmministratoreCCS implements EndPointAmministratoreCCS{
 
 		return Response
 				.status(Response.Status.CREATED)
-				.entity(getPDF(cdf, username, password))
+				//.entity(getPDF(cdf, username, password))
 				.build();
 	}
 

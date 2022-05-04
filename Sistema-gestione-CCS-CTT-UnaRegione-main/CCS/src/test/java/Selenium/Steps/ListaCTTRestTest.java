@@ -5,11 +5,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
 import it.unisannio.ingegneriaDelSoftware.DomainTypes.Beans.User;
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -18,10 +21,12 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Form;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ListaCTTRestTest {
 
-    public static WebDriver driver1, driver2;
+    public static WebDriver driver1;
     String urlIn = "http://127.0.0.1:8080/Login.html";
     String urlOut = "http://127.0.0.1:8080/ChangePasswordAfterLogin.html";
     MongoDataManager mm = MongoDataManager.getInstance();
@@ -32,15 +37,36 @@ public class ListaCTTRestTest {
     Form form, form1;
 
     @Given("L'amministratore si autenitica sul portale")
-    public void l_amministratore_si_autenitica_sul_portale(){
+    public void l_amministratore_si_autenitica_sul_portale() throws MalformedURLException {
+        //System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
         System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
-        driver1 = new EdgeDriver();
+
+        EdgeOptions options = new EdgeOptions();
+
+        //WebDriverManager.edgedriver().setup();
+
+        options.addArguments("test-type");
+        options.addArguments("--disable-web-security");
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+
+        URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+
+        driver1 = new RemoteWebDriver(remoteUrl, options);
 
         driver1.get(urlIn);
         driver1.manage().window().maximize();
         driver1.findElement(By.id("user")).sendKeys("admin");
         driver1.findElement(By.id("pass")).sendKeys("Adminadmin1");
-        driver1.findElement(By.id("btnLogin")).click();
+        //driver1.findElement(By.id("btnLogin")).click();
+
+        WebElement element = driver1.findElement(By.id("btnLogin"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver1;
+        executor.executeScript("arguments[0].click();", element);
     }
 
     @When("Viene compilato il form per l'aggiunta di un nuovo CTT per aumentare il numero in lista")
@@ -73,7 +99,7 @@ public class ListaCTTRestTest {
         token = user.getToken();
 
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        Assertions.assertEquals(2, mm.getListaCTT().size());
+        Assertions.assertEquals(3, mm.getListaCTT().size());
     }
 
     @When("Viene compilato il form per l'aggiunta di un nuovo CTT sbagliato per auementare il numero in lista")
@@ -100,8 +126,7 @@ public class ListaCTTRestTest {
     @Then("Viene sottomesso il form e non restituita la dimensione di una lista di CTT")
     public void viene_sottomesso_il_form_e_non_restituita_la_dimensione_di_una_lista_di_CTT(){
         listaCTT.request().header(HttpHeaders.AUTHORIZATION, "Basic "+token).get();
-        Assertions.assertEquals(2, mm.getListaCTT().size());
-        driver1.close();
+        Assertions.assertEquals(3, mm.getListaCTT().size());
     }
 
 }

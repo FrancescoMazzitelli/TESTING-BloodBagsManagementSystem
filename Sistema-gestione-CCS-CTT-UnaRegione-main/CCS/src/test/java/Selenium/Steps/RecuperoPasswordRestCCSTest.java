@@ -6,16 +6,39 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class RecuperoPasswordRestCCSTest {
 
-    public static WebDriver driver1, driver2;
+    public static WebDriver driver1;
     String urlIn = "http://127.0.0.1:8080/Login.html";
     String urlOut = "http://127.0.0.1:8080/AmministratoreCCS.html";
 
     @Given("Viene immesso l'username")
-    public void viene_immesso_l_username() throws InterruptedException {
-        driver1 = new EdgeDriver();
+    public void viene_immesso_l_username() throws InterruptedException, MalformedURLException {
+        System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
+
+        EdgeOptions options = new EdgeOptions();
+
+        //WebDriverManager.edgedriver().setup();
+
+        options.addArguments("test-type");
+        options.addArguments("--disable-web-security");
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+
+        URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+
+        driver1 = new RemoteWebDriver(remoteUrl, options);
+
         driver1.get(urlIn);
         Thread.sleep(1000);
         driver1.findElement(By.xpath("//a[contains(text(), 'Hai dimenticato email o password?')]")).click();
@@ -81,6 +104,5 @@ public class RecuperoPasswordRestCCSTest {
         String alertChk = "username e codice fiscale non coincidono";
         if(alert.equalsIgnoreCase(alertChk)) flag = true;
         Assertions.assertTrue(flag);
-        driver1.close();
     }
 }
