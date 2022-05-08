@@ -19,8 +19,8 @@ jobs:
       - name: Set the selenium server
         run: |
           docker ps
-          docker exec docker-ccs sh
-          dir
+          docker exec docker-ccs dir
+          docker exec docker-ccs cd home/app
       - name: Run Tests
         run: |
           docker exec cd home/app
