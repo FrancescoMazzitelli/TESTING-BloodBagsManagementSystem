@@ -15,7 +15,7 @@ jobs:
       - name: Pull the docker image for CCS
         run: docker pull francescomazzitelli/ccs:latest
       - name: Run container
-        run: docker run --name docker-ccs -w /home/app -d -p 8080:8080 francescomazzitelli/ccs
+        run: docker run --name docker-ccs -d -p 8080:8080 francescomazzitelli/ccs -w /home/app
       - name: Set the selenium server
         run: |
           docker ps
