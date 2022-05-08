@@ -22,7 +22,7 @@ jobs:
           sudo ls
           sudo ls
           sudo ls
-          sudo docker cp docker-ccs:home/app/msedgedriver home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/home
+          sudo docker cp docker-ccs:home/app/msedgedriver /home
           sudo docker cp home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/home/msedgedriver docker-ccs:/
       - name: Set the selenium server
         run: |
