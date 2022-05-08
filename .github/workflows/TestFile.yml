@@ -26,5 +26,4 @@ jobs:
         run: |
           exec cd home/app
           exec mvn test
-
- 
+          
