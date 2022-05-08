@@ -18,6 +18,7 @@ jobs:
         run: docker run --name docker-ccs -d -p 8080:8080 francescomazzitelli/ccs -w /home/app
       - name: Copy the driver from container/home/app -> VM -> container
         run: |
+          sudo su
           docker cp docker-ccs:home/app/msedgedriver /home
           docker cp home/msedgedriver docker-ccs:/
       - name: Set the selenium server
