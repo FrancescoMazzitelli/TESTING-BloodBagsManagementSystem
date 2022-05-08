@@ -16,6 +16,8 @@ jobs:
         run: docker pull francescomazzitelli/ccs:latest
       - name: Run container
         run: docker run --name docker-ccs -d -p 8080:8080 francescomazzitelli/ccs -w /home/app
+      - name: Copy the driver from repository to container
+        run: dir
       - name: Set the selenium server
         run: |
           docker ps
