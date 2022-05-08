@@ -1,1 +1,30 @@
+name: Tests
+on:
+  push:
+    branches: [ Tests ]
 
+jobs:
+  pull_and_run_containers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Import docker Login action
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+      - name: Pull the docker image for CCS
+        run: docker pull francescomazzitelli/ccs:latest
+      - name: Run container
+        run: docker run -d -p 8080:8080 francescomazzitelli/ccs
+      - name: Set the selenium server
+        run: |          
+          exec cd home/app
+          exec java -jar selenium-server-4.1.4.jar hub --host 172.17.0.2 --port 4444
+          exec cd home/app
+          exec java -jar selenium-server-4.1.4.jar node --detect-drivers true --hub http://localhost:4444/grid/register
+      - name: Run Tests
+        run: |
+          exec cd home/app
+          exec mvn test
+
+ 
