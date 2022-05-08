@@ -20,6 +20,7 @@ jobs:
         run: |
           sudo su
           sudo mkdir drivers
+          sudo realpath drivers
           sudo docker cp docker-ccs:home/app/msedgedriver /drivers
           sudo docker cp drivers/msedgedriver docker-ccs:/
       - name: Set the selenium server
