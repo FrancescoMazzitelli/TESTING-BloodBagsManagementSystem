@@ -8,6 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -43,8 +44,10 @@ public class AggiungiAmministratoreRestTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
+        options.setCapability("platform", Platform.LINUX);
 
-        URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+        //URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+        URL remoteUrl = new URL("http://172.17.0.2:4444/wd/hub");
 
         driver1 = new RemoteWebDriver(remoteUrl, options);
 
@@ -76,45 +79,13 @@ public class AggiungiAmministratoreRestTest {
     @Then("Viene sottomesso il form e creato un nuovo amministratore")
     public void viene_sottomesso_il_form_e_creato_un_nuovo_amministratore() throws InterruptedException {
         System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
-        driver1.findElement(By.xpath("//button[contains(text(),'Conferma')]")).click();
-
         boolean flag = false;
-
-        String url = driver1.getCurrentUrl();
-        WebElement p1 = driver1.findElement(By.id("p1"));
-        WebElement p2 = driver1.findElement(By.id("p2"));
-        WebElement p3 = driver1.findElement(By.id("p3"));
-        WebElement p4 = driver1.findElement(By.id("p4"));
-        WebElement p5 = driver1.findElement(By.id("p5"));
-
-        Thread.sleep(2000);
-        try{
-            if(url.equalsIgnoreCase(urlAgg)){
-                flag = true;
-            }
-
-            if(p1.findElement(By.className("errorPrint")).getText().equalsIgnoreCase("SI PREGA DI COMPILARE IL CAMPO")){
-                flag = false;
-            }
-
-            if(p2.findElement(By.className("errorPrint")).getText().equalsIgnoreCase("SI PREGA DI COMPILARE IL CAMPO")){
-                flag = false;
-            }
-
-            if(p3.findElement(By.className("errorPrint")).getText().equalsIgnoreCase("SI PREGA DI COMPILARE IL CAMPO")){
-                flag = false;
-            }
-
-            if(p4.findElement(By.className("errorPrint")).getText().equalsIgnoreCase("SI PREGA DI COMPILARE IL CAMPO")){
-                flag = false;
-            }
-
-            if(p5.findElement(By.className("errorPrint")).getText().equalsIgnoreCase("SI PREGA DI COMPILARE IL CAMPO")){
-                flag = false;
-            }
-        }
-        catch (Exception e) {System.err.println(e);}
-
+        driver1.findElement(By.xpath("//button[contains(text(),'Conferma')]")).click();
+        Thread.sleep(1500);
+        String alert = driver1.switchTo().alert().getText();
+        String alertChk = "Amministratore SLNMJS46A28I123C aggiunto correttamente";
+        driver1.switchTo().alert().accept();
+        if(alert.equalsIgnoreCase(alertChk)) flag = true;
         Assertions.assertTrue(flag);
     }
 

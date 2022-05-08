@@ -5,8 +5,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class RecuperoPasswordRestCTTTest {
 
@@ -15,11 +21,27 @@ public class RecuperoPasswordRestCTTTest {
     String urlOut = "http://127.0.0.1:8081/AmministratoreCTT.html";
 
     @Given("L'admin si autentica sul portale")
-    public void un_amministratore_si_autentica_sul_portale(){
+    public void un_amministratore_si_autentica_sul_portale() throws MalformedURLException {
         System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
-        driver1 = new EdgeDriver();
+        EdgeOptions options = new EdgeOptions();
+
+        //WebDriverManager.edgedriver().setup();
+
+        options.addArguments("test-type");
+        options.addArguments("--disable-web-security");
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.setCapability("platform", Platform.LINUX);
+
+        //URL remoteUrl = new URL("http://192.168.1.125:4444/wd/hub");
+        URL remoteUrl = new URL("http://172.17.0.2:4444/wd/hub");
+
+        driver1 = new RemoteWebDriver(remoteUrl, options);
         driver1.get(urlIn);
-        driver1.manage().window().maximize();
     }
 
     @When("Viene inserita una nuova password")

@@ -37,12 +37,11 @@ public class RicercaSaccaLocaleSteps {
 
     @When("Viene compilato il form per la ricerca")
     public void vieneCompilatoIlFormPerLaRicerca() {
-        ricercaLocale1 = ricercaLocale.queryParam("gruppoSanguigno", "Bp")
-                .queryParam("numeroSacche", "2")
-                .queryParam("dataArrivoMassima", "2022-12-22")
+        ricercaLocale1 = ricercaLocale.queryParam("gruppoSanguigno", "Ap")
+                .queryParam("numeroSacche", "1")
+                .queryParam("dataArrivoMassima", "2025-01-02")
                 .queryParam("enteRichiedente", "Ospedale Rummo")
-                .queryParam("indirizzoEnte", "Benevento, via pacevecchia 2")
-                .queryParam("priorità", "TRUE");
+                .queryParam("indirizzoEnte", "Benevento, via pacevecchia 2");
     }
 
     @Then("Viene sottomesso il form e ricercata la sacca")

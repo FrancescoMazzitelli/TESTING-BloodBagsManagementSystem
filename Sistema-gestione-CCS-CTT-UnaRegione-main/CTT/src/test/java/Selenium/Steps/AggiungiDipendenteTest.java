@@ -7,10 +7,13 @@ import it.unisannio.ingegneriaDelSoftware.CttRestApplication;
 import it.unisannio.ingegneriaDelSoftware.DataManagers.MongoDataManager;
 import org.bson.conversions.Bson;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -30,28 +33,66 @@ public class AggiungiDipendenteTest {
     }
 */
     @Given("L'utente effettua l'accesso sull'apposito portale")
-    public void l_utente_effettua_l_accesso_sull_apposito_portale(){
+    public void l_utente_effettua_l_accesso_sull_apposito_portale() throws MalformedURLException {
+        System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
         MongoDataManager md = MongoDataManager.getInstance();
-        Bson query1, query2, query3;
+        Bson query1, query2, query3, query4, query5, query6, query7, query8, query9;
         query1 = eq("seriale", "CTT001-00000001");
         query2 = eq("seriale", "CTT001-00000002");
         query3 = eq("seriale", "CTT001-00000003");
+        query4 = eq("seriale", "CTT001-00000011");
+        query5 = eq("seriale", "CTT001-00000012");
+        query6 = eq("seriale", "CTT001-00000013");
+        query7 = eq("seriale", "CTT001-00000008");
+        query8 = eq("seriale", "CTT001-00000009");
+        query9 = eq("seriale", "CTT001-00000010");
         MongoCollection collection = md.getCollectionDatiSacca();
         DeleteResult result1 = collection.deleteOne(query1);
         DeleteResult result2 = collection.deleteOne(query2);
         DeleteResult result3 = collection.deleteOne(query3);
+        DeleteResult result4 = collection.deleteOne(query4);
+        DeleteResult result5 = collection.deleteOne(query5);
+        DeleteResult result6 = collection.deleteOne(query6);
+        DeleteResult result7 = collection.deleteOne(query7);
+        DeleteResult result8 = collection.deleteOne(query8);
+        DeleteResult result9 = collection.deleteOne(query9);
 
         System.out.println("CTT001-00000001 "+result1.wasAcknowledged());
         System.out.println("CTT001-00000002 "+result2.wasAcknowledged());
         System.out.println("CTT001-00000003 "+result3.wasAcknowledged());
+        System.out.println("CTT001-00000011 "+result4.wasAcknowledged());
+        System.out.println("CTT001-00000012 "+result5.wasAcknowledged());
+        System.out.println("CTT001-00000013 "+result6.wasAcknowledged());
+        System.out.println("CTT001-00000008 "+result7.wasAcknowledged());
+        System.out.println("CTT001-00000009 "+result8.wasAcknowledged());
+        System.out.println("CTT001-00000010 "+result9.wasAcknowledged());
 
-        System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
-        driver1 = new EdgeDriver();
+        EdgeOptions options = new EdgeOptions();
+
+        //WebDriverManager.edgedriver().setup();
+
+        options.addArguments("test-type");
+        options.addArguments("--disable-web-security");
+        options.addArguments("--allow-running-insecure-content");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+        options.addArguments("--disable-gpu");
+        options.setCapability("platform", Platform.LINUX);
+
+        //URL remoteUrl = new URL("http://192.168.1.125:4444/wd/hub");
+        URL remoteUrl = new URL("http://172.17.0.2:4444/wd/hub");
+
+        driver1 = new RemoteWebDriver(remoteUrl, options);
+
         driver1.get(urlIn);
-        driver1.manage().window().maximize();
         driver1.findElement(By.id("user")).sendKeys("username 003");
         driver1.findElement(By.id("pass")).sendKeys("Password3");
-        driver1.findElement(By.id("btnLogin")).click();
+        //driver1.findElement(By.id("btnLogin")).click();
+        WebElement element = driver1.findElement(By.id("btnLogin"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver1;
+        executor.executeScript("arguments[0].click();", element);
     }
 
     @When("Viene compilato il form per l'aggiunta di un magazziniere")

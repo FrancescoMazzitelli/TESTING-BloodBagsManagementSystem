@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -27,6 +28,9 @@ public class CambioPasswordRestCCSTest {
 
         //WebDriverManager.edgedriver().setup();
 
+        DesiredCapabilities capability = new DesiredCapabilities();
+        capability.setBrowserName("MicrosoftEdge");
+
         options.addArguments("test-type");
         options.addArguments("--disable-web-security");
         options.addArguments("--allow-running-insecure-content");
@@ -35,9 +39,10 @@ public class CambioPasswordRestCCSTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
-        options.addArguments("--incognito");
+        options.setCapability("platform", Platform.LINUX);
 
-        URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+        //URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+        URL remoteUrl = new URL("http://172.17.0.2:4444/wd/hub");
 
         driver1 = new RemoteWebDriver(remoteUrl, options);
 
@@ -86,7 +91,7 @@ public class CambioPasswordRestCCSTest {
     }
 
     @Then("Viene sottomessa e non cambiata la password a causa del token errato")
-    public void viene_sottomessa_e_non_cambiata_la_password_a_causa_del_token_errato() throws InterruptedException {
+    public void viene_sottomessa_e_non_cambiata_la_password_a_causa_del_token_errato() throws InterruptedException, MalformedURLException {
         //System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
         System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
 
@@ -102,12 +107,12 @@ public class CambioPasswordRestCCSTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
-        options.setCapability("SUPPORTS_NETWORK_CONNECTION", true);
+        options.setCapability("platform", Platform.LINUX);
 
         //URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+        URL remoteUrl = new URL("http://172.17.0.2:4444/wd/hub");
 
-        //driver = new RemoteWebDriver(remoteUrl, options);
-        driver1 = new EdgeDriver(options);
+        driver1 = new RemoteWebDriver(remoteUrl, options);
 
         driver1.get(urlOut);
 

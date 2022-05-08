@@ -6,36 +6,334 @@
   <component name="ChangeListManager">
     <list default="true" id="e614c052-8e34-470b-a03c-d54e7a30dad8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestAmministratoreCCS.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestAmministratoreCCS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/AggiungiAmministratoreRestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/AggiungiAmministratoreRestSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/AggiungiCTTRestTestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/AggiungiCTTRestTestSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/AggiungiAmministratoreRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/JUnit/AggiungiAmministratoreRestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/AggiungiCTTRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/JUnit/AggiungiCTTRestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/AggiungiAmministratoreRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/AggiungiAmministratoreRestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/AggiungiCTTRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/AggiungiCTTRestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/CambioPasswordRestCCSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/CambioPasswordRestCCSTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/ListaCTTRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/ListaCTTRestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/LogoutTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/LogoutTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RecuperoPasswordRestCCSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RecuperoPasswordRestCCSTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RemoveAmministratoreCCSRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RemoveAmministratoreCCSRestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RemoveCTTRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RemoveCTTRestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/ReportsCCSRestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/ReportsCCSRestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/java/Selenium/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/AggiungiAmministratoreRestTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/resources/Features/AggiungiAmministratoreRestTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/AggiungiCTTRestTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/resources/Features/AggiungiCTTRestTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/CambioPasswordRestCCSTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/resources/Features/CambioPasswordRestCCSTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/ListaCTTRestTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/resources/Features/ListaCTTRestTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/LogOutRestTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/resources/Features/LogOutRestTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/LoginRestTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/resources/Features/LoginRestTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/RecuperoPasswordRestCCSTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/resources/Features/RecuperoPasswordRestCCSTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/RemoveAmministratoreCCSRestTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/resources/Features/RemoveAmministratoreCCSRestTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/RemoveCTTRestTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/resources/Features/RemoveCTTRestTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/ReportCCSRestTest.feature" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/src/test/resources/Features/ReportCCSRestTest.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTT/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/CCS/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/selenium-server-standalone-3.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/WebSocket/Decoders/CTTNameDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/WebSocket/Decoders/NotificaSaccaInScadenzaDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/WebSocket/Decoders/SaccaWrapperDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/WebSocket/Encoders/CTTNameEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/WebSocket/Encoders/NotificaSaccaInScadenzaEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/WebSocket/Encoders/SaccaWrapperEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/WebSocket/WebSocketConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Annotazioni/Secured.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/CcsRestApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/ClientRest/CCSRestClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/Codec/CTTCodec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/Codec/DipendenteCodec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/Codec/SaccaCodec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/MongoDataManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Beans/Sacca.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Beans/Seriale.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Beans/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/CTT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/CTTName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/CTTPosition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Cdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/DatiSacca.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Dipendente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/GruppoSanguigno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Notifiche/NotificaEvasione.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Notifiche/NotificaRisultatiRicerca.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Notifiche/NotificaSaccaInScadenza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/RuoloDipendente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Wrapper/SaccaWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestAmministratoreCCS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestAutentificazione.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestRicercaGlobale.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestSaccheInScadenza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/EntityAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/EntityNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/AssertionErrorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/DateTimeParseExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/EntityAlreadyExistsExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/EntityNotFoundExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/ExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/IllegalArgumentExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/InterruptedExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/NumberFormaExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/SettingsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Filtri/FiltroDiAutentificazione.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Filtri/FiltroWebSocket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Functional/Comparator/CTTConPiuSacche.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Functional/Comparator/CTTDistanceComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Functional/ConnectionVerifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Functional/IDGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Functional/NotificaSaccaInScadenzaMaker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Functional/PDFGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/CCSFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/EndPointAmministratoreCCS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/EndPointAutentificazione.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/EndPointRicercaGlobale.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/EndPointSaccheInScadenzaCCS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/Notifica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/Observer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/Searcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/Subject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/SaccheInScadenza/SaccheInScadenzaObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/SaccheInScadenza/WebSocketEndpointSaccheInScadenza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Searchers/NonPrioritySearcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Searchers/PrioritySearcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Searchers/SearcherFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/CTTNameProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/DatabaseProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/NetworkProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/Settings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/AggiuntaNuovoAmministratoreCCSForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/AggiuntaNuovoCTTForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/AmministratoreCCS.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/ChangePassword.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/ChangePasswordAfterLogin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/Login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/QueryMenuCCS.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/RimozioneAmministratoreCCSForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/RimozioneCTTForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/css/formStylesPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/css/queryMenuStyles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/css/stylesPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/css/tables.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/img/Amministratore.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/img/LOGO_CCS.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/img/LOGO_CENTER_R.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/img/Operatore.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/img/bg-pattern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/img/return.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/img/returnBlue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/img/searchicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/js/filter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/js/queryMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/js/scriptControl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/main/resources/static/assets/js/websocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/AggiungiAmministratoreRestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/AggiungiCTTRestTestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/CambioPasswordRestCCSSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/ListaCTTRestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/LoginRestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/LogoutRestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/RecuperoPasswordRestCCSSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/RemoveAmministratoreCCSRestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/RemoveCTTRestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/Steps/ReportsCCSRestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Cucumber/TestRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/AggiungiAmministratoreRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/AggiungiCTTRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/CambioPasswordRestCCSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/ListaCTTRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/LogOutRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/LoginRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/RecuperoPasswordRestCCSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/RemoveAmministratoreCCSRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/RemoveCTTRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/ReportDipendentiCCSRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/ReportGiacenzaMediaSaccheRegionaleRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/ReportSaccheInviateRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/ReportSaccheRicevuteRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/JUnit/ReportStatisticoSaccheRegionaleRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/AggiungiAmministratoreRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/AggiungiCTTRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/CambioPasswordRestCCSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/ListaCTTRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/LoginTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/LogoutTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RecuperoPasswordRestCCSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RemoveAmministratoreCCSRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/RemoveCTTRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/Steps/ReportsCCSRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/java/Selenium/TestRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/AggiungiAmministratoreRestTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/AggiungiCTTRestTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/CambioPasswordRestCCSTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/ListaCTTRestTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/LogOutRestTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/LoginRestTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/RecuperoPasswordRestCCSTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/RemoveAmministratoreCCSRestTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/RemoveCTTRestTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Features/ReportCCSRestTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Selenium_WebDrivers/chromedriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CCS/src/test/resources/Selenium_WebDrivers/msedgedriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/CTT/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/selenium-server-standalone-3.9.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/Decoders/NotificaEvasioneDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/Decoders/NotificaRisultatiRicercaDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/Decoders/NotificaSaccaInScadenzaDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/Decoders/NotificaSmaltimentoSaccheDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/Decoders/SaccaWrapperDecoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/Encoders/NotificaEvasioneEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/Encoders/NotificaRisultatiRicercaEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/Encoders/NotificaSaccaInScadenzaEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/Encoders/NotificaSmaltimentoSaccheEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/Encoders/SaccaWrapperEncoder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/WebSocket/WebSocketConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/AbstractClasses/MagazziniereSubject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/AbstractClasses/OperatoreSubject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Annotazioni/Secured.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/ClientRest/CTTRestClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/CttRestApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/Codec/DatiSaccaCodec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/Codec/DipendenteCodec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/Codec/SaccaCodec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DataManagers/MongoDataManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Beans/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/CTTName.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Cdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/DatiSacca.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Dipendente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/GruppoSanguigno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Notifiche/NotificaEvasione.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Notifiche/NotificaRisultatiRicerca.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Notifiche/NotificaSaccaInScadenza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Notifiche/NotificaSmaltimentoSacche.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/RuoloDipendente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Sacca.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Seriale.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/DomainTypes/Wrapper/SaccaWrapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestAmministratoreCTT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestAutentificazione.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestMagazziniereCTT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestNotificheMagazziniere.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestNotificheOperatore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/EndPointRest/EndPointRestOperatoreCTT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/EntityAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/EntityNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/AssertionErrorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/DateTimeParseExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/EntityAlreadyExistsExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/EntityNotFoundExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/ExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/IllegalArgumentExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/ExceptionHandler/InterruptedExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/NotificaNotCreatedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Exceptions/SaccheInLocaleNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Filtri/FiltroDiAutentificazione.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Filtri/FiltroDiAutorizzazione.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Filtri/FiltroWebSocket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Functional/ConnectionVerifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Functional/IDGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Functional/PDFGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/CTTFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/DataManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/EndPointAmministratoreCTT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/EndPointAutentificazione.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/EndPointMagazziniereCTT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/EndPointOperatoreCTT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/Observer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/ResponseHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/Searcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Interfaces/Subject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Magazziniere/EvasioneSacche/EvasioneObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Magazziniere/EvasioneSacche/WebSocketEndPointEvasioneSacche.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Magazziniere/SmaltimentoSacche/SaccheScaduteRemover.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Magazziniere/SmaltimentoSacche/SmaltimentoObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Magazziniere/SmaltimentoSacche/WebSocketEndPointSmaltimentoSacche.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Operatore/RicercaGlobale/RisultatiRicercaGlobaleObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Operatore/RicercaGlobale/WebSocketEndPointResultRicercaGlobale.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Operatore/SaccheInScadenza/GestioneScadenzeCTT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Operatore/SaccheInScadenza/SaccheInScadenzaClientEndPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Operatore/SaccheInScadenza/SaccheInScadenzaObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Operatore/SaccheInScadenza/WebSocketEndPointSaccheInScadenza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/ResponseHandler/ResponseBuilderFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/ResponseHandler/SaccheNonTrovateInLocaleHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/ResponseHandler/SaccheTrovateInLocaleHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/ResponseHandler/SaccheTrovateParzialmenteInLocaleHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Searcher/CompositionSearcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Searcher/SearcherCompatibile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Searcher/SearcherLocale.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/CTTNameProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/DatabaseProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/NetworkProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/SerialSettings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/java/it/unisannio/ingegneriaDelSoftware/Util/Settings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/AggiungiSaccaForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/AggiuntaNuovoDipendenteCTTForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/AmministratoreCTT.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/ChangePassword.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/ChangePasswordAfterLogin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/EvasioneSaccaInScadenzaForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/Login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/MagazziniereCTT.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/OperatoreCTT.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/QueryMenuCTT.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/RicercaSaccaForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/RimozioneDipendenteCTTForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/css/formStylesPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/css/queryMenuStyles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/css/stylesPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/css/tables.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/img/Amministratore.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/img/LOGOCTTSFONDO.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/img/LOGO_CENTER_R.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/img/LOGO_CTT.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/img/Magazziniere.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/img/Operatore.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/img/bg-pattern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/img/return.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/img/returnBlue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/img/searchicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/js/filter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/js/queryMenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/js/scriptControl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/js/webSocketRicercaGlobale.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/js/webSocketScadenze.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/js/webSocketSmaltimento.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/main/resources/static/assets/js/websocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/AggiungiDipendenteSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/AggiuntaSaccaMagazzinoSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/CambioPasswordRestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/EvasioneSaccaSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/LoginSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/LogoutRestSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/RecuperoPasswordRestCTTSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/RemoveDipendenteCTTSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/ReportStatisticiSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/Steps/RicercaSaccaLocaleSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Cucumber/TestRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/AggiungiDipendenteTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/AggiuntaSaccaMagazzinoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/CambioPasswordRestCTTTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/EvasioneSaccaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/LogOutRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/LoginTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/RecuperoPasswordRestCTTTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/RemoveDipendenteCTTTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/ReportDipendentiCTTRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/ReportGiacenzaMediaSaccheLocaleRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/ReportSaccheInviateRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/ReportSaccheRicevuteRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/ReportStatisticoSaccheLocaleRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/JUnit/RicercaSaccaLocaleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/AggiungiDipendenteTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/AggiuntaSaccaMagazzinoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/CambioPasswordRestCTTTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/EvasioneSaccaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/LoginTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/LogoutRestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/RecuperoPasswordRestCTTTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/RemoveDipendenteCTTTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/ReportStatisticiTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/Steps/RicercaSaccaLocaleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/java/Selenium/TestRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Features/AggiungiDipendenteTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Features/AggiuntaSaccaMagazzinoTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Features/CambioPasswordRestCTTTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Features/EvasioneSaccaTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Features/LogOutRestTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Features/LoginTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Features/RecuperoPasswordRestCTTTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Features/RemoveDipendenteCTTTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Features/ReportStatisticiTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Features/RicercaSaccaLocaleTest.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Selenium_WebDrivers/chromedriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CTT/src/test/resources/Selenium_WebDrivers/msedgedriver.exe" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +380,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CCS/webdrivermanager-5.1.1.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CTT/src/test/java/Selenium" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -91,10 +389,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT" />
-      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CCS" />
-      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT\src\main\resources" />
-      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CCS\src\test" />
+      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT\src\test\java\Selenium" />
+      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT\src\test\java" />
+      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT\src\test\resources\Features" />
+      <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT\src\test\resources" />
       <recent name="C:\Users\panne\Ingegneria-del-software-magistrale-2022\Sistema-gestione-CCS-CTT-UnaRegione-main\CTT\src\test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">

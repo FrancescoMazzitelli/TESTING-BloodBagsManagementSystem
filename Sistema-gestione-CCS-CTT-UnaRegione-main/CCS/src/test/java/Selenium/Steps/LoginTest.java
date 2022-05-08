@@ -3,12 +3,10 @@ package Selenium.Steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
@@ -23,7 +21,7 @@ public class LoginTest {
     String urlOut = "http://127.0.0.1:8080/AmministratoreCCS.html";
 
     @Given("Viene compilato il form per il login")
-    public void viene_compilato_il_form_per_il_login() {
+    public void viene_compilato_il_form_per_il_login() throws MalformedURLException {
         System.setProperty("webdriver.edge.driver", "src/test/resources/Selenium_WebDrivers/msedgedriver.exe");
 
         EdgeOptions options = new EdgeOptions();
@@ -38,12 +36,13 @@ public class LoginTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
-        options.setCapability("SUPPORTS_NETWORK_CONNECTION", true);
+        options.setCapability("platform", Platform.LINUX);
 
         //URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+        URL remoteUrl = new URL("http://172.17.0.2:4444/wd/hub");
 
-        //driver = new RemoteWebDriver(remoteUrl, options);
-        driver1 = new EdgeDriver(options);
+        driver1 = new RemoteWebDriver(remoteUrl, options);
+
         driver1.get(urlIn);
         driver1.manage().window().maximize();
         driver1.findElement(By.id("user")).sendKeys("admin");
@@ -82,8 +81,10 @@ public class LoginTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         options.addArguments("--disable-gpu");
+        options.setCapability("platform", Platform.LINUX);
 
-        URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+        //URL remoteUrl = new URL("http://localhost:4444/wd/hub");
+        URL remoteUrl = new URL("http://172.17.0.2:4444/wd/hub");
 
         driver1 = new RemoteWebDriver(remoteUrl, options);
 

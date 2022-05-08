@@ -38,19 +38,19 @@ public class AggiuntaSaccaMagazzinoSteps {
     public void vieneCompilatoIlFormPerLAggiuntaDiUnaNuovaSacca() {
         form1 = new Form();
         form1.param("gruppo_sanguigno", GruppoSanguigno.Ap.toString());
-        form1.param("data_scadenza", "2023-11-10");
+        form1.param("data_scadenza", "2025-11-10");
         form1.param("data_produzione", "2022-03-12");
         form1.param("ente_donatore", "DonatoreProva1");
 
         form2 = new Form();
         form2.param("gruppo_sanguigno", GruppoSanguigno.Ap.toString());
-        form2.param("data_scadenza", "2022-11-10");
+        form2.param("data_scadenza", "2025-11-10");
         form2.param("data_produzione", "2022-04-20");
         form2.param("ente_donatore", "DonatoreProva1");
 
         form3 = new Form();
         form3.param("gruppo_sanguigno", GruppoSanguigno.Am.toString());
-        form3.param("data_scadenza", "2022-11-10");
+        form3.param("data_scadenza", "2025-11-10");
         form3.param("data_produzione", "2022-04-20");
         form3.param("ente_donatore", "DonatoreProva2");
     }
