@@ -15,13 +15,13 @@ jobs:
       - name: Pull the docker image for CCS
         run: docker pull francescomazzitelli/ccs:latest
       - name: Run container
-        run: docker run --name docker-ccs -d -p 8080:8080 francescomazzitelli/ccs
+        run: docker run --name docker-ccs -w home/app -d -p 8080:8080 francescomazzitelli/ccs
       - name: Set the selenium server
         run: |
           docker ps
           docker exec docker-ccs dir
-          docker run docker-ccs -w home/app java -jar selenium-server-4.1.4.jar hub --host 172.17.0.2 --port 4444
-          docker run docker-ccs -w home/app java -jar selenium-server-4.1.4.jar node --detect-drivers true --hub http://localhost:4444/grid/register
+          docker run docker-ccs java -jar selenium-server-4.1.4.jar hub --host 172.17.0.2 --port 4444
+          docker run docker-ccs java -jar selenium-server-4.1.4.jar node --detect-drivers true --hub http://localhost:4444/grid/register
       - name: Run Tests
         run: |
           docker exec cd home/app
