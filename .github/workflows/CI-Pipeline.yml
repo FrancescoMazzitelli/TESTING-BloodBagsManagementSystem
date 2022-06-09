@@ -30,7 +30,10 @@ jobs:
           mvn package -DskipTests
       
       - name: Create the container
-        run: docker build -f Dockerfile -t docker-ccs .
+        run: |
+          cd /home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CCS
+          ls
+          docker build -f Dockerfile -t docker-ccs .
           
       - name: Run container
         run: docker run --name ccs -d -p 8080:8080 docker-ccs -w /home/app
@@ -77,10 +80,13 @@ jobs:
           mvn package -DskipTests
       
       - name: Create the container
-        run: docker build -f Dockerfile -t docker-ctt .
+        run: |
+          cd /home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CTT
+          ls
+          docker build -f Dockerfile -t docker-ccs .
           
       - name: Run container
-        run: docker run --name ctt -d -p 8080:8080 docker-ctt -w /home/app
+        run: docker run --name ctt -d -p 8081:8081 docker-ctt -w /home/app
       
       - name: Set the selenium server
         run: |
