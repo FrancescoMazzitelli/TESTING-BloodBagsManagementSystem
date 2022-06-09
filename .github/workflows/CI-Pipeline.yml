@@ -66,7 +66,7 @@ jobs:
         run: sudo apt-get update
       
       - name: Download Edge
-        run: wget -P /home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CCS "http://download1492.mediafire.com/bjor2hakexkg/axbrk2frk18va0d/microsoft-edge-stable_101.0.1210.32-1_amd64.deb"
+        run: wget -P /home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CTT "http://download1492.mediafire.com/bjor2hakexkg/axbrk2frk18va0d/microsoft-edge-stable_101.0.1210.32-1_amd64.deb"
       
       - name: Check if downloaded
         run: |
