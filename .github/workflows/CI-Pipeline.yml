@@ -41,10 +41,8 @@ jobs:
       - name: Set the selenium server
         run: |
           docker ps
-          docker exec ccs cd home/app
-          docker exec ccs dir
-          docker exec ccs java -jar home/app/selenium-server-4.1.4.jar hub --host 172.17.0.2 --port 4444 &
-          docker exec ccs java -jar home/app/selenium-server-4.1.4.jar node --detect-drivers true --hub http://localhost:4444/grid/register &
+          docker exec ccs java -jar home/app/selenium-server-4.1.4.jar hub --host 172.17.0.2 --port 4442 &
+          docker exec ccs java -jar home/app/selenium-server-4.1.4.jar node --detect-drivers true --hub http://localhost:4442/grid/register &
       
       - name: Run Tests
         run: docker exec ccs mvn test --file /home/app
@@ -93,8 +91,8 @@ jobs:
       - name: Set the selenium server
         run: |
           docker ps
-          docker exec ctt java -jar home/app/selenium-server-4.1.4.jar hub --host 172.17.0.2 --port 4444 &
-          docker exec ctt java -jar home/app/selenium-server-4.1.4.jar node --detect-drivers true --hub http://localhost:4444/grid/register &
+          docker exec ctt java -jar home/app/selenium-server-4.1.4.jar hub --host 172.17.0.2 --port 4442 &
+          docker exec ctt java -jar home/app/selenium-server-4.1.4.jar node --detect-drivers true --hub http://localhost:4442/grid/register &
       
       - name: Run Tests
         run: docker exec ctt mvn test --file /home/app
