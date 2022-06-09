@@ -13,5 +13,5 @@ jobs:
         run: curl https://go.microsoft.com/fwlink?linkid=2149051
       - name: List all the directory
         run: |
-          cd home
+          cd /home/runner/work
           ls
