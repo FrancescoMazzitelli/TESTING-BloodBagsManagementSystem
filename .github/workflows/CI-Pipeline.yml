@@ -11,17 +11,13 @@ jobs:
         run: sudo apt-get update
       - name: Download Edge
         run: wget -P /home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CCS "https://download1492.mediafire.com/rgxmcnld3phg/axbrk2frk18va0d/microsoft-edge-stable_101.0.1210.32-1_amd64.deb"
-      - name: Check if downloaded
-        run: |
-          cd /home/runner/work
-          ls
-          
+
       - name: Package the app into a jar
-        run: mvn package -DskipTests --file "/home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CCS"
-      - name: Move into CCS directory and create the container
         run: |
           cd /home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CCS
-          docker build -f Dockerfile -t docker-ccs .
+          mvn package -DskipTests
+      - name: Create the container
+        run: docker build -f Dockerfile -t docker-ccs .
           
       - name: Run container
         run: docker run --name ccs -d -p 8080:8080 docker-ccs -w /home/app
@@ -49,11 +45,11 @@ jobs:
           ls
           
       - name: Package the app into a jar
-        run: mvn package -DskipTests --file "/home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CTT"
-      - name: Move into CCS directory and create the container
         run: |
           cd /home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CTT
-          docker build -f Dockerfile -t docker-ctt .
+          mvn package -DskipTests
+      - name: Create the container
+        run: docker build -f Dockerfile -t docker-ctt .
           
       - name: Run container
         run: docker run --name ctt -d -p 8080:8080 docker-ctt -w /home/app
