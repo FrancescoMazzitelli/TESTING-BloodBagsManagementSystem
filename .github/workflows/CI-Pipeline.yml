@@ -41,6 +41,8 @@ jobs:
       - name: Set the selenium server
         run: |
           docker ps
+          docker exec ccs cd home/app
+          docker exec ccs dir
           docker exec ccs java -jar home/app/selenium-server-4.1.4.jar hub --host 172.17.0.2 --port 4444 &
           docker exec ccs java -jar home/app/selenium-server-4.1.4.jar node --detect-drivers true --hub http://localhost:4444/grid/register &
       
