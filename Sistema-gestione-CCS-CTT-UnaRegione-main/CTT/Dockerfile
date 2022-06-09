@@ -5,8 +5,10 @@ COPY pom.xml /home/app
 COPY selenium-server-4.1.4.jar /home/app
 COPY microsoft-edge-stable_101.0.1210.32-1_amd64.deb /home
 COPY src/test/resources/Selenium_WebDrivers/msedgedriver /home/app
-RUN apt-get update
+
 RUN apt-get -y install sudo
+RUN sudo apt-get clean
+RUN sudo apt-get update
 RUN apt-get -y install fonts-liberation
 RUN apt-get -y install libasound2
 RUN apt-get -y install libatk-bridge2.0-0
