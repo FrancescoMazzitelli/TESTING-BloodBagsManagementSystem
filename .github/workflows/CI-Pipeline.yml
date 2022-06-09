@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get update
-        run: apt-get update
+        run: sudo apt-get update
       - name: Get sudo
         run: apt-get -y install sudo
       - name: Download Edge
