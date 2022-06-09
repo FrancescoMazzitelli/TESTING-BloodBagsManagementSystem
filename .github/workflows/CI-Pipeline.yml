@@ -10,7 +10,6 @@ jobs:
       - name: Get update
         run: sudo apt-get update
       - name: Download Edge
-        run: curl https://mega.nz/file/wEcXGD6Z#zPCX8dRPoALJkA5Yhfjn_DWmWMibqZv6Nnblzw2dPGQ
+        run: curl https://download1593.mediafire.com/cn8lqir1w6hg/hqf6y31uwx2no5b/microsoft-edge-stable_102.0.1245.33-1_amd64.deb
       - name: List all the directory
-        run: dir
-
+        run: ls
