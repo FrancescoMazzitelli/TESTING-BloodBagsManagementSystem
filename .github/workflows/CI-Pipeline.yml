@@ -15,6 +15,7 @@ jobs:
       - name: Package the app into a jar
         run: |
           cd /home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CCS
+          ls
           mvn package -DskipTests
       - name: Create the container
         run: docker build -f Dockerfile -t docker-ccs .
@@ -47,6 +48,7 @@ jobs:
       - name: Package the app into a jar
         run: |
           cd /home/runner/work/Ingegneria-del-software-magistrale-2022/Ingegneria-del-software-magistrale-2022/Sistema-gestione-CCS-CTT-UnaRegione-main/CTT
+          ls
           mvn package -DskipTests
       - name: Create the container
         run: docker build -f Dockerfile -t docker-ctt .
