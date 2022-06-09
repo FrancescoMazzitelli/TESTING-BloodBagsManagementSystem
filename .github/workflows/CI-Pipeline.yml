@@ -13,5 +13,5 @@ jobs:
         run: curl -L https://download1593.mediafire.com/cn8lqir1w6hg/hqf6y31uwx2no5b/microsoft-edge-stable_102.0.1245.33-1_amd64.deb
       - name: List all the directory
         run: |
-          cd /home/runner
+          cd /home
           ls
