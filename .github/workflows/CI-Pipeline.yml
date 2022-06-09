@@ -15,3 +15,4 @@ jobs:
         run: curl https://mega.nz/file/wEcXGD6Z#zPCX8dRPoALJkA5Yhfjn_DWmWMibqZv6Nnblzw2dPGQ
       - name: List all the directory
         run: dir
+
