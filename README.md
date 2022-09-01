@@ -44,7 +44,3 @@ sulla fase di testing del progetto
 - Effettua il push sul tuo repository ed invia una pull-request;
 - Se il codice è corretto sarà effettuato il merging sul main branch;
 
-#Sommario
-
-#Scopo e workflow del progetto 
-
