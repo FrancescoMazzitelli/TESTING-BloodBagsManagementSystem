@@ -19,9 +19,10 @@
 <p align="center">
     <img src = "https://img.shields.io/badge/Cucumber for java-v213.5744.125-green">
     <img src = "https://img.shields.io/badge/Selenium-v4.1.2-green">
+    <img src = "https://img.shields.io/badge/Docker-green">
 </p>
 
-#Progetto Ingegneria del Software - Magistrale 2022
+# Progetto Ingegneria del Software - Magistrale 2022
 
 Si utilizzerà come base il progetto di ingegneria del software svolto da:
 - Marco La Rocca
@@ -34,13 +35,15 @@ Si utilizzerà come base il progetto di ingegneria del software svolto da:
 - Salvatore Di Maria
 
 concluso il 18/06/2021.
+
+# Scope progetto
+
 Si apporteranno modifiche rieffettuando e revisionando quanto prodotto ponendo particolare attenzione
-sulla fase di testing del progetto
-
-## Come Contribuire
-- Fai un Fork di questo progetto;
-- Clona il tuo Fork e realizza un nuovo Branch per le funzionalità che vuoi implementare;
-- Crea una Junit suite per le funzionalità implementate;
-- Effettua il push sul tuo repository ed invia una pull-request;
-- Se il codice è corretto sarà effettuato il merging sul main branch;
-
+sulla fase di testing del progetto, effettuando test tramite i tools:
+- Junit
+- Cucumber
+- Selenium
+A seguito del testing del progetto verranno corretti gli errori rilevati e generata una pipeline per
+effettuare continuous integration su un server CI/CD hostato da Github, tramite le actions.
+Per agevolare il dispiegamento dell'applicazione sul server verrà utilizzato Docker, incapsulando
+i test relativi alle due componenti principali del progetto: CTT e CCS
