@@ -1,5 +1,5 @@
 <p align= "center">
-<img src="https://www.unisannio.it/sites/default/files/emblema.png.pagespeed.ce.L9uvAVRynq.png" alt="Unisannio" width= 50%>
+<img src="https://www.unisannio.it/sites/default/files/emblema.png.pagespeed.ce.L9uvAVRynq.png" alt="Unisannio" width= 20%>
 </p>
 <p align="center">
     Tools utilizzati nel progetto originale
