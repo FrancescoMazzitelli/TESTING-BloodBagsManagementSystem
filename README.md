@@ -43,6 +43,7 @@ sulla fase di testing del progetto, effettuando test tramite i tools:
 - Junit
 - Cucumber
 - Selenium
+
 A seguito del testing del progetto verranno corretti gli errori rilevati e generata una pipeline per
 effettuare continuous integration su un server CI/CD hostato da Github, tramite le actions.
 Per agevolare il dispiegamento dell'applicazione sul server verrà utilizzato Docker, incapsulando
